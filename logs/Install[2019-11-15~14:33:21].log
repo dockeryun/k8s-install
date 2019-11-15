@@ -1,0 +1,1325 @@
+2019-11-15 14:33:30,312 p=98349 u=root |  PLAY [kube-master[0]] ******************************************************************************************************************
+2019-11-15 14:33:30,379 p=98349 u=root |  TASK [loadbalancer_apiserver is not set] ***********************************************************************************************
+2019-11-15 14:33:30,379 p=98349 u=root |  Friday 15 November 2019  14:33:30 +0800 (0:00:00.183)       0:00:00.183 ******* 
+2019-11-15 14:33:30,397 p=98349 u=root |  skipping: [master]
+2019-11-15 14:33:30,406 p=98349 u=root |  PLAY [k8s-cluster] *********************************************************************************************************************
+2019-11-15 14:33:30,414 p=98349 u=root |  TASK [Disable swap] ********************************************************************************************************************
+2019-11-15 14:33:30,415 p=98349 u=root |  Friday 15 November 2019  14:33:30 +0800 (0:00:00.035)       0:00:00.219 ******* 
+2019-11-15 14:33:30,469 p=98349 u=root |  changed: [master]
+2019-11-15 14:33:30,605 p=98349 u=root |  changed: [node2]
+2019-11-15 14:33:30,611 p=98349 u=root |  TASK [Swap off] ************************************************************************************************************************
+2019-11-15 14:33:30,611 p=98349 u=root |  Friday 15 November 2019  14:33:30 +0800 (0:00:00.196)       0:00:00.415 ******* 
+2019-11-15 14:33:30,654 p=98349 u=root |  changed: [master]
+2019-11-15 14:33:30,791 p=98349 u=root |  changed: [node2]
+2019-11-15 14:33:30,801 p=98349 u=root |  PLAY [all] *****************************************************************************************************************************
+2019-11-15 14:33:30,813 p=98349 u=root |  TASK [Fetch /etc/os-release] ***********************************************************************************************************
+2019-11-15 14:33:30,814 p=98349 u=root |  Friday 15 November 2019  14:33:30 +0800 (0:00:00.202)       0:00:00.618 ******* 
+2019-11-15 14:33:30,924 p=98349 u=root |  ok: [master]
+2019-11-15 14:33:31,010 p=98349 u=root |  ok: [node2]
+2019-11-15 14:33:31,017 p=98349 u=root |  TASK [Check os release] ****************************************************************************************************************
+2019-11-15 14:33:31,018 p=98349 u=root |  Friday 15 November 2019  14:33:31 +0800 (0:00:00.204)       0:00:00.822 ******* 
+2019-11-15 14:33:31,117 p=98349 u=root |  ok: [master]
+2019-11-15 14:33:31,162 p=98349 u=root |  ok: [node2]
+2019-11-15 14:33:31,166 p=98349 u=root |  TASK [Add APT repositories(Ubuntu 18.04)] **********************************************************************************************
+2019-11-15 14:33:31,167 p=98349 u=root |  Friday 15 November 2019  14:33:31 +0800 (0:00:00.149)       0:00:00.971 ******* 
+2019-11-15 14:33:31,194 p=98349 u=root |  skipping: [node2]
+2019-11-15 14:33:31,231 p=98349 u=root |  skipping: [master]
+2019-11-15 14:33:31,232 p=98349 u=root |  PLAY RECAP *****************************************************************************************************************************
+2019-11-15 14:33:31,233 p=98349 u=root |  master                     : ok=4    changed=2    unreachable=0    failed=0   
+2019-11-15 14:33:31,234 p=98349 u=root |  node2                      : ok=4    changed=2    unreachable=0    failed=0   
+2019-11-15 14:33:31,234 p=98349 u=root |  Friday 15 November 2019  14:33:31 +0800 (0:00:00.067)       0:00:01.038 ******* 
+2019-11-15 14:33:31,235 p=98349 u=root |  =============================================================================== 
+2019-11-15 14:33:31,236 p=98349 u=root |  Fetch /etc/os-release ----------------------------------------------------------------------------------------------------------- 0.20s
+2019-11-15 14:33:31,237 p=98349 u=root |  Swap off ------------------------------------------------------------------------------------------------------------------------ 0.20s
+2019-11-15 14:33:31,237 p=98349 u=root |  Disable swap -------------------------------------------------------------------------------------------------------------------- 0.20s
+2019-11-15 14:33:31,238 p=98349 u=root |  Check os release ---------------------------------------------------------------------------------------------------------------- 0.15s
+2019-11-15 14:33:31,238 p=98349 u=root |  Add APT repositories(Ubuntu 18.04) ---------------------------------------------------------------------------------------------- 0.07s
+2019-11-15 14:33:31,238 p=98349 u=root |  loadbalancer_apiserver is not set ----------------------------------------------------------------------------------------------- 0.04s
+2019-11-15 14:33:35,333 p=98395 u=root |  PLAY [localhost] ***********************************************************************************************************************
+2019-11-15 14:33:35,362 p=98395 u=root |  TASK [Check ansible version >=2.7.8] ***************************************************************************************************
+2019-11-15 14:33:35,362 p=98395 u=root |  Friday 15 November 2019  14:33:35 +0800 (0:00:00.146)       0:00:00.146 ******* 
+2019-11-15 14:33:35,547 p=98395 u=root |  ok: [localhost] => {
+    "changed": false, 
+    "msg": "All assertions passed"
+}
+2019-11-15 14:33:35,554 p=98395 u=root |   [WARNING]: Could not match supplied host pattern, ignoring: bastion
+
+2019-11-15 14:33:35,605 p=98395 u=root |  PLAY [bastion[0]] **********************************************************************************************************************
+2019-11-15 14:33:35,605 p=98395 u=root |  skipping: no hosts matched
+2019-11-15 14:33:35,614 p=98395 u=root |  PLAY [k8s-cluster:etcd] ****************************************************************************************************************
+2019-11-15 14:33:35,682 p=98395 u=root |  TASK [download : prep_download | Set a few facts] **************************************************************************************
+2019-11-15 14:33:35,683 p=98395 u=root |  Friday 15 November 2019  14:33:35 +0800 (0:00:00.320)       0:00:00.466 ******* 
+2019-11-15 14:33:35,711 p=98395 u=root |  skipping: [master]
+2019-11-15 14:33:35,732 p=98395 u=root |  skipping: [node2]
+2019-11-15 14:33:35,740 p=98395 u=root |  TASK [download : Set image info command for containerd] ********************************************************************************
+2019-11-15 14:33:35,740 p=98395 u=root |  Friday 15 November 2019  14:33:35 +0800 (0:00:00.057)       0:00:00.524 ******* 
+2019-11-15 14:33:35,772 p=98395 u=root |  skipping: [master]
+2019-11-15 14:33:35,790 p=98395 u=root |  skipping: [node2]
+2019-11-15 14:33:35,802 p=98395 u=root |  TASK [download : Register docker images info] ******************************************************************************************
+2019-11-15 14:33:35,802 p=98395 u=root |  Friday 15 November 2019  14:33:35 +0800 (0:00:00.061)       0:00:00.585 ******* 
+2019-11-15 14:33:35,833 p=98395 u=root |  skipping: [master]
+2019-11-15 14:33:35,849 p=98395 u=root |  skipping: [node2]
+2019-11-15 14:33:35,856 p=98395 u=root |  TASK [download : prep_download | Create staging directory on remote node] **************************************************************
+2019-11-15 14:33:35,856 p=98395 u=root |  Friday 15 November 2019  14:33:35 +0800 (0:00:00.054)       0:00:00.639 ******* 
+2019-11-15 14:33:35,892 p=98395 u=root |  skipping: [master]
+2019-11-15 14:33:35,910 p=98395 u=root |  skipping: [node2]
+2019-11-15 14:33:35,924 p=98395 u=root |  TASK [download : prep_download | Create local cache for files and images] **************************************************************
+2019-11-15 14:33:35,924 p=98395 u=root |  Friday 15 November 2019  14:33:35 +0800 (0:00:00.068)       0:00:00.707 ******* 
+2019-11-15 14:33:35,956 p=98395 u=root |  skipping: [master]
+2019-11-15 14:33:35,972 p=98395 u=root |  TASK [download : prep_download | On localhost, check if passwordless root is possible] *************************************************
+2019-11-15 14:33:35,972 p=98395 u=root |  Friday 15 November 2019  14:33:35 +0800 (0:00:00.047)       0:00:00.755 ******* 
+2019-11-15 14:33:36,001 p=98395 u=root |  skipping: [master]
+2019-11-15 14:33:36,017 p=98395 u=root |  TASK [download : prep_download | On localhost, check if user has access to docker without using sudo] **********************************
+2019-11-15 14:33:36,017 p=98395 u=root |  Friday 15 November 2019  14:33:36 +0800 (0:00:00.045)       0:00:00.801 ******* 
+2019-11-15 14:33:36,041 p=98395 u=root |  skipping: [master]
+2019-11-15 14:33:36,051 p=98395 u=root |  TASK [download : prep_download | Parse the outputs of the previous commands] ***********************************************************
+2019-11-15 14:33:36,052 p=98395 u=root |  Friday 15 November 2019  14:33:36 +0800 (0:00:00.034)       0:00:00.835 ******* 
+2019-11-15 14:33:36,080 p=98395 u=root |  skipping: [master]
+2019-11-15 14:33:36,098 p=98395 u=root |  skipping: [node2]
+2019-11-15 14:33:36,104 p=98395 u=root |  TASK [download : prep_download | Check that local user is in group or can become root] *************************************************
+2019-11-15 14:33:36,104 p=98395 u=root |  Friday 15 November 2019  14:33:36 +0800 (0:00:00.052)       0:00:00.887 ******* 
+2019-11-15 14:33:36,131 p=98395 u=root |  skipping: [master]
+2019-11-15 14:33:36,150 p=98395 u=root |  skipping: [node2]
+2019-11-15 14:33:36,161 p=98395 u=root |  TASK [download : include_tasks] ********************************************************************************************************
+2019-11-15 14:33:36,162 p=98395 u=root |  Friday 15 November 2019  14:33:36 +0800 (0:00:00.057)       0:00:00.945 ******* 
+2019-11-15 14:33:36,194 p=98395 u=root |  skipping: [master]
+2019-11-15 14:33:36,207 p=98395 u=root |  skipping: [node2]
+2019-11-15 14:33:36,213 p=98395 u=root |  TASK [download : download | Get kubeadm binary and list of required images] ************************************************************
+2019-11-15 14:33:36,213 p=98395 u=root |  Friday 15 November 2019  14:33:36 +0800 (0:00:00.051)       0:00:00.997 ******* 
+2019-11-15 14:33:36,244 p=98395 u=root |  skipping: [master]
+2019-11-15 14:33:36,261 p=98395 u=root |  skipping: [node2]
+2019-11-15 14:33:36,272 p=98395 u=root |  TASK [download : download | Download files / images] ***********************************************************************************
+2019-11-15 14:33:36,272 p=98395 u=root |  Friday 15 November 2019  14:33:36 +0800 (0:00:00.058)       0:00:01.055 ******* 
+2019-11-15 14:33:36,373 p=98395 u=root |  skipping: [master]
+2019-11-15 14:33:36,389 p=98395 u=root |  skipping: [node2]
+2019-11-15 14:33:36,401 p=98395 u=root |  TASK [download : download | Sync files / images from ansible host to nodes] ************************************************************
+2019-11-15 14:33:36,401 p=98395 u=root |  Friday 15 November 2019  14:33:36 +0800 (0:00:00.129)       0:00:01.185 ******* 
+2019-11-15 14:33:36,505 p=98395 u=root |  skipping: [master]
+2019-11-15 14:33:36,520 p=98395 u=root |  skipping: [node2]
+2019-11-15 14:33:36,530 p=98395 u=root |  TASK [kubespray-defaults : Configure defaults] *****************************************************************************************
+2019-11-15 14:33:36,530 p=98395 u=root |  Friday 15 November 2019  14:33:36 +0800 (0:00:00.129)       0:00:01.314 ******* 
+2019-11-15 14:33:36,584 p=98395 u=root |  ok: [master] => {
+    "msg": "Check roles/kubespray-defaults/defaults/main.yml"
+}
+2019-11-15 14:33:36,653 p=98395 u=root |  ok: [node2] => {
+    "msg": "Check roles/kubespray-defaults/defaults/main.yml"
+}
+2019-11-15 14:33:36,660 p=98395 u=root |  TASK [bootstrap-os : Fetch /etc/os-release] ********************************************************************************************
+2019-11-15 14:33:36,660 p=98395 u=root |  Friday 15 November 2019  14:33:36 +0800 (0:00:00.130)       0:00:01.444 ******* 
+2019-11-15 14:33:36,728 p=98395 u=root |  ok: [master]
+2019-11-15 14:33:36,851 p=98395 u=root |  ok: [node2]
+2019-11-15 14:33:36,857 p=98395 u=root |  TASK [bootstrap-os : include_tasks] ****************************************************************************************************
+2019-11-15 14:33:36,857 p=98395 u=root |  Friday 15 November 2019  14:33:36 +0800 (0:00:00.196)       0:00:01.640 ******* 
+2019-11-15 14:33:36,924 p=98395 u=root |  included: /data/soft/kubesphere-all-v2.1.0/k8s/roles/bootstrap-os/tasks/bootstrap-centos.yml for master, node2
+2019-11-15 14:33:36,938 p=98395 u=root |  TASK [bootstrap-os : Check if this is an atomic host] **********************************************************************************
+2019-11-15 14:33:36,938 p=98395 u=root |  Friday 15 November 2019  14:33:36 +0800 (0:00:00.081)       0:00:01.721 ******* 
+2019-11-15 14:33:37,280 p=98395 u=root |  ok: [master]
+2019-11-15 14:33:37,456 p=98395 u=root |  ok: [node2]
+2019-11-15 14:33:37,462 p=98395 u=root |  TASK [bootstrap-os : Store the fact if this is an atomic host] *************************************************************************
+2019-11-15 14:33:37,462 p=98395 u=root |  Friday 15 November 2019  14:33:37 +0800 (0:00:00.523)       0:00:02.245 ******* 
+2019-11-15 14:33:37,525 p=98395 u=root |  ok: [master]
+2019-11-15 14:33:37,590 p=98395 u=root |  ok: [node2]
+2019-11-15 14:33:37,598 p=98395 u=root |  TASK [bootstrap-os : Check presence of fastestmirror.conf] *****************************************************************************
+2019-11-15 14:33:37,599 p=98395 u=root |  Friday 15 November 2019  14:33:37 +0800 (0:00:00.136)       0:00:02.382 ******* 
+2019-11-15 14:33:37,834 p=98395 u=root |  ok: [master]
+2019-11-15 14:33:38,064 p=98395 u=root |  ok: [node2]
+2019-11-15 14:33:38,071 p=98395 u=root |  TASK [bootstrap-os : Disable fastestmirror plugin if requested] ************************************************************************
+2019-11-15 14:33:38,071 p=98395 u=root |  Friday 15 November 2019  14:33:38 +0800 (0:00:00.472)       0:00:02.855 ******* 
+2019-11-15 14:33:38,448 p=98395 u=root |  changed: [master]
+2019-11-15 14:33:38,563 p=98395 u=root |  changed: [node2]
+2019-11-15 14:33:38,571 p=98395 u=root |  TASK [bootstrap-os : Add proxy to /etc/yum.conf if http_proxy is defined] **************************************************************
+2019-11-15 14:33:38,571 p=98395 u=root |  Friday 15 November 2019  14:33:38 +0800 (0:00:00.499)       0:00:03.354 ******* 
+2019-11-15 14:33:38,606 p=98395 u=root |  skipping: [master]
+2019-11-15 14:33:38,622 p=98395 u=root |  skipping: [node2]
+2019-11-15 14:33:38,630 p=98395 u=root |  TASK [bootstrap-os : Install libselinux python package] ********************************************************************************
+2019-11-15 14:33:38,630 p=98395 u=root |  Friday 15 November 2019  14:33:38 +0800 (0:00:00.058)       0:00:03.413 ******* 
+2019-11-15 14:33:39,921 p=98395 u=root |  ok: [master]
+2019-11-15 14:33:39,968 p=98395 u=root |  ok: [node2]
+2019-11-15 14:33:39,975 p=98395 u=root |  TASK [bootstrap-os : include_tasks] ****************************************************************************************************
+2019-11-15 14:33:39,977 p=98395 u=root |  Friday 15 November 2019  14:33:39 +0800 (0:00:01.345)       0:00:04.760 ******* 
+2019-11-15 14:33:40,013 p=98395 u=root |  skipping: [master]
+2019-11-15 14:33:40,032 p=98395 u=root |  skipping: [node2]
+2019-11-15 14:33:40,041 p=98395 u=root |  TASK [bootstrap-os : include_tasks] ****************************************************************************************************
+2019-11-15 14:33:40,041 p=98395 u=root |  Friday 15 November 2019  14:33:40 +0800 (0:00:00.064)       0:00:04.825 ******* 
+2019-11-15 14:33:40,074 p=98395 u=root |  skipping: [master]
+2019-11-15 14:33:40,089 p=98395 u=root |  skipping: [node2]
+2019-11-15 14:33:40,100 p=98395 u=root |  TASK [bootstrap-os : include_tasks] ****************************************************************************************************
+2019-11-15 14:33:40,100 p=98395 u=root |  Friday 15 November 2019  14:33:40 +0800 (0:00:00.058)       0:00:04.883 ******* 
+2019-11-15 14:33:40,130 p=98395 u=root |  skipping: [master]
+2019-11-15 14:33:40,147 p=98395 u=root |  skipping: [node2]
+2019-11-15 14:33:40,152 p=98395 u=root |  TASK [bootstrap-os : include_tasks] ****************************************************************************************************
+2019-11-15 14:33:40,152 p=98395 u=root |  Friday 15 November 2019  14:33:40 +0800 (0:00:00.052)       0:00:04.936 ******* 
+2019-11-15 14:33:40,183 p=98395 u=root |  skipping: [master]
+2019-11-15 14:33:40,198 p=98395 u=root |  skipping: [node2]
+2019-11-15 14:33:40,204 p=98395 u=root |  TASK [bootstrap-os : include_tasks] ****************************************************************************************************
+2019-11-15 14:33:40,205 p=98395 u=root |  Friday 15 November 2019  14:33:40 +0800 (0:00:00.052)       0:00:04.988 ******* 
+2019-11-15 14:33:40,237 p=98395 u=root |  skipping: [master]
+2019-11-15 14:33:40,253 p=98395 u=root |  skipping: [node2]
+2019-11-15 14:33:40,265 p=98395 u=root |  TASK [bootstrap-os : include_tasks] ****************************************************************************************************
+2019-11-15 14:33:40,265 p=98395 u=root |  Friday 15 November 2019  14:33:40 +0800 (0:00:00.060)       0:00:05.049 ******* 
+2019-11-15 14:33:40,294 p=98395 u=root |  skipping: [master]
+2019-11-15 14:33:40,314 p=98395 u=root |  skipping: [node2]
+2019-11-15 14:33:40,320 p=98395 u=root |  TASK [bootstrap-os : Create remote_tmp for it is used by another module] ***************************************************************
+2019-11-15 14:33:40,320 p=98395 u=root |  Friday 15 November 2019  14:33:40 +0800 (0:00:00.055)       0:00:05.104 ******* 
+2019-11-15 14:33:40,669 p=98395 u=root |  ok: [master]
+2019-11-15 14:33:40,788 p=98395 u=root |  ok: [node2]
+2019-11-15 14:33:40,798 p=98395 u=root |  TASK [bootstrap-os : Gather host facts to get ansible_os_family] ***********************************************************************
+2019-11-15 14:33:40,798 p=98395 u=root |  Friday 15 November 2019  14:33:40 +0800 (0:00:00.477)       0:00:05.582 ******* 
+2019-11-15 14:33:41,132 p=98395 u=root |  ok: [master]
+2019-11-15 14:33:41,324 p=98395 u=root |  ok: [node2]
+2019-11-15 14:33:41,337 p=98395 u=root |  TASK [bootstrap-os : Assign inventory name to unconfigured hostnames (non-CoreOS, Suse and ClearLinux)] ********************************
+2019-11-15 14:33:41,337 p=98395 u=root |  Friday 15 November 2019  14:33:41 +0800 (0:00:00.539)       0:00:06.121 ******* 
+2019-11-15 14:33:42,065 p=98395 u=root |  ok: [master]
+2019-11-15 14:33:42,219 p=98395 u=root |  ok: [node2]
+2019-11-15 14:33:42,231 p=98395 u=root |  TASK [bootstrap-os : Assign inventory name to unconfigured hostnames (CoreOS, Suse and ClearLinux only)] *******************************
+2019-11-15 14:33:42,231 p=98395 u=root |  Friday 15 November 2019  14:33:42 +0800 (0:00:00.894)       0:00:07.015 ******* 
+2019-11-15 14:33:42,261 p=98395 u=root |  skipping: [master]
+2019-11-15 14:33:42,281 p=98395 u=root |  skipping: [node2]
+2019-11-15 14:33:42,293 p=98395 u=root |  TASK [bootstrap-os : Update hostname fact (CoreOS, Suse and ClearLinux only)] **********************************************************
+2019-11-15 14:33:42,294 p=98395 u=root |  Friday 15 November 2019  14:33:42 +0800 (0:00:00.062)       0:00:07.077 ******* 
+2019-11-15 14:33:42,328 p=98395 u=root |  skipping: [master]
+2019-11-15 14:33:42,346 p=98395 u=root |  skipping: [node2]
+2019-11-15 14:33:42,356 p=98395 u=root |  TASK [bootstrap-os : Install ceph-commmon package] *************************************************************************************
+2019-11-15 14:33:42,356 p=98395 u=root |  Friday 15 November 2019  14:33:42 +0800 (0:00:00.062)       0:00:07.140 ******* 
+2019-11-15 14:33:42,390 p=98395 u=root |  skipping: [master]
+2019-11-15 14:33:42,411 p=98395 u=root |  skipping: [node2]
+2019-11-15 14:33:42,425 p=98395 u=root |  TASK [bootstrap-os : Ensure bash_completion.d folder exists] ***************************************************************************
+2019-11-15 14:33:42,426 p=98395 u=root |  Friday 15 November 2019  14:33:42 +0800 (0:00:00.069)       0:00:07.209 ******* 
+2019-11-15 14:33:42,654 p=98395 u=root |  ok: [master]
+2019-11-15 14:33:42,859 p=98395 u=root |  ok: [node2]
+2019-11-15 14:33:42,877 p=98395 u=root |  PLAY [k8s-cluster:etcd] ****************************************************************************************************************
+2019-11-15 14:33:42,961 p=98395 u=root |  TASK [Gathering Facts] *****************************************************************************************************************
+2019-11-15 14:33:42,961 p=98395 u=root |  Friday 15 November 2019  14:33:42 +0800 (0:00:00.535)       0:00:07.744 ******* 
+2019-11-15 14:33:43,583 p=98395 u=root |  ok: [master]
+2019-11-15 14:33:44,019 p=98395 u=root |  ok: [node2]
+2019-11-15 14:33:44,051 p=98395 u=root |  TASK [chrony : apt cache] **************************************************************************************************************
+2019-11-15 14:33:44,051 p=98395 u=root |  Friday 15 November 2019  14:33:44 +0800 (0:00:01.090)       0:00:08.834 ******* 
+2019-11-15 14:33:44,099 p=98395 u=root |  skipping: [master]
+2019-11-15 14:33:44,117 p=98395 u=root |  skipping: [node2]
+2019-11-15 14:33:44,148 p=98395 u=root |  TASK [chrony : apt remove ntp] *********************************************************************************************************
+2019-11-15 14:33:44,148 p=98395 u=root |  Friday 15 November 2019  14:33:44 +0800 (0:00:00.096)       0:00:08.931 ******* 
+2019-11-15 14:33:44,566 p=98395 u=root |  fatal: [master]: FAILED! => {"changed": false, "msg": "Unsupported parameters for (yum) module: warn Supported parameters include: allow_downgrade, autoremove, bugfix, conf_file, disable_excludes, disable_gpg_check, disable_plugin, disablerepo, download_only, enable_plugin, enablerepo, exclude, install_repoquery, installroot, list, name, releasever, security, skip_broken, state, update_cache, update_only, use_backend, validate_certs"}
+2019-11-15 14:33:44,566 p=98395 u=root |  ...ignoring
+2019-11-15 14:33:44,772 p=98395 u=root |  fatal: [node2]: FAILED! => {"changed": false, "msg": "Unsupported parameters for (yum) module: warn Supported parameters include: allow_downgrade, autoremove, bugfix, conf_file, disable_excludes, disable_gpg_check, disable_plugin, disablerepo, download_only, enable_plugin, enablerepo, exclude, install_repoquery, installroot, list, name, releasever, security, skip_broken, state, update_cache, update_only, use_backend, validate_certs"}
+2019-11-15 14:33:44,773 p=98395 u=root |  ...ignoring
+2019-11-15 14:33:44,803 p=98395 u=root |  TASK [chrony : apt remove ntp] *********************************************************************************************************
+2019-11-15 14:33:44,803 p=98395 u=root |  Friday 15 November 2019  14:33:44 +0800 (0:00:00.655)       0:00:09.587 ******* 
+2019-11-15 14:33:44,849 p=98395 u=root |  skipping: [master]
+2019-11-15 14:33:44,868 p=98395 u=root |  skipping: [node2]
+2019-11-15 14:33:44,899 p=98395 u=root |  TASK [chrony : install chrony] *********************************************************************************************************
+2019-11-15 14:33:44,899 p=98395 u=root |  Friday 15 November 2019  14:33:44 +0800 (0:00:00.095)       0:00:09.683 ******* 
+2019-11-15 14:33:47,391 p=98395 u=root |  changed: [master]
+2019-11-15 14:33:47,709 p=98395 u=root |  changed: [node2]
+2019-11-15 14:33:47,738 p=98395 u=root |  TASK [chrony : conf chrony server] *****************************************************************************************************
+2019-11-15 14:33:47,738 p=98395 u=root |  Friday 15 November 2019  14:33:47 +0800 (0:00:02.839)       0:00:12.522 ******* 
+2019-11-15 14:33:47,811 p=98395 u=root |  skipping: [node2]
+2019-11-15 14:33:48,274 p=98395 u=root |  changed: [master]
+2019-11-15 14:33:48,306 p=98395 u=root |  TASK [chrony : conf chrony server] *****************************************************************************************************
+2019-11-15 14:33:48,306 p=98395 u=root |  Friday 15 November 2019  14:33:48 +0800 (0:00:00.567)       0:00:13.089 ******* 
+2019-11-15 14:33:48,353 p=98395 u=root |  skipping: [master]
+2019-11-15 14:33:48,373 p=98395 u=root |  skipping: [node2]
+2019-11-15 14:33:48,401 p=98395 u=root |  TASK [chrony : start chrony server] ****************************************************************************************************
+2019-11-15 14:33:48,401 p=98395 u=root |  Friday 15 November 2019  14:33:48 +0800 (0:00:00.095)       0:00:13.185 ******* 
+2019-11-15 14:33:48,473 p=98395 u=root |  skipping: [node2]
+2019-11-15 14:33:49,049 p=98395 u=root |  changed: [master]
+2019-11-15 14:33:49,078 p=98395 u=root |  TASK [chrony : start chrony server] ****************************************************************************************************
+2019-11-15 14:33:49,078 p=98395 u=root |  Friday 15 November 2019  14:33:49 +0800 (0:00:00.676)       0:00:13.862 ******* 
+2019-11-15 14:33:49,130 p=98395 u=root |  skipping: [master]
+2019-11-15 14:33:49,147 p=98395 u=root |  skipping: [node2]
+2019-11-15 14:33:49,173 p=98395 u=root |  TASK [chrony : conf chrony client] *****************************************************************************************************
+2019-11-15 14:33:49,173 p=98395 u=root |  Friday 15 November 2019  14:33:49 +0800 (0:00:00.094)       0:00:13.957 ******* 
+2019-11-15 14:33:49,225 p=98395 u=root |  skipping: [master]
+2019-11-15 14:33:49,954 p=98395 u=root |  changed: [node2]
+2019-11-15 14:33:49,980 p=98395 u=root |  TASK [chrony : conf chrony client] *****************************************************************************************************
+2019-11-15 14:33:49,981 p=98395 u=root |  Friday 15 November 2019  14:33:49 +0800 (0:00:00.807)       0:00:14.764 ******* 
+2019-11-15 14:33:50,032 p=98395 u=root |  skipping: [master]
+2019-11-15 14:33:50,057 p=98395 u=root |  skipping: [node2]
+2019-11-15 14:33:50,088 p=98395 u=root |  TASK [chrony : restart chrony client] **************************************************************************************************
+2019-11-15 14:33:50,088 p=98395 u=root |  Friday 15 November 2019  14:33:50 +0800 (0:00:00.107)       0:00:14.872 ******* 
+2019-11-15 14:33:50,140 p=98395 u=root |  skipping: [master]
+2019-11-15 14:33:50,703 p=98395 u=root |  changed: [node2]
+2019-11-15 14:33:50,730 p=98395 u=root |  TASK [chrony : start chrony client] ****************************************************************************************************
+2019-11-15 14:33:50,731 p=98395 u=root |  Friday 15 November 2019  14:33:50 +0800 (0:00:00.642)       0:00:15.514 ******* 
+2019-11-15 14:33:50,782 p=98395 u=root |  skipping: [master]
+2019-11-15 14:33:50,804 p=98395 u=root |  skipping: [node2]
+2019-11-15 14:33:50,832 p=98395 u=root |  TASK [download : prep_download | Set a few facts] **************************************************************************************
+2019-11-15 14:33:50,832 p=98395 u=root |  Friday 15 November 2019  14:33:50 +0800 (0:00:00.101)       0:00:15.615 ******* 
+2019-11-15 14:33:50,879 p=98395 u=root |  skipping: [master]
+2019-11-15 14:33:50,899 p=98395 u=root |  skipping: [node2]
+2019-11-15 14:33:50,929 p=98395 u=root |  TASK [download : Set image info command for containerd] ********************************************************************************
+2019-11-15 14:33:50,929 p=98395 u=root |  Friday 15 November 2019  14:33:50 +0800 (0:00:00.096)       0:00:15.712 ******* 
+2019-11-15 14:33:50,978 p=98395 u=root |  skipping: [master]
+2019-11-15 14:33:50,999 p=98395 u=root |  skipping: [node2]
+2019-11-15 14:33:51,026 p=98395 u=root |  TASK [download : Register docker images info] ******************************************************************************************
+2019-11-15 14:33:51,026 p=98395 u=root |  Friday 15 November 2019  14:33:51 +0800 (0:00:00.097)       0:00:15.809 ******* 
+2019-11-15 14:33:51,072 p=98395 u=root |  skipping: [master]
+2019-11-15 14:33:51,090 p=98395 u=root |  skipping: [node2]
+2019-11-15 14:33:51,126 p=98395 u=root |  TASK [download : prep_download | Create staging directory on remote node] **************************************************************
+2019-11-15 14:33:51,127 p=98395 u=root |  Friday 15 November 2019  14:33:51 +0800 (0:00:00.100)       0:00:15.910 ******* 
+2019-11-15 14:33:51,175 p=98395 u=root |  skipping: [master]
+2019-11-15 14:33:51,195 p=98395 u=root |  skipping: [node2]
+2019-11-15 14:33:51,226 p=98395 u=root |  TASK [download : prep_download | Create local cache for files and images] **************************************************************
+2019-11-15 14:33:51,226 p=98395 u=root |  Friday 15 November 2019  14:33:51 +0800 (0:00:00.099)       0:00:16.010 ******* 
+2019-11-15 14:33:51,260 p=98395 u=root |  skipping: [master]
+2019-11-15 14:33:51,302 p=98395 u=root |  TASK [download : prep_download | On localhost, check if passwordless root is possible] *************************************************
+2019-11-15 14:33:51,302 p=98395 u=root |  Friday 15 November 2019  14:33:51 +0800 (0:00:00.075)       0:00:16.085 ******* 
+2019-11-15 14:33:51,332 p=98395 u=root |  skipping: [master]
+2019-11-15 14:33:51,366 p=98395 u=root |  TASK [download : prep_download | On localhost, check if user has access to docker without using sudo] **********************************
+2019-11-15 14:33:51,366 p=98395 u=root |  Friday 15 November 2019  14:33:51 +0800 (0:00:00.063)       0:00:16.149 ******* 
+2019-11-15 14:33:51,395 p=98395 u=root |  skipping: [master]
+2019-11-15 14:33:51,420 p=98395 u=root |  TASK [download : prep_download | Parse the outputs of the previous commands] ***********************************************************
+2019-11-15 14:33:51,420 p=98395 u=root |  Friday 15 November 2019  14:33:51 +0800 (0:00:00.054)       0:00:16.204 ******* 
+2019-11-15 14:33:51,467 p=98395 u=root |  skipping: [master]
+2019-11-15 14:33:51,485 p=98395 u=root |  skipping: [node2]
+2019-11-15 14:33:51,515 p=98395 u=root |  TASK [download : prep_download | Check that local user is in group or can become root] *************************************************
+2019-11-15 14:33:51,516 p=98395 u=root |  Friday 15 November 2019  14:33:51 +0800 (0:00:00.095)       0:00:16.299 ******* 
+2019-11-15 14:33:51,567 p=98395 u=root |  skipping: [master]
+2019-11-15 14:33:51,586 p=98395 u=root |  skipping: [node2]
+2019-11-15 14:33:51,614 p=98395 u=root |  TASK [download : include_tasks] ********************************************************************************************************
+2019-11-15 14:33:51,614 p=98395 u=root |  Friday 15 November 2019  14:33:51 +0800 (0:00:00.098)       0:00:16.397 ******* 
+2019-11-15 14:33:51,661 p=98395 u=root |  skipping: [master]
+2019-11-15 14:33:51,681 p=98395 u=root |  skipping: [node2]
+2019-11-15 14:33:51,709 p=98395 u=root |  TASK [download : download | Get kubeadm binary and list of required images] ************************************************************
+2019-11-15 14:33:51,710 p=98395 u=root |  Friday 15 November 2019  14:33:51 +0800 (0:00:00.095)       0:00:16.493 ******* 
+2019-11-15 14:33:51,757 p=98395 u=root |  skipping: [master]
+2019-11-15 14:33:51,775 p=98395 u=root |  skipping: [node2]
+2019-11-15 14:33:51,808 p=98395 u=root |  TASK [download : download | Download files / images] ***********************************************************************************
+2019-11-15 14:33:51,808 p=98395 u=root |  Friday 15 November 2019  14:33:51 +0800 (0:00:00.098)       0:00:16.591 ******* 
+2019-11-15 14:33:52,148 p=98395 u=root |  skipping: [master] => (item={'value': {u'repo': u'library/busybox', u'tag': u'1.29.2', u'container': True, u'groups': [u'k8s-cluster'], u'sha256': u'', u'enabled': False}, 'key': u'busybox'}) 
+2019-11-15 14:33:52,217 p=98395 u=root |  skipping: [node2] => (item={'value': {u'repo': u'library/busybox', u'tag': u'1.29.2', u'container': True, u'groups': [u'k8s-cluster'], u'sha256': u'', u'enabled': False}, 'key': u'busybox'}) 
+2019-11-15 14:33:52,254 p=98395 u=root |  skipping: [master] => (item={'value': {u'repo': u'calico/typha', u'tag': u'v3.7.3', u'container': True, u'groups': [u'k8s-cluster'], u'sha256': u'', u'enabled': False}, 'key': u'calico_typha'}) 
+2019-11-15 14:33:52,255 p=98395 u=root |  skipping: [master] => (item={'value': {u'repo': u'contiv/auth_proxy', u'tag': u'1.2.1', u'container': True, u'groups': [u'k8s-cluster'], u'sha256': u'', u'enabled': False}, 'key': u'contiv_auth_proxy'}) 
+2019-11-15 14:33:52,255 p=98395 u=root |  skipping: [master] => (item={'value': {u'repo': u'mirrorgooglecontainers/cluster-proportional-autoscaler-amd64', u'tag': u'1.6.0', u'container': True, u'groups': [u'kube-master'], u'sha256': u'', u'enabled': True}, 'key': u'dnsautoscaler'}) 
+2019-11-15 14:33:52,256 p=98395 u=root |  skipping: [master] => (item={'value': {u'unarchive': False, u'groups': [u'k8s-cluster'], u'dest': u'/tmp/releases/istioctl', u'enabled': True, u'url': u'https://kubernetes-istio.pek3b.qingstor.com/1.3.3/bin/istioctl', u'version': u'1.3.3', u'mode': u'0755', u'file': True, u'owner': u'root', u'sha256': u'ede2905baf31ddbb9e0cce00122c19d9adc0db6ae9961a8625291119f0cf7486'}, 'key': u'istioctl'}) 
+2019-11-15 14:33:52,256 p=98395 u=root |  skipping: [master] => (item={'value': {u'repo': u'kubeovn/kube-ovn-cni', u'tag': u'v0.6.0', u'container': True, u'groups': [u'k8s-cluster'], u'sha256': u'', u'enabled': False}, 'key': u'kube_ovn_cni'}) 
+2019-11-15 14:33:52,257 p=98395 u=root |  skipping: [master] => (item={'value': {u'repo': u'mirrorgooglecontainers/pause-amd64', u'tag': u'3.1', u'container': True, u'groups': [u'k8s-cluster'], u'sha256': u'', u'enabled': True}, 'key': u'pod_infra'}) 
+2019-11-15 14:33:52,257 p=98395 u=root |  skipping: [master] => (item={'value': {u'unarchive': False, u'sha256': u'4f15f75cd2dc46c13359968d2078ac3df14d431607a6798743d6feb462f4b9a3', u'container': False, u'groups': [u'kube-master'], u'dest': u'/tmp/releases/helm', u'enabled': True, u'source_url': u'https://kubernetes-helm.pek3b.qingstor.com/linux-amd64/v2.14.3/helm', u'repo': u'lachlanevenson/k8s-helm', u'url': u'https://kubernetes-helm.pek3b.qingstor.com/linux-amd64/v2.14.3/helm', u'version': u'v2.14.3', u'mode': u'0755', u'file': True, u'owner': u'root', u'tag': u'v2.14.3'}, 'key': u'helm'}) 
+2019-11-15 14:33:52,258 p=98395 u=root |  skipping: [master] => (item={'value': {u'unarchive': False, u'groups': [u'k8s-cluster'], u'dest': u'/tmp/releases/kubeadm-v1.15.5-amd64', u'enabled': True, u'url': u'https://kubernetes-release.pek3b.qingstor.com/release/v1.15.5/bin/linux/amd64/kubeadm', u'version': u'v1.15.5', u'mode': u'0755', u'file': True, u'owner': u'root', u'sha256': u'e64bb0b2cfdcaa1f4063879bb358848c41aa1b5cc18b75c91994d11a9bf8c136'}, 'key': u'kubeadm'}) 
+2019-11-15 14:33:52,278 p=98395 u=root |  skipping: [node2] => (item={'value': {u'repo': u'calico/typha', u'tag': u'v3.7.3', u'container': True, u'groups': [u'k8s-cluster'], u'sha256': u'', u'enabled': False}, 'key': u'calico_typha'}) 
+2019-11-15 14:33:52,278 p=98395 u=root |  skipping: [node2] => (item={'value': {u'repo': u'contiv/auth_proxy', u'tag': u'1.2.1', u'container': True, u'groups': [u'k8s-cluster'], u'sha256': u'', u'enabled': False}, 'key': u'contiv_auth_proxy'}) 
+2019-11-15 14:33:52,279 p=98395 u=root |  skipping: [node2] => (item={'value': {u'repo': u'mirrorgooglecontainers/cluster-proportional-autoscaler-amd64', u'tag': u'1.6.0', u'container': True, u'groups': [u'kube-master'], u'sha256': u'', u'enabled': True}, 'key': u'dnsautoscaler'}) 
+2019-11-15 14:33:52,280 p=98395 u=root |  skipping: [node2] => (item={'value': {u'unarchive': False, u'groups': [u'k8s-cluster'], u'dest': u'/tmp/releases/istioctl', u'enabled': True, u'url': u'https://kubernetes-istio.pek3b.qingstor.com/1.3.3/bin/istioctl', u'version': u'1.3.3', u'mode': u'0755', u'file': True, u'owner': u'root', u'sha256': u'ede2905baf31ddbb9e0cce00122c19d9adc0db6ae9961a8625291119f0cf7486'}, 'key': u'istioctl'}) 
+2019-11-15 14:33:52,281 p=98395 u=root |  skipping: [node2] => (item={'value': {u'repo': u'kubeovn/kube-ovn-cni', u'tag': u'v0.6.0', u'container': True, u'groups': [u'k8s-cluster'], u'sha256': u'', u'enabled': False}, 'key': u'kube_ovn_cni'}) 
+2019-11-15 14:33:52,282 p=98395 u=root |  skipping: [node2] => (item={'value': {u'repo': u'mirrorgooglecontainers/pause-amd64', u'tag': u'3.1', u'container': True, u'groups': [u'k8s-cluster'], u'sha256': u'', u'enabled': True}, 'key': u'pod_infra'}) 
+2019-11-15 14:33:52,317 p=98395 u=root |  skipping: [node2] => (item={'value': {u'unarchive': False, u'sha256': u'4f15f75cd2dc46c13359968d2078ac3df14d431607a6798743d6feb462f4b9a3', u'container': False, u'groups': [u'kube-master'], u'dest': u'/tmp/releases/helm', u'enabled': True, u'source_url': u'https://kubernetes-helm.pek3b.qingstor.com/linux-amd64/v2.14.3/helm', u'repo': u'lachlanevenson/k8s-helm', u'url': u'https://kubernetes-helm.pek3b.qingstor.com/linux-amd64/v2.14.3/helm', u'version': u'v2.14.3', u'mode': u'0755', u'file': True, u'owner': u'root', u'tag': u'v2.14.3'}, 'key': u'helm'}) 
+2019-11-15 14:33:52,317 p=98395 u=root |  skipping: [node2] => (item={'value': {u'unarchive': False, u'groups': [u'k8s-cluster'], u'dest': u'/tmp/releases/kubeadm-v1.15.5-amd64', u'enabled': True, u'url': u'https://kubernetes-release.pek3b.qingstor.com/release/v1.15.5/bin/linux/amd64/kubeadm', u'version': u'v1.15.5', u'mode': u'0755', u'file': True, u'owner': u'root', u'sha256': u'e64bb0b2cfdcaa1f4063879bb358848c41aa1b5cc18b75c91994d11a9bf8c136'}, 'key': u'kubeadm'}) 
+2019-11-15 14:33:52,327 p=98395 u=root |  skipping: [node2] => (item={'value': {u'repo': u'rancher/local-path-provisioner', u'tag': u'v0.0.2', u'container': True, u'groups': [u'kube-node'], u'sha256': u'', u'enabled': False}, 'key': u'local_path_provisioner'}) 
+2019-11-15 14:33:52,390 p=98395 u=root |  skipping: [master] => (item={'value': {u'repo': u'rancher/local-path-provisioner', u'tag': u'v0.0.2', u'container': True, u'groups': [u'kube-node'], u'sha256': u'', u'enabled': False}, 'key': u'local_path_provisioner'}) 
+2019-11-15 14:33:52,391 p=98395 u=root |  skipping: [master] => (item={'value': {u'repo': u'cilium/operator', u'tag': u'v1.5.5', u'container': True, u'groups': [u'k8s-cluster'], u'sha256': u'', u'enabled': False}, 'key': u'cilium_operator'}) 
+2019-11-15 14:33:52,392 p=98395 u=root |  skipping: [master] => (item={'value': {u'repo': u'quay.azk8s.cn/external_storage/rbd-provisioner', u'tag': u'v2.1.1-k8s1.11', u'container': True, u'groups': [u'kube-node'], u'sha256': u'', u'enabled': False}, 'key': u'rbd_provisioner'}) 
+2019-11-15 14:33:52,392 p=98395 u=root |  skipping: [master] => (item={'value': {u'repo': u'quay.azk8s.cn/coreos/flannel-cni', u'tag': u'v0.3.0', u'container': True, u'groups': [u'k8s-cluster'], u'sha256': u'', u'enabled': False}, 'key': u'flannel_cni'}) 
+2019-11-15 14:33:52,394 p=98395 u=root |  skipping: [master] => (item={'value': {u'repo': u'quay.azk8s.cn/l23network/k8s-netchecker-server', u'tag': u'v1.0', u'container': True, u'groups': [u'k8s-cluster'], u'sha256': u'', u'enabled': False}, 'key': u'netcheck_server'}) 
+2019-11-15 14:33:52,396 p=98395 u=root |  skipping: [master] => (item={'value': {u'repo': u'mirrorgooglecontainers/kube-registry-proxy', u'tag': u'0.4', u'container': True, u'groups': [u'kube-node'], u'sha256': u'', u'enabled': False}, 'key': u'registry_proxy'}) 
+2019-11-15 14:33:52,398 p=98395 u=root |  skipping: [master] => (item={'value': {u'repo': u'quay.azk8s.cn/coreos/flannel', u'tag': u'v0.11.0', u'container': True, u'groups': [u'k8s-cluster'], u'sha256': u'', u'enabled': False}, 'key': u'flannel'}) 
+2019-11-15 14:33:52,404 p=98395 u=root |  skipping: [master] => (item={'value': {u'repo': u'contiv/netplugin', u'tag': u'1.2.1', u'container': True, u'groups': [u'k8s-cluster'], u'sha256': u'', u'enabled': False}, 'key': u'contiv'}) 
+2019-11-15 14:33:52,405 p=98395 u=root |  skipping: [master] => (item={'value': {u'repo': u'quay.azk8s.cn/l23network/k8s-netchecker-agent', u'tag': u'v1.0', u'container': True, u'groups': [u'k8s-cluster'], u'sha256': u'', u'enabled': False}, 'key': u'netcheck_agent'}) 
+2019-11-15 14:33:52,465 p=98395 u=root |  skipping: [node2] => (item={'value': {u'repo': u'cilium/operator', u'tag': u'v1.5.5', u'container': True, u'groups': [u'k8s-cluster'], u'sha256': u'', u'enabled': False}, 'key': u'cilium_operator'}) 
+2019-11-15 14:33:52,466 p=98395 u=root |  skipping: [node2] => (item={'value': {u'repo': u'quay.azk8s.cn/external_storage/rbd-provisioner', u'tag': u'v2.1.1-k8s1.11', u'container': True, u'groups': [u'kube-node'], u'sha256': u'', u'enabled': False}, 'key': u'rbd_provisioner'}) 
+2019-11-15 14:33:52,468 p=98395 u=root |  skipping: [node2] => (item={'value': {u'repo': u'quay.azk8s.cn/coreos/flannel-cni', u'tag': u'v0.3.0', u'container': True, u'groups': [u'k8s-cluster'], u'sha256': u'', u'enabled': False}, 'key': u'flannel_cni'}) 
+2019-11-15 14:33:52,468 p=98395 u=root |  skipping: [node2] => (item={'value': {u'repo': u'quay.azk8s.cn/l23network/k8s-netchecker-server', u'tag': u'v1.0', u'container': True, u'groups': [u'k8s-cluster'], u'sha256': u'', u'enabled': False}, 'key': u'netcheck_server'}) 
+2019-11-15 14:33:52,469 p=98395 u=root |  skipping: [node2] => (item={'value': {u'repo': u'mirrorgooglecontainers/kube-registry-proxy', u'tag': u'0.4', u'container': True, u'groups': [u'kube-node'], u'sha256': u'', u'enabled': False}, 'key': u'registry_proxy'}) 
+2019-11-15 14:33:52,470 p=98395 u=root |  skipping: [node2] => (item={'value': {u'repo': u'quay.azk8s.cn/coreos/flannel', u'tag': u'v0.11.0', u'container': True, u'groups': [u'k8s-cluster'], u'sha256': u'', u'enabled': False}, 'key': u'flannel'}) 
+2019-11-15 14:33:52,470 p=98395 u=root |  skipping: [node2] => (item={'value': {u'repo': u'contiv/netplugin', u'tag': u'1.2.1', u'container': True, u'groups': [u'k8s-cluster'], u'sha256': u'', u'enabled': False}, 'key': u'contiv'}) 
+2019-11-15 14:33:52,471 p=98395 u=root |  skipping: [node2] => (item={'value': {u'repo': u'quay.azk8s.cn/l23network/k8s-netchecker-agent', u'tag': u'v1.0', u'container': True, u'groups': [u'k8s-cluster'], u'sha256': u'', u'enabled': False}, 'key': u'netcheck_agent'}) 
+2019-11-15 14:33:52,525 p=98395 u=root |  skipping: [master] => (item={'value': {u'unarchive': False, u'groups': [u'k8s-cluster'], u'dest': u'/tmp/releases/calicoctl', u'enabled': True, u'url': u'https://projectcalico.pek3b.qingstor.com/calicoctl/releases/download/v3.7.3/calicoctl-linux-amd64', u'version': u'v3.7.3', u'mode': u'0755', u'file': True, u'owner': u'root', u'sha256': u'932f68e893e80e95e10f064f1e7745e438d456f41a6ff12d11bb16ca0cab735c'}, 'key': u'calicoctl'}) 
+2019-11-15 14:33:52,526 p=98395 u=root |  skipping: [master] => (item={'value': {u'repo': u'nfvpe/multus', u'tag': u'v3.2.1', u'container': True, u'groups': [u'k8s-cluster'], u'sha256': u'', u'enabled': False}, 'key': u'multus'}) 
+2019-11-15 14:33:52,526 p=98395 u=root |  skipping: [master] => (item={'value': {u'unarchive': True, u'sha256': u'', u'container': True, u'file': False, u'dest': u'/tmp/releases/etcd-v3.2.18-linux-amd64.tar.gz', u'enabled': True, u'repo': u'quay.azk8s.cn/coreos/etcd', u'url': u'https://github.com/coreos/etcd/releases/download/v3.2.18/etcd-v3.2.18-linux-amd64.tar.gz', u'version': u'v3.2.18', u'mode': u'0755', u'groups': [u'etcd'], u'owner': u'root', u'tag': u'v3.2.18'}, 'key': u'etcd'}) 
+2019-11-15 14:33:52,527 p=98395 u=root |  skipping: [master] => (item={'value': {u'repo': u'library/nginx', u'tag': 1.15, u'container': True, u'groups': [u'kube-node'], u'sha256': u'', u'enabled': False}, 'key': u'nginx'}) 
+2019-11-15 14:33:52,527 p=98395 u=root |  skipping: [master] => (item={'value': {u'repo': u'kubeovn/kube-ovn-node', u'tag': u'v0.6.0', u'container': True, u'groups': [u'k8s-cluster'], u'sha256': u'', u'enabled': False}, 'key': u'kube_ovn_node'}) 
+2019-11-15 14:33:52,528 p=98395 u=root |  skipping: [master] => (item={'value': {u'repo': u'gcr.azk8s.cn/kubernetes-helm/tiller', u'tag': u'v2.14.3', u'container': True, u'groups': [u'kube-node'], u'sha256': u'', u'enabled': True}, 'key': u'tiller'}) 
+2019-11-15 14:33:52,529 p=98395 u=root |  skipping: [master] => (item={'value': {u'repo': u'weaveworks/weave-npc', u'tag': u'2.5.2', u'container': True, u'groups': [u'k8s-cluster'], u'sha256': u'', u'enabled': False}, 'key': u'weave_npc'}) 
+2019-11-15 14:33:52,531 p=98395 u=root |  skipping: [master] => (item={'value': {u'repo': u'calico/routereflector', u'tag': u'v0.6.1', u'container': True, u'groups': [u'calico-rr'], u'sha256': u'', u'enabled': False}, 'key': u'calico_rr'}) 
+2019-11-15 14:33:52,533 p=98395 u=root |  skipping: [master] => (item={'value': {u'repo': u'mirrorgooglecontainers/kubernetes-dashboard-amd64', u'tag': u'v1.10.1', u'container': True, u'groups': [u'kube-master'], u'sha256': u'', u'enabled': False}, 'key': u'dashboard'}) 
+2019-11-15 14:33:52,553 p=98395 u=root |  skipping: [node2] => (item={'value': {u'unarchive': False, u'groups': [u'k8s-cluster'], u'dest': u'/tmp/releases/calicoctl', u'enabled': True, u'url': u'https://projectcalico.pek3b.qingstor.com/calicoctl/releases/download/v3.7.3/calicoctl-linux-amd64', u'version': u'v3.7.3', u'mode': u'0755', u'file': True, u'owner': u'root', u'sha256': u'932f68e893e80e95e10f064f1e7745e438d456f41a6ff12d11bb16ca0cab735c'}, 'key': u'calicoctl'}) 
+2019-11-15 14:33:52,554 p=98395 u=root |  skipping: [node2] => (item={'value': {u'repo': u'nfvpe/multus', u'tag': u'v3.2.1', u'container': True, u'groups': [u'k8s-cluster'], u'sha256': u'', u'enabled': False}, 'key': u'multus'}) 
+2019-11-15 14:33:52,555 p=98395 u=root |  skipping: [node2] => (item={'value': {u'unarchive': True, u'sha256': u'', u'container': True, u'file': False, u'dest': u'/tmp/releases/etcd-v3.2.18-linux-amd64.tar.gz', u'enabled': True, u'repo': u'quay.azk8s.cn/coreos/etcd', u'url': u'https://github.com/coreos/etcd/releases/download/v3.2.18/etcd-v3.2.18-linux-amd64.tar.gz', u'version': u'v3.2.18', u'mode': u'0755', u'groups': [u'etcd'], u'owner': u'root', u'tag': u'v3.2.18'}, 'key': u'etcd'}) 
+2019-11-15 14:33:52,556 p=98395 u=root |  skipping: [node2] => (item={'value': {u'repo': u'library/nginx', u'tag': 1.15, u'container': True, u'groups': [u'kube-node'], u'sha256': u'', u'enabled': False}, 'key': u'nginx'}) 
+2019-11-15 14:33:52,556 p=98395 u=root |  skipping: [node2] => (item={'value': {u'repo': u'kubeovn/kube-ovn-node', u'tag': u'v0.6.0', u'container': True, u'groups': [u'k8s-cluster'], u'sha256': u'', u'enabled': False}, 'key': u'kube_ovn_node'}) 
+2019-11-15 14:33:52,588 p=98395 u=root |  skipping: [node2] => (item={'value': {u'repo': u'gcr.azk8s.cn/kubernetes-helm/tiller', u'tag': u'v2.14.3', u'container': True, u'groups': [u'kube-node'], u'sha256': u'', u'enabled': True}, 'key': u'tiller'}) 
+2019-11-15 14:33:52,588 p=98395 u=root |  skipping: [node2] => (item={'value': {u'repo': u'weaveworks/weave-npc', u'tag': u'2.5.2', u'container': True, u'groups': [u'k8s-cluster'], u'sha256': u'', u'enabled': False}, 'key': u'weave_npc'}) 
+2019-11-15 14:33:52,647 p=98395 u=root |  skipping: [master] => (item={'value': {u'repo': u'quay.azk8s.cn/external_storage/local-volume-provisioner', u'tag': u'v2.3.2', u'container': True, u'groups': [u'kube-node'], u'sha256': u'', u'enabled': False}, 'key': u'local_volume_provisioner'}) 
+2019-11-15 14:33:52,648 p=98395 u=root |  skipping: [master] => (item={'value': {u'repo': u'library/busybox', u'container': True, u'tag': u'latest', u'enabled': False, u'sha256': u''}, 'key': u'testbox'}) 
+2019-11-15 14:33:52,648 p=98395 u=root |  skipping: [master] => (item={'value': {u'repo': u'calico/kube-controllers', u'tag': u'v3.7.3', u'container': True, u'groups': [u'k8s-cluster'], u'sha256': u'', u'enabled': True}, 'key': u'calico_policy'}) 
+2019-11-15 14:33:52,648 p=98395 u=root |  skipping: [master] => (item={'value': {u'repo': u'quay.azk8s.cn/jetstack/cert-manager-controller', u'tag': u'v0.5.2', u'container': True, u'groups': [u'kube-node'], u'sha256': u'', u'enabled': False}, 'key': u'cert_manager_controller'}) 
+2019-11-15 14:33:52,649 p=98395 u=root |  skipping: [master] => (item={'value': {u'repo': u'gcr.azk8s.cn/google-containers/hyperkube', u'tag': u'v1.15.5', u'container': True, u'groups': [u'k8s-cluster'], u'sha256': u'', u'enabled': True}, 'key': u'hyperkube'}) 
+2019-11-15 14:33:52,649 p=98395 u=root |  skipping: [master] => (item={'value': {u'repo': u'gcr.azk8s.cn/google-containers/k8s-dns-node-cache', u'tag': u'1.15.5', u'container': True, u'groups': [u'k8s-cluster'], u'sha256': u'', u'enabled': True}, 'key': u'nodelocaldns'}) 
+2019-11-15 14:33:52,650 p=98395 u=root |  skipping: [master] => (item={'value': {u'repo': u'cilium/cilium-init', u'tag': u'2019-04-05', u'container': True, u'groups': [u'k8s-cluster'], u'sha256': u'', u'enabled': False}, 'key': u'cilium_init'}) 
+2019-11-15 14:33:52,657 p=98395 u=root |  skipping: [node2] => (item={'value': {u'repo': u'calico/routereflector', u'tag': u'v0.6.1', u'container': True, u'groups': [u'calico-rr'], u'sha256': u'', u'enabled': False}, 'key': u'calico_rr'}) 
+2019-11-15 14:33:52,659 p=98395 u=root |  skipping: [node2] => (item={'value': {u'repo': u'mirrorgooglecontainers/kubernetes-dashboard-amd64', u'tag': u'v1.10.1', u'container': True, u'groups': [u'kube-master'], u'sha256': u'', u'enabled': False}, 'key': u'dashboard'}) 
+2019-11-15 14:33:52,660 p=98395 u=root |  skipping: [node2] => (item={'value': {u'repo': u'quay.azk8s.cn/external_storage/local-volume-provisioner', u'tag': u'v2.3.2', u'container': True, u'groups': [u'kube-node'], u'sha256': u'', u'enabled': False}, 'key': u'local_volume_provisioner'}) 
+2019-11-15 14:33:52,661 p=98395 u=root |  skipping: [node2] => (item={'value': {u'repo': u'library/busybox', u'container': True, u'tag': u'latest', u'enabled': False, u'sha256': u''}, 'key': u'testbox'}) 
+2019-11-15 14:33:52,685 p=98395 u=root |  skipping: [master] => (item={'value': {u'repo': u'ferest/etcd-initer', u'tag': u'latest', u'container': True, u'groups': [u'k8s-cluster'], u'sha256': u'', u'enabled': False}, 'key': u'contiv_etcd_init'}) 
+2019-11-15 14:33:52,687 p=98395 u=root |  skipping: [master] => (item={'value': {u'unarchive': True, u'groups': [u'k8s-cluster'], u'dest': u'/tmp/releases/crictl-v1.15.0-linux-amd64.tar.gz', u'enabled': False, u'url': u'https://github.com/kubernetes-sigs/cri-tools/releases/download/v1.15.0/crictl-v1.15.0-linux-amd64.tar.gz', u'version': u'v1.15.0', u'mode': u'0755', u'file': True, u'owner': u'root', u'sha256': u'c3b71be1f363e16078b51334967348aab4f72f46ef64a61fe7754e029779d45a'}, 'key': u'crictl'}) 
+2019-11-15 14:33:52,717 p=98395 u=root |  skipping: [node2] => (item={'value': {u'repo': u'calico/kube-controllers', u'tag': u'v3.7.3', u'container': True, u'groups': [u'k8s-cluster'], u'sha256': u'', u'enabled': True}, 'key': u'calico_policy'}) 
+2019-11-15 14:33:52,719 p=98395 u=root |  skipping: [node2] => (item={'value': {u'repo': u'quay.azk8s.cn/jetstack/cert-manager-controller', u'tag': u'v0.5.2', u'container': True, u'groups': [u'kube-node'], u'sha256': u'', u'enabled': False}, 'key': u'cert_manager_controller'}) 
+2019-11-15 14:33:52,720 p=98395 u=root |  skipping: [node2] => (item={'value': {u'repo': u'gcr.azk8s.cn/google-containers/hyperkube', u'tag': u'v1.15.5', u'container': True, u'groups': [u'k8s-cluster'], u'sha256': u'', u'enabled': True}, 'key': u'hyperkube'}) 
+2019-11-15 14:33:52,773 p=98395 u=root |  skipping: [master] => (item={'value': {u'repo': u'quay.azk8s.cn/kubernetes-ingress-controller/nginx-ingress-controller', u'tag': u'0.25.1', u'container': True, u'groups': [u'kube-node'], u'sha256': u'', u'enabled': False}, 'key': u'ingress_nginx_controller'}) 
+2019-11-15 14:33:52,773 p=98395 u=root |  skipping: [master] => (item={'value': {u'unarchive': False, u'groups': [u'k8s-cluster'], u'dest': u'/tmp/releases/hyperkube-v1.15.5-amd64', u'enabled': True, u'url': u'https://kubernetes-release.pek3b.qingstor.com/release/v1.15.5/bin/linux/amd64/hyperkube', u'version': u'v1.15.5', u'mode': u'0755', u'file': True, u'owner': u'root', u'sha256': u'15988bea1177a3e169aa43177456b6f58a15318165b15144c47ccd044de9edfe'}, 'key': u'hyperkube_file'}) 
+2019-11-15 14:33:52,774 p=98395 u=root |  skipping: [master] => (item={'value': {u'repo': u'cloudnativelabs/kube-router', u'tag': u'v0.2.5', u'container': True, u'groups': [u'k8s-cluster'], u'sha256': u'', u'enabled': False}, 'key': u'kube_router'}) 
+2019-11-15 14:33:52,774 p=98395 u=root |  skipping: [master] => (item={'value': {u'repo': u'quay.azk8s.cn/external_storage/cephfs-provisioner', u'tag': u'v2.1.0-k8s1.11', u'container': True, u'groups': [u'kube-node'], u'sha256': u'', u'enabled': False}, 'key': u'cephfs_provisioner'}) 
+2019-11-15 14:33:52,775 p=98395 u=root |  skipping: [master] => (item={'value': {u'unarchive': False, u'groups': [u'k8s-cluster'], u'dest': u'/tmp/releases/cni-plugins-linux-amd64-v0.8.1.tgz', u'enabled': True, u'url': u'https://containernetworking.pek3b.qingstor.com/plugins/releases/download/v0.8.1/cni-plugins-linux-amd64-v0.8.1.tgz', u'version': u'v0.8.1', u'mode': u'0755', u'file': True, u'owner': u'root', u'sha256': u'e9bfc78acd3ae71be77eb8f3e890cc9078a33cc3797703b8ff2fc3077a232252'}, 'key': u'cni'}) 
+2019-11-15 14:33:52,775 p=98395 u=root |  skipping: [master] => (item={'value': {u'repo': u'mirrorgooglecontainers/addon-resizer', u'tag': u'1.8.3', u'container': True, u'groups': [u'kube-master'], u'sha256': u'', u'enabled': False}, 'key': u'addon_resizer'}) 
+2019-11-15 14:33:52,879 p=98395 u=root |  skipping: [master] => (item={'value': {u'repo': u'calico/node', u'tag': u'v3.7.3', u'container': True, u'groups': [u'k8s-cluster'], u'sha256': u'', u'enabled': True}, 'key': u'calico_node'}) 
+2019-11-15 14:33:52,879 p=98395 u=root |  skipping: [master] => (item={'value': {u'repo': u'weaveworks/weave-kube', u'tag': u'2.5.2', u'container': True, u'groups': [u'k8s-cluster'], u'sha256': u'', u'enabled': False}, 'key': u'weave_kube'}) 
+2019-11-15 14:33:52,880 p=98395 u=root |  skipping: [master] => (item={'value': {u'repo': u'kubeovn/kube-ovn-db', u'tag': u'v0.6.0', u'container': True, u'groups': [u'k8s-cluster'], u'sha256': u'', u'enabled': False}, 'key': u'kube_ovn_db'}) 
+2019-11-15 14:33:52,880 p=98395 u=root |  skipping: [master] => (item={'value': {u'repo': u'library/registry', u'tag': u'2.6', u'container': True, u'groups': [u'kube-node'], u'sha256': u'', u'enabled': False}, 'key': u'registry'}) 
+2019-11-15 14:33:52,880 p=98395 u=root |  skipping: [master] => (item={'value': {u'repo': u'xueshanf/install-socat', u'tag': u'latest', u'container': True, u'groups': [u'k8s-cluster'], u'sha256': u'', u'enabled': False}, 'key': u'install_socat'}) 
+2019-11-15 14:33:52,881 p=98395 u=root |  skipping: [master] => (item={'value': {u'repo': u'mirrorgooglecontainers/metrics-server-amd64', u'tag': u'v0.3.3', u'container': True, u'groups': [u'kube-master'], u'sha256': u'', u'enabled': False}, 'key': u'metrics_server'}) 
+2019-11-15 14:33:52,882 p=98395 u=root |  skipping: [master] => (item={'value': {u'repo': u'library/haproxy', u'tag': u'2.0.4', u'container': True, u'groups': [u'kube-node'], u'sha256': u'', u'enabled': False}, 'key': u'haproxy'}) 
+2019-11-15 14:33:52,882 p=98395 u=root |  skipping: [master] => (item={'value': {u'repo': u'kubeovn/kube-ovn-controller', u'tag': u'v0.6.0', u'container': True, u'groups': [u'k8s-cluster'], u'sha256': u'', u'enabled': False}, 'key': u'kube_ovn_controller'}) 
+2019-11-15 14:33:52,894 p=98395 u=root |  skipping: [node2] => (item={'value': {u'repo': u'gcr.azk8s.cn/google-containers/k8s-dns-node-cache', u'tag': u'1.15.5', u'container': True, u'groups': [u'k8s-cluster'], u'sha256': u'', u'enabled': True}, 'key': u'nodelocaldns'}) 
+2019-11-15 14:33:52,900 p=98395 u=root |  skipping: [node2] => (item={'value': {u'repo': u'cilium/cilium-init', u'tag': u'2019-04-05', u'container': True, u'groups': [u'k8s-cluster'], u'sha256': u'', u'enabled': False}, 'key': u'cilium_init'}) 
+2019-11-15 14:33:52,904 p=98395 u=root |  skipping: [node2] => (item={'value': {u'repo': u'ferest/etcd-initer', u'tag': u'latest', u'container': True, u'groups': [u'k8s-cluster'], u'sha256': u'', u'enabled': False}, 'key': u'contiv_etcd_init'}) 
+2019-11-15 14:33:52,911 p=98395 u=root |  skipping: [node2] => (item={'value': {u'unarchive': True, u'groups': [u'k8s-cluster'], u'dest': u'/tmp/releases/crictl-v1.15.0-linux-amd64.tar.gz', u'enabled': False, u'url': u'https://github.com/kubernetes-sigs/cri-tools/releases/download/v1.15.0/crictl-v1.15.0-linux-amd64.tar.gz', u'version': u'v1.15.0', u'mode': u'0755', u'file': True, u'owner': u'root', u'sha256': u'c3b71be1f363e16078b51334967348aab4f72f46ef64a61fe7754e029779d45a'}, 'key': u'crictl'}) 
+2019-11-15 14:33:52,912 p=98395 u=root |  skipping: [node2] => (item={'value': {u'repo': u'quay.azk8s.cn/kubernetes-ingress-controller/nginx-ingress-controller', u'tag': u'0.25.1', u'container': True, u'groups': [u'kube-node'], u'sha256': u'', u'enabled': False}, 'key': u'ingress_nginx_controller'}) 
+2019-11-15 14:33:52,922 p=98395 u=root |  skipping: [node2] => (item={'value': {u'unarchive': False, u'groups': [u'k8s-cluster'], u'dest': u'/tmp/releases/hyperkube-v1.15.5-amd64', u'enabled': True, u'url': u'https://kubernetes-release.pek3b.qingstor.com/release/v1.15.5/bin/linux/amd64/hyperkube', u'version': u'v1.15.5', u'mode': u'0755', u'file': True, u'owner': u'root', u'sha256': u'15988bea1177a3e169aa43177456b6f58a15318165b15144c47ccd044de9edfe'}, 'key': u'hyperkube_file'}) 
+2019-11-15 14:33:52,927 p=98395 u=root |  skipping: [node2] => (item={'value': {u'repo': u'cloudnativelabs/kube-router', u'tag': u'v0.2.5', u'container': True, u'groups': [u'k8s-cluster'], u'sha256': u'', u'enabled': False}, 'key': u'kube_router'}) 
+2019-11-15 14:33:52,933 p=98395 u=root |  skipping: [node2] => (item={'value': {u'repo': u'quay.azk8s.cn/external_storage/cephfs-provisioner', u'tag': u'v2.1.0-k8s1.11', u'container': True, u'groups': [u'kube-node'], u'sha256': u'', u'enabled': False}, 'key': u'cephfs_provisioner'}) 
+2019-11-15 14:33:52,935 p=98395 u=root |  skipping: [node2] => (item={'value': {u'unarchive': False, u'groups': [u'k8s-cluster'], u'dest': u'/tmp/releases/cni-plugins-linux-amd64-v0.8.1.tgz', u'enabled': True, u'url': u'https://containernetworking.pek3b.qingstor.com/plugins/releases/download/v0.8.1/cni-plugins-linux-amd64-v0.8.1.tgz', u'version': u'v0.8.1', u'mode': u'0755', u'file': True, u'owner': u'root', u'sha256': u'e9bfc78acd3ae71be77eb8f3e890cc9078a33cc3797703b8ff2fc3077a232252'}, 'key': u'cni'}) 
+2019-11-15 14:33:52,937 p=98395 u=root |  skipping: [node2] => (item={'value': {u'repo': u'mirrorgooglecontainers/addon-resizer', u'tag': u'1.8.3', u'container': True, u'groups': [u'kube-master'], u'sha256': u'', u'enabled': False}, 'key': u'addon_resizer'}) 
+2019-11-15 14:33:52,939 p=98395 u=root |  skipping: [node2] => (item={'value': {u'repo': u'calico/node', u'tag': u'v3.7.3', u'container': True, u'groups': [u'k8s-cluster'], u'sha256': u'', u'enabled': True}, 'key': u'calico_node'}) 
+2019-11-15 14:33:52,946 p=98395 u=root |  skipping: [node2] => (item={'value': {u'repo': u'weaveworks/weave-kube', u'tag': u'2.5.2', u'container': True, u'groups': [u'k8s-cluster'], u'sha256': u'', u'enabled': False}, 'key': u'weave_kube'}) 
+2019-11-15 14:33:52,947 p=98395 u=root |  skipping: [node2] => (item={'value': {u'repo': u'kubeovn/kube-ovn-db', u'tag': u'v0.6.0', u'container': True, u'groups': [u'k8s-cluster'], u'sha256': u'', u'enabled': False}, 'key': u'kube_ovn_db'}) 
+2019-11-15 14:33:52,948 p=98395 u=root |  skipping: [node2] => (item={'value': {u'repo': u'library/registry', u'tag': u'2.6', u'container': True, u'groups': [u'kube-node'], u'sha256': u'', u'enabled': False}, 'key': u'registry'}) 
+2019-11-15 14:33:52,975 p=98395 u=root |  skipping: [master] => (item={'value': {u'repo': u'coredns/coredns', u'tag': u'1.6.0', u'container': True, u'groups': [u'kube-master'], u'sha256': u'', u'enabled': True}, 'key': u'coredns'}) 
+2019-11-15 14:33:52,977 p=98395 u=root |  skipping: [master] => (item={'value': {u'repo': u'calico/cni', u'tag': u'v3.7.3', u'container': True, u'groups': [u'k8s-cluster'], u'sha256': u'', u'enabled': True}, 'key': u'calico_cni'}) 
+2019-11-15 14:33:52,979 p=98395 u=root |  skipping: [master] => (item={'value': {u'repo': u'cilium/cilium', u'tag': u'v1.5.5', u'container': True, u'groups': [u'k8s-cluster'], u'sha256': u'', u'enabled': False}, 'key': u'cilium'}) 
+2019-11-15 14:33:53,002 p=98395 u=root |  skipping: [node2] => (item={'value': {u'repo': u'xueshanf/install-socat', u'tag': u'latest', u'container': True, u'groups': [u'k8s-cluster'], u'sha256': u'', u'enabled': False}, 'key': u'install_socat'}) 
+2019-11-15 14:33:53,002 p=98395 u=root |  skipping: [node2] => (item={'value': {u'repo': u'mirrorgooglecontainers/metrics-server-amd64', u'tag': u'v0.3.3', u'container': True, u'groups': [u'kube-master'], u'sha256': u'', u'enabled': False}, 'key': u'metrics_server'}) 
+2019-11-15 14:33:53,012 p=98395 u=root |  skipping: [node2] => (item={'value': {u'repo': u'library/haproxy', u'tag': u'2.0.4', u'container': True, u'groups': [u'kube-node'], u'sha256': u'', u'enabled': False}, 'key': u'haproxy'}) 
+2019-11-15 14:33:53,031 p=98395 u=root |  skipping: [node2] => (item={'value': {u'repo': u'kubeovn/kube-ovn-controller', u'tag': u'v0.6.0', u'container': True, u'groups': [u'k8s-cluster'], u'sha256': u'', u'enabled': False}, 'key': u'kube_ovn_controller'}) 
+2019-11-15 14:33:53,043 p=98395 u=root |  skipping: [node2] => (item={'value': {u'repo': u'coredns/coredns', u'tag': u'1.6.0', u'container': True, u'groups': [u'kube-master'], u'sha256': u'', u'enabled': True}, 'key': u'coredns'}) 
+2019-11-15 14:33:53,057 p=98395 u=root |  skipping: [node2] => (item={'value': {u'repo': u'calico/cni', u'tag': u'v3.7.3', u'container': True, u'groups': [u'k8s-cluster'], u'sha256': u'', u'enabled': True}, 'key': u'calico_cni'}) 
+2019-11-15 14:33:53,072 p=98395 u=root |  skipping: [node2] => (item={'value': {u'repo': u'cilium/cilium', u'tag': u'v1.5.5', u'container': True, u'groups': [u'k8s-cluster'], u'sha256': u'', u'enabled': False}, 'key': u'cilium'}) 
+2019-11-15 14:33:53,112 p=98395 u=root |  TASK [download : download | Sync files / images from ansible host to nodes] ************************************************************
+2019-11-15 14:33:53,112 p=98395 u=root |  Friday 15 November 2019  14:33:53 +0800 (0:00:01.303)       0:00:17.895 ******* 
+2019-11-15 14:33:53,454 p=98395 u=root |  skipping: [master] => (item={'value': {u'repo': u'library/busybox', u'tag': u'1.29.2', u'container': True, u'groups': [u'k8s-cluster'], u'sha256': u'', u'enabled': False}, 'key': u'busybox'}) 
+2019-11-15 14:33:53,479 p=98395 u=root |  skipping: [master] => (item={'value': {u'repo': u'calico/typha', u'tag': u'v3.7.3', u'container': True, u'groups': [u'k8s-cluster'], u'sha256': u'', u'enabled': False}, 'key': u'calico_typha'}) 
+2019-11-15 14:33:53,480 p=98395 u=root |  skipping: [master] => (item={'value': {u'repo': u'contiv/auth_proxy', u'tag': u'1.2.1', u'container': True, u'groups': [u'k8s-cluster'], u'sha256': u'', u'enabled': False}, 'key': u'contiv_auth_proxy'}) 
+2019-11-15 14:33:53,516 p=98395 u=root |  skipping: [node2] => (item={'value': {u'repo': u'library/busybox', u'tag': u'1.29.2', u'container': True, u'groups': [u'k8s-cluster'], u'sha256': u'', u'enabled': False}, 'key': u'busybox'}) 
+2019-11-15 14:33:53,516 p=98395 u=root |  skipping: [master] => (item={'value': {u'repo': u'mirrorgooglecontainers/cluster-proportional-autoscaler-amd64', u'tag': u'1.6.0', u'container': True, u'groups': [u'kube-master'], u'sha256': u'', u'enabled': True}, 'key': u'dnsautoscaler'}) 
+2019-11-15 14:33:53,524 p=98395 u=root |  skipping: [master] => (item={'value': {u'unarchive': False, u'groups': [u'k8s-cluster'], u'dest': u'/tmp/releases/istioctl', u'enabled': True, u'url': u'https://kubernetes-istio.pek3b.qingstor.com/1.3.3/bin/istioctl', u'version': u'1.3.3', u'mode': u'0755', u'file': True, u'owner': u'root', u'sha256': u'ede2905baf31ddbb9e0cce00122c19d9adc0db6ae9961a8625291119f0cf7486'}, 'key': u'istioctl'}) 
+2019-11-15 14:33:53,527 p=98395 u=root |  skipping: [master] => (item={'value': {u'repo': u'kubeovn/kube-ovn-cni', u'tag': u'v0.6.0', u'container': True, u'groups': [u'k8s-cluster'], u'sha256': u'', u'enabled': False}, 'key': u'kube_ovn_cni'}) 
+2019-11-15 14:33:53,531 p=98395 u=root |  skipping: [node2] => (item={'value': {u'repo': u'calico/typha', u'tag': u'v3.7.3', u'container': True, u'groups': [u'k8s-cluster'], u'sha256': u'', u'enabled': False}, 'key': u'calico_typha'}) 
+2019-11-15 14:33:53,532 p=98395 u=root |  skipping: [node2] => (item={'value': {u'repo': u'contiv/auth_proxy', u'tag': u'1.2.1', u'container': True, u'groups': [u'k8s-cluster'], u'sha256': u'', u'enabled': False}, 'key': u'contiv_auth_proxy'}) 
+2019-11-15 14:33:53,637 p=98395 u=root |  skipping: [node2] => (item={'value': {u'repo': u'mirrorgooglecontainers/cluster-proportional-autoscaler-amd64', u'tag': u'1.6.0', u'container': True, u'groups': [u'kube-master'], u'sha256': u'', u'enabled': True}, 'key': u'dnsautoscaler'}) 
+2019-11-15 14:33:53,638 p=98395 u=root |  skipping: [node2] => (item={'value': {u'unarchive': False, u'groups': [u'k8s-cluster'], u'dest': u'/tmp/releases/istioctl', u'enabled': True, u'url': u'https://kubernetes-istio.pek3b.qingstor.com/1.3.3/bin/istioctl', u'version': u'1.3.3', u'mode': u'0755', u'file': True, u'owner': u'root', u'sha256': u'ede2905baf31ddbb9e0cce00122c19d9adc0db6ae9961a8625291119f0cf7486'}, 'key': u'istioctl'}) 
+2019-11-15 14:33:53,639 p=98395 u=root |  skipping: [node2] => (item={'value': {u'repo': u'kubeovn/kube-ovn-cni', u'tag': u'v0.6.0', u'container': True, u'groups': [u'k8s-cluster'], u'sha256': u'', u'enabled': False}, 'key': u'kube_ovn_cni'}) 
+2019-11-15 14:33:53,640 p=98395 u=root |  skipping: [node2] => (item={'value': {u'repo': u'mirrorgooglecontainers/pause-amd64', u'tag': u'3.1', u'container': True, u'groups': [u'k8s-cluster'], u'sha256': u'', u'enabled': True}, 'key': u'pod_infra'}) 
+2019-11-15 14:33:53,640 p=98395 u=root |  skipping: [node2] => (item={'value': {u'unarchive': False, u'sha256': u'4f15f75cd2dc46c13359968d2078ac3df14d431607a6798743d6feb462f4b9a3', u'container': False, u'groups': [u'kube-master'], u'dest': u'/tmp/releases/helm', u'enabled': True, u'source_url': u'https://kubernetes-helm.pek3b.qingstor.com/linux-amd64/v2.14.3/helm', u'repo': u'lachlanevenson/k8s-helm', u'url': u'https://kubernetes-helm.pek3b.qingstor.com/linux-amd64/v2.14.3/helm', u'version': u'v2.14.3', u'mode': u'0755', u'file': True, u'owner': u'root', u'tag': u'v2.14.3'}, 'key': u'helm'}) 
+2019-11-15 14:33:53,642 p=98395 u=root |  skipping: [node2] => (item={'value': {u'unarchive': False, u'groups': [u'k8s-cluster'], u'dest': u'/tmp/releases/kubeadm-v1.15.5-amd64', u'enabled': True, u'url': u'https://kubernetes-release.pek3b.qingstor.com/release/v1.15.5/bin/linux/amd64/kubeadm', u'version': u'v1.15.5', u'mode': u'0755', u'file': True, u'owner': u'root', u'sha256': u'e64bb0b2cfdcaa1f4063879bb358848c41aa1b5cc18b75c91994d11a9bf8c136'}, 'key': u'kubeadm'}) 
+2019-11-15 14:33:53,644 p=98395 u=root |  skipping: [node2] => (item={'value': {u'repo': u'rancher/local-path-provisioner', u'tag': u'v0.0.2', u'container': True, u'groups': [u'kube-node'], u'sha256': u'', u'enabled': False}, 'key': u'local_path_provisioner'}) 
+2019-11-15 14:33:53,660 p=98395 u=root |  skipping: [node2] => (item={'value': {u'repo': u'cilium/operator', u'tag': u'v1.5.5', u'container': True, u'groups': [u'k8s-cluster'], u'sha256': u'', u'enabled': False}, 'key': u'cilium_operator'}) 
+2019-11-15 14:33:53,691 p=98395 u=root |  skipping: [node2] => (item={'value': {u'repo': u'quay.azk8s.cn/external_storage/rbd-provisioner', u'tag': u'v2.1.1-k8s1.11', u'container': True, u'groups': [u'kube-node'], u'sha256': u'', u'enabled': False}, 'key': u'rbd_provisioner'}) 
+2019-11-15 14:33:53,692 p=98395 u=root |  skipping: [node2] => (item={'value': {u'repo': u'quay.azk8s.cn/coreos/flannel-cni', u'tag': u'v0.3.0', u'container': True, u'groups': [u'k8s-cluster'], u'sha256': u'', u'enabled': False}, 'key': u'flannel_cni'}) 
+2019-11-15 14:33:53,747 p=98395 u=root |  skipping: [master] => (item={'value': {u'repo': u'mirrorgooglecontainers/pause-amd64', u'tag': u'3.1', u'container': True, u'groups': [u'k8s-cluster'], u'sha256': u'', u'enabled': True}, 'key': u'pod_infra'}) 
+2019-11-15 14:33:53,748 p=98395 u=root |  skipping: [master] => (item={'value': {u'unarchive': False, u'sha256': u'4f15f75cd2dc46c13359968d2078ac3df14d431607a6798743d6feb462f4b9a3', u'container': False, u'groups': [u'kube-master'], u'dest': u'/tmp/releases/helm', u'enabled': True, u'source_url': u'https://kubernetes-helm.pek3b.qingstor.com/linux-amd64/v2.14.3/helm', u'repo': u'lachlanevenson/k8s-helm', u'url': u'https://kubernetes-helm.pek3b.qingstor.com/linux-amd64/v2.14.3/helm', u'version': u'v2.14.3', u'mode': u'0755', u'file': True, u'owner': u'root', u'tag': u'v2.14.3'}, 'key': u'helm'}) 
+2019-11-15 14:33:53,749 p=98395 u=root |  skipping: [master] => (item={'value': {u'unarchive': False, u'groups': [u'k8s-cluster'], u'dest': u'/tmp/releases/kubeadm-v1.15.5-amd64', u'enabled': True, u'url': u'https://kubernetes-release.pek3b.qingstor.com/release/v1.15.5/bin/linux/amd64/kubeadm', u'version': u'v1.15.5', u'mode': u'0755', u'file': True, u'owner': u'root', u'sha256': u'e64bb0b2cfdcaa1f4063879bb358848c41aa1b5cc18b75c91994d11a9bf8c136'}, 'key': u'kubeadm'}) 
+2019-11-15 14:33:53,750 p=98395 u=root |  skipping: [master] => (item={'value': {u'repo': u'rancher/local-path-provisioner', u'tag': u'v0.0.2', u'container': True, u'groups': [u'kube-node'], u'sha256': u'', u'enabled': False}, 'key': u'local_path_provisioner'}) 
+2019-11-15 14:33:53,751 p=98395 u=root |  skipping: [master] => (item={'value': {u'repo': u'cilium/operator', u'tag': u'v1.5.5', u'container': True, u'groups': [u'k8s-cluster'], u'sha256': u'', u'enabled': False}, 'key': u'cilium_operator'}) 
+2019-11-15 14:33:53,752 p=98395 u=root |  skipping: [master] => (item={'value': {u'repo': u'quay.azk8s.cn/external_storage/rbd-provisioner', u'tag': u'v2.1.1-k8s1.11', u'container': True, u'groups': [u'kube-node'], u'sha256': u'', u'enabled': False}, 'key': u'rbd_provisioner'}) 
+2019-11-15 14:33:53,755 p=98395 u=root |  skipping: [master] => (item={'value': {u'repo': u'quay.azk8s.cn/coreos/flannel-cni', u'tag': u'v0.3.0', u'container': True, u'groups': [u'k8s-cluster'], u'sha256': u'', u'enabled': False}, 'key': u'flannel_cni'}) 
+2019-11-15 14:33:53,755 p=98395 u=root |  skipping: [master] => (item={'value': {u'repo': u'quay.azk8s.cn/l23network/k8s-netchecker-server', u'tag': u'v1.0', u'container': True, u'groups': [u'k8s-cluster'], u'sha256': u'', u'enabled': False}, 'key': u'netcheck_server'}) 
+2019-11-15 14:33:53,757 p=98395 u=root |  skipping: [master] => (item={'value': {u'repo': u'mirrorgooglecontainers/kube-registry-proxy', u'tag': u'0.4', u'container': True, u'groups': [u'kube-node'], u'sha256': u'', u'enabled': False}, 'key': u'registry_proxy'}) 
+2019-11-15 14:33:53,758 p=98395 u=root |  skipping: [master] => (item={'value': {u'repo': u'quay.azk8s.cn/coreos/flannel', u'tag': u'v0.11.0', u'container': True, u'groups': [u'k8s-cluster'], u'sha256': u'', u'enabled': False}, 'key': u'flannel'}) 
+2019-11-15 14:33:53,760 p=98395 u=root |  skipping: [master] => (item={'value': {u'repo': u'contiv/netplugin', u'tag': u'1.2.1', u'container': True, u'groups': [u'k8s-cluster'], u'sha256': u'', u'enabled': False}, 'key': u'contiv'}) 
+2019-11-15 14:33:53,761 p=98395 u=root |  skipping: [master] => (item={'value': {u'repo': u'quay.azk8s.cn/l23network/k8s-netchecker-agent', u'tag': u'v1.0', u'container': True, u'groups': [u'k8s-cluster'], u'sha256': u'', u'enabled': False}, 'key': u'netcheck_agent'}) 
+2019-11-15 14:33:53,761 p=98395 u=root |  skipping: [master] => (item={'value': {u'unarchive': False, u'groups': [u'k8s-cluster'], u'dest': u'/tmp/releases/calicoctl', u'enabled': True, u'url': u'https://projectcalico.pek3b.qingstor.com/calicoctl/releases/download/v3.7.3/calicoctl-linux-amd64', u'version': u'v3.7.3', u'mode': u'0755', u'file': True, u'owner': u'root', u'sha256': u'932f68e893e80e95e10f064f1e7745e438d456f41a6ff12d11bb16ca0cab735c'}, 'key': u'calicoctl'}) 
+2019-11-15 14:33:53,810 p=98395 u=root |  skipping: [node2] => (item={'value': {u'repo': u'quay.azk8s.cn/l23network/k8s-netchecker-server', u'tag': u'v1.0', u'container': True, u'groups': [u'k8s-cluster'], u'sha256': u'', u'enabled': False}, 'key': u'netcheck_server'}) 
+2019-11-15 14:33:53,811 p=98395 u=root |  skipping: [node2] => (item={'value': {u'repo': u'mirrorgooglecontainers/kube-registry-proxy', u'tag': u'0.4', u'container': True, u'groups': [u'kube-node'], u'sha256': u'', u'enabled': False}, 'key': u'registry_proxy'}) 
+2019-11-15 14:33:53,812 p=98395 u=root |  skipping: [node2] => (item={'value': {u'repo': u'quay.azk8s.cn/coreos/flannel', u'tag': u'v0.11.0', u'container': True, u'groups': [u'k8s-cluster'], u'sha256': u'', u'enabled': False}, 'key': u'flannel'}) 
+2019-11-15 14:33:53,813 p=98395 u=root |  skipping: [node2] => (item={'value': {u'repo': u'contiv/netplugin', u'tag': u'1.2.1', u'container': True, u'groups': [u'k8s-cluster'], u'sha256': u'', u'enabled': False}, 'key': u'contiv'}) 
+2019-11-15 14:33:53,814 p=98395 u=root |  skipping: [node2] => (item={'value': {u'repo': u'quay.azk8s.cn/l23network/k8s-netchecker-agent', u'tag': u'v1.0', u'container': True, u'groups': [u'k8s-cluster'], u'sha256': u'', u'enabled': False}, 'key': u'netcheck_agent'}) 
+2019-11-15 14:33:53,816 p=98395 u=root |  skipping: [node2] => (item={'value': {u'unarchive': False, u'groups': [u'k8s-cluster'], u'dest': u'/tmp/releases/calicoctl', u'enabled': True, u'url': u'https://projectcalico.pek3b.qingstor.com/calicoctl/releases/download/v3.7.3/calicoctl-linux-amd64', u'version': u'v3.7.3', u'mode': u'0755', u'file': True, u'owner': u'root', u'sha256': u'932f68e893e80e95e10f064f1e7745e438d456f41a6ff12d11bb16ca0cab735c'}, 'key': u'calicoctl'}) 
+2019-11-15 14:33:53,818 p=98395 u=root |  skipping: [node2] => (item={'value': {u'repo': u'nfvpe/multus', u'tag': u'v3.2.1', u'container': True, u'groups': [u'k8s-cluster'], u'sha256': u'', u'enabled': False}, 'key': u'multus'}) 
+2019-11-15 14:33:53,890 p=98395 u=root |  skipping: [master] => (item={'value': {u'repo': u'nfvpe/multus', u'tag': u'v3.2.1', u'container': True, u'groups': [u'k8s-cluster'], u'sha256': u'', u'enabled': False}, 'key': u'multus'}) 
+2019-11-15 14:33:53,892 p=98395 u=root |  skipping: [master] => (item={'value': {u'unarchive': True, u'sha256': u'', u'container': True, u'file': False, u'dest': u'/tmp/releases/etcd-v3.2.18-linux-amd64.tar.gz', u'enabled': True, u'repo': u'quay.azk8s.cn/coreos/etcd', u'url': u'https://github.com/coreos/etcd/releases/download/v3.2.18/etcd-v3.2.18-linux-amd64.tar.gz', u'version': u'v3.2.18', u'mode': u'0755', u'groups': [u'etcd'], u'owner': u'root', u'tag': u'v3.2.18'}, 'key': u'etcd'}) 
+2019-11-15 14:33:53,896 p=98395 u=root |  skipping: [master] => (item={'value': {u'repo': u'library/nginx', u'tag': 1.15, u'container': True, u'groups': [u'kube-node'], u'sha256': u'', u'enabled': False}, 'key': u'nginx'}) 
+2019-11-15 14:33:53,897 p=98395 u=root |  skipping: [master] => (item={'value': {u'repo': u'kubeovn/kube-ovn-node', u'tag': u'v0.6.0', u'container': True, u'groups': [u'k8s-cluster'], u'sha256': u'', u'enabled': False}, 'key': u'kube_ovn_node'}) 
+2019-11-15 14:33:53,899 p=98395 u=root |  skipping: [master] => (item={'value': {u'repo': u'gcr.azk8s.cn/kubernetes-helm/tiller', u'tag': u'v2.14.3', u'container': True, u'groups': [u'kube-node'], u'sha256': u'', u'enabled': True}, 'key': u'tiller'}) 
+2019-11-15 14:33:53,910 p=98395 u=root |  skipping: [master] => (item={'value': {u'repo': u'weaveworks/weave-npc', u'tag': u'2.5.2', u'container': True, u'groups': [u'k8s-cluster'], u'sha256': u'', u'enabled': False}, 'key': u'weave_npc'}) 
+2019-11-15 14:33:53,911 p=98395 u=root |  skipping: [master] => (item={'value': {u'repo': u'calico/routereflector', u'tag': u'v0.6.1', u'container': True, u'groups': [u'calico-rr'], u'sha256': u'', u'enabled': False}, 'key': u'calico_rr'}) 
+2019-11-15 14:33:53,933 p=98395 u=root |  skipping: [master] => (item={'value': {u'repo': u'mirrorgooglecontainers/kubernetes-dashboard-amd64', u'tag': u'v1.10.1', u'container': True, u'groups': [u'kube-master'], u'sha256': u'', u'enabled': False}, 'key': u'dashboard'}) 
+2019-11-15 14:33:53,950 p=98395 u=root |  skipping: [node2] => (item={'value': {u'unarchive': True, u'sha256': u'', u'container': True, u'file': False, u'dest': u'/tmp/releases/etcd-v3.2.18-linux-amd64.tar.gz', u'enabled': True, u'repo': u'quay.azk8s.cn/coreos/etcd', u'url': u'https://github.com/coreos/etcd/releases/download/v3.2.18/etcd-v3.2.18-linux-amd64.tar.gz', u'version': u'v3.2.18', u'mode': u'0755', u'groups': [u'etcd'], u'owner': u'root', u'tag': u'v3.2.18'}, 'key': u'etcd'}) 
+2019-11-15 14:33:53,950 p=98395 u=root |  skipping: [node2] => (item={'value': {u'repo': u'library/nginx', u'tag': 1.15, u'container': True, u'groups': [u'kube-node'], u'sha256': u'', u'enabled': False}, 'key': u'nginx'}) 
+2019-11-15 14:33:53,951 p=98395 u=root |  skipping: [node2] => (item={'value': {u'repo': u'kubeovn/kube-ovn-node', u'tag': u'v0.6.0', u'container': True, u'groups': [u'k8s-cluster'], u'sha256': u'', u'enabled': False}, 'key': u'kube_ovn_node'}) 
+2019-11-15 14:33:53,951 p=98395 u=root |  skipping: [node2] => (item={'value': {u'repo': u'gcr.azk8s.cn/kubernetes-helm/tiller', u'tag': u'v2.14.3', u'container': True, u'groups': [u'kube-node'], u'sha256': u'', u'enabled': True}, 'key': u'tiller'}) 
+2019-11-15 14:33:53,951 p=98395 u=root |  skipping: [node2] => (item={'value': {u'repo': u'weaveworks/weave-npc', u'tag': u'2.5.2', u'container': True, u'groups': [u'k8s-cluster'], u'sha256': u'', u'enabled': False}, 'key': u'weave_npc'}) 
+2019-11-15 14:33:53,952 p=98395 u=root |  skipping: [node2] => (item={'value': {u'repo': u'calico/routereflector', u'tag': u'v0.6.1', u'container': True, u'groups': [u'calico-rr'], u'sha256': u'', u'enabled': False}, 'key': u'calico_rr'}) 
+2019-11-15 14:33:53,999 p=98395 u=root |  skipping: [node2] => (item={'value': {u'repo': u'mirrorgooglecontainers/kubernetes-dashboard-amd64', u'tag': u'v1.10.1', u'container': True, u'groups': [u'kube-master'], u'sha256': u'', u'enabled': False}, 'key': u'dashboard'}) 
+2019-11-15 14:33:53,999 p=98395 u=root |  skipping: [node2] => (item={'value': {u'repo': u'quay.azk8s.cn/external_storage/local-volume-provisioner', u'tag': u'v2.3.2', u'container': True, u'groups': [u'kube-node'], u'sha256': u'', u'enabled': False}, 'key': u'local_volume_provisioner'}) 
+2019-11-15 14:33:54,000 p=98395 u=root |  skipping: [node2] => (item={'value': {u'repo': u'library/busybox', u'container': True, u'tag': u'latest', u'enabled': False, u'sha256': u''}, 'key': u'testbox'}) 
+2019-11-15 14:33:54,003 p=98395 u=root |  skipping: [node2] => (item={'value': {u'repo': u'calico/kube-controllers', u'tag': u'v3.7.3', u'container': True, u'groups': [u'k8s-cluster'], u'sha256': u'', u'enabled': True}, 'key': u'calico_policy'}) 
+2019-11-15 14:33:54,004 p=98395 u=root |  skipping: [master] => (item={'value': {u'repo': u'quay.azk8s.cn/external_storage/local-volume-provisioner', u'tag': u'v2.3.2', u'container': True, u'groups': [u'kube-node'], u'sha256': u'', u'enabled': False}, 'key': u'local_volume_provisioner'}) 
+2019-11-15 14:33:54,006 p=98395 u=root |  skipping: [master] => (item={'value': {u'repo': u'library/busybox', u'container': True, u'tag': u'latest', u'enabled': False, u'sha256': u''}, 'key': u'testbox'}) 
+2019-11-15 14:33:54,016 p=98395 u=root |  skipping: [master] => (item={'value': {u'repo': u'calico/kube-controllers', u'tag': u'v3.7.3', u'container': True, u'groups': [u'k8s-cluster'], u'sha256': u'', u'enabled': True}, 'key': u'calico_policy'}) 
+2019-11-15 14:33:54,017 p=98395 u=root |  skipping: [master] => (item={'value': {u'repo': u'quay.azk8s.cn/jetstack/cert-manager-controller', u'tag': u'v0.5.2', u'container': True, u'groups': [u'kube-node'], u'sha256': u'', u'enabled': False}, 'key': u'cert_manager_controller'}) 
+2019-11-15 14:33:54,049 p=98395 u=root |  skipping: [node2] => (item={'value': {u'repo': u'quay.azk8s.cn/jetstack/cert-manager-controller', u'tag': u'v0.5.2', u'container': True, u'groups': [u'kube-node'], u'sha256': u'', u'enabled': False}, 'key': u'cert_manager_controller'}) 
+2019-11-15 14:33:54,049 p=98395 u=root |  skipping: [node2] => (item={'value': {u'repo': u'gcr.azk8s.cn/google-containers/hyperkube', u'tag': u'v1.15.5', u'container': True, u'groups': [u'k8s-cluster'], u'sha256': u'', u'enabled': True}, 'key': u'hyperkube'}) 
+2019-11-15 14:33:54,096 p=98395 u=root |  skipping: [node2] => (item={'value': {u'repo': u'gcr.azk8s.cn/google-containers/k8s-dns-node-cache', u'tag': u'1.15.5', u'container': True, u'groups': [u'k8s-cluster'], u'sha256': u'', u'enabled': True}, 'key': u'nodelocaldns'}) 
+2019-11-15 14:33:54,097 p=98395 u=root |  skipping: [node2] => (item={'value': {u'repo': u'cilium/cilium-init', u'tag': u'2019-04-05', u'container': True, u'groups': [u'k8s-cluster'], u'sha256': u'', u'enabled': False}, 'key': u'cilium_init'}) 
+2019-11-15 14:33:54,098 p=98395 u=root |  skipping: [node2] => (item={'value': {u'repo': u'ferest/etcd-initer', u'tag': u'latest', u'container': True, u'groups': [u'k8s-cluster'], u'sha256': u'', u'enabled': False}, 'key': u'contiv_etcd_init'}) 
+2019-11-15 14:33:54,098 p=98395 u=root |  skipping: [node2] => (item={'value': {u'unarchive': True, u'groups': [u'k8s-cluster'], u'dest': u'/tmp/releases/crictl-v1.15.0-linux-amd64.tar.gz', u'enabled': False, u'url': u'https://github.com/kubernetes-sigs/cri-tools/releases/download/v1.15.0/crictl-v1.15.0-linux-amd64.tar.gz', u'version': u'v1.15.0', u'mode': u'0755', u'file': True, u'owner': u'root', u'sha256': u'c3b71be1f363e16078b51334967348aab4f72f46ef64a61fe7754e029779d45a'}, 'key': u'crictl'}) 
+2019-11-15 14:33:54,152 p=98395 u=root |  skipping: [node2] => (item={'value': {u'repo': u'quay.azk8s.cn/kubernetes-ingress-controller/nginx-ingress-controller', u'tag': u'0.25.1', u'container': True, u'groups': [u'kube-node'], u'sha256': u'', u'enabled': False}, 'key': u'ingress_nginx_controller'}) 
+2019-11-15 14:33:54,153 p=98395 u=root |  skipping: [node2] => (item={'value': {u'unarchive': False, u'groups': [u'k8s-cluster'], u'dest': u'/tmp/releases/hyperkube-v1.15.5-amd64', u'enabled': True, u'url': u'https://kubernetes-release.pek3b.qingstor.com/release/v1.15.5/bin/linux/amd64/hyperkube', u'version': u'v1.15.5', u'mode': u'0755', u'file': True, u'owner': u'root', u'sha256': u'15988bea1177a3e169aa43177456b6f58a15318165b15144c47ccd044de9edfe'}, 'key': u'hyperkube_file'}) 
+2019-11-15 14:33:54,153 p=98395 u=root |  skipping: [node2] => (item={'value': {u'repo': u'cloudnativelabs/kube-router', u'tag': u'v0.2.5', u'container': True, u'groups': [u'k8s-cluster'], u'sha256': u'', u'enabled': False}, 'key': u'kube_router'}) 
+2019-11-15 14:33:54,155 p=98395 u=root |  skipping: [node2] => (item={'value': {u'repo': u'quay.azk8s.cn/external_storage/cephfs-provisioner', u'tag': u'v2.1.0-k8s1.11', u'container': True, u'groups': [u'kube-node'], u'sha256': u'', u'enabled': False}, 'key': u'cephfs_provisioner'}) 
+2019-11-15 14:33:54,202 p=98395 u=root |  skipping: [node2] => (item={'value': {u'unarchive': False, u'groups': [u'k8s-cluster'], u'dest': u'/tmp/releases/cni-plugins-linux-amd64-v0.8.1.tgz', u'enabled': True, u'url': u'https://containernetworking.pek3b.qingstor.com/plugins/releases/download/v0.8.1/cni-plugins-linux-amd64-v0.8.1.tgz', u'version': u'v0.8.1', u'mode': u'0755', u'file': True, u'owner': u'root', u'sha256': u'e9bfc78acd3ae71be77eb8f3e890cc9078a33cc3797703b8ff2fc3077a232252'}, 'key': u'cni'}) 
+2019-11-15 14:33:54,204 p=98395 u=root |  skipping: [node2] => (item={'value': {u'repo': u'mirrorgooglecontainers/addon-resizer', u'tag': u'1.8.3', u'container': True, u'groups': [u'kube-master'], u'sha256': u'', u'enabled': False}, 'key': u'addon_resizer'}) 
+2019-11-15 14:33:54,253 p=98395 u=root |  skipping: [node2] => (item={'value': {u'repo': u'calico/node', u'tag': u'v3.7.3', u'container': True, u'groups': [u'k8s-cluster'], u'sha256': u'', u'enabled': True}, 'key': u'calico_node'}) 
+2019-11-15 14:33:54,253 p=98395 u=root |  skipping: [node2] => (item={'value': {u'repo': u'weaveworks/weave-kube', u'tag': u'2.5.2', u'container': True, u'groups': [u'k8s-cluster'], u'sha256': u'', u'enabled': False}, 'key': u'weave_kube'}) 
+2019-11-15 14:33:54,254 p=98395 u=root |  skipping: [node2] => (item={'value': {u'repo': u'kubeovn/kube-ovn-db', u'tag': u'v0.6.0', u'container': True, u'groups': [u'k8s-cluster'], u'sha256': u'', u'enabled': False}, 'key': u'kube_ovn_db'}) 
+2019-11-15 14:33:54,255 p=98395 u=root |  skipping: [node2] => (item={'value': {u'repo': u'library/registry', u'tag': u'2.6', u'container': True, u'groups': [u'kube-node'], u'sha256': u'', u'enabled': False}, 'key': u'registry'}) 
+2019-11-15 14:33:54,271 p=98395 u=root |  skipping: [master] => (item={'value': {u'repo': u'gcr.azk8s.cn/google-containers/hyperkube', u'tag': u'v1.15.5', u'container': True, u'groups': [u'k8s-cluster'], u'sha256': u'', u'enabled': True}, 'key': u'hyperkube'}) 
+2019-11-15 14:33:54,272 p=98395 u=root |  skipping: [master] => (item={'value': {u'repo': u'gcr.azk8s.cn/google-containers/k8s-dns-node-cache', u'tag': u'1.15.5', u'container': True, u'groups': [u'k8s-cluster'], u'sha256': u'', u'enabled': True}, 'key': u'nodelocaldns'}) 
+2019-11-15 14:33:54,273 p=98395 u=root |  skipping: [master] => (item={'value': {u'repo': u'cilium/cilium-init', u'tag': u'2019-04-05', u'container': True, u'groups': [u'k8s-cluster'], u'sha256': u'', u'enabled': False}, 'key': u'cilium_init'}) 
+2019-11-15 14:33:54,274 p=98395 u=root |  skipping: [master] => (item={'value': {u'repo': u'ferest/etcd-initer', u'tag': u'latest', u'container': True, u'groups': [u'k8s-cluster'], u'sha256': u'', u'enabled': False}, 'key': u'contiv_etcd_init'}) 
+2019-11-15 14:33:54,275 p=98395 u=root |  skipping: [master] => (item={'value': {u'unarchive': True, u'groups': [u'k8s-cluster'], u'dest': u'/tmp/releases/crictl-v1.15.0-linux-amd64.tar.gz', u'enabled': False, u'url': u'https://github.com/kubernetes-sigs/cri-tools/releases/download/v1.15.0/crictl-v1.15.0-linux-amd64.tar.gz', u'version': u'v1.15.0', u'mode': u'0755', u'file': True, u'owner': u'root', u'sha256': u'c3b71be1f363e16078b51334967348aab4f72f46ef64a61fe7754e029779d45a'}, 'key': u'crictl'}) 
+2019-11-15 14:33:54,277 p=98395 u=root |  skipping: [master] => (item={'value': {u'repo': u'quay.azk8s.cn/kubernetes-ingress-controller/nginx-ingress-controller', u'tag': u'0.25.1', u'container': True, u'groups': [u'kube-node'], u'sha256': u'', u'enabled': False}, 'key': u'ingress_nginx_controller'}) 
+2019-11-15 14:33:54,277 p=98395 u=root |  skipping: [master] => (item={'value': {u'unarchive': False, u'groups': [u'k8s-cluster'], u'dest': u'/tmp/releases/hyperkube-v1.15.5-amd64', u'enabled': True, u'url': u'https://kubernetes-release.pek3b.qingstor.com/release/v1.15.5/bin/linux/amd64/hyperkube', u'version': u'v1.15.5', u'mode': u'0755', u'file': True, u'owner': u'root', u'sha256': u'15988bea1177a3e169aa43177456b6f58a15318165b15144c47ccd044de9edfe'}, 'key': u'hyperkube_file'}) 
+2019-11-15 14:33:54,278 p=98395 u=root |  skipping: [master] => (item={'value': {u'repo': u'cloudnativelabs/kube-router', u'tag': u'v0.2.5', u'container': True, u'groups': [u'k8s-cluster'], u'sha256': u'', u'enabled': False}, 'key': u'kube_router'}) 
+2019-11-15 14:33:54,279 p=98395 u=root |  skipping: [master] => (item={'value': {u'repo': u'quay.azk8s.cn/external_storage/cephfs-provisioner', u'tag': u'v2.1.0-k8s1.11', u'container': True, u'groups': [u'kube-node'], u'sha256': u'', u'enabled': False}, 'key': u'cephfs_provisioner'}) 
+2019-11-15 14:33:54,280 p=98395 u=root |  skipping: [master] => (item={'value': {u'unarchive': False, u'groups': [u'k8s-cluster'], u'dest': u'/tmp/releases/cni-plugins-linux-amd64-v0.8.1.tgz', u'enabled': True, u'url': u'https://containernetworking.pek3b.qingstor.com/plugins/releases/download/v0.8.1/cni-plugins-linux-amd64-v0.8.1.tgz', u'version': u'v0.8.1', u'mode': u'0755', u'file': True, u'owner': u'root', u'sha256': u'e9bfc78acd3ae71be77eb8f3e890cc9078a33cc3797703b8ff2fc3077a232252'}, 'key': u'cni'}) 
+2019-11-15 14:33:54,280 p=98395 u=root |  skipping: [master] => (item={'value': {u'repo': u'mirrorgooglecontainers/addon-resizer', u'tag': u'1.8.3', u'container': True, u'groups': [u'kube-master'], u'sha256': u'', u'enabled': False}, 'key': u'addon_resizer'}) 
+2019-11-15 14:33:54,281 p=98395 u=root |  skipping: [master] => (item={'value': {u'repo': u'calico/node', u'tag': u'v3.7.3', u'container': True, u'groups': [u'k8s-cluster'], u'sha256': u'', u'enabled': True}, 'key': u'calico_node'}) 
+2019-11-15 14:33:54,281 p=98395 u=root |  skipping: [master] => (item={'value': {u'repo': u'weaveworks/weave-kube', u'tag': u'2.5.2', u'container': True, u'groups': [u'k8s-cluster'], u'sha256': u'', u'enabled': False}, 'key': u'weave_kube'}) 
+2019-11-15 14:33:54,282 p=98395 u=root |  skipping: [master] => (item={'value': {u'repo': u'kubeovn/kube-ovn-db', u'tag': u'v0.6.0', u'container': True, u'groups': [u'k8s-cluster'], u'sha256': u'', u'enabled': False}, 'key': u'kube_ovn_db'}) 
+2019-11-15 14:33:54,282 p=98395 u=root |  skipping: [master] => (item={'value': {u'repo': u'library/registry', u'tag': u'2.6', u'container': True, u'groups': [u'kube-node'], u'sha256': u'', u'enabled': False}, 'key': u'registry'}) 
+2019-11-15 14:33:54,341 p=98395 u=root |  skipping: [node2] => (item={'value': {u'repo': u'xueshanf/install-socat', u'tag': u'latest', u'container': True, u'groups': [u'k8s-cluster'], u'sha256': u'', u'enabled': False}, 'key': u'install_socat'}) 
+2019-11-15 14:33:54,342 p=98395 u=root |  skipping: [node2] => (item={'value': {u'repo': u'mirrorgooglecontainers/metrics-server-amd64', u'tag': u'v0.3.3', u'container': True, u'groups': [u'kube-master'], u'sha256': u'', u'enabled': False}, 'key': u'metrics_server'}) 
+2019-11-15 14:33:54,343 p=98395 u=root |  skipping: [node2] => (item={'value': {u'repo': u'library/haproxy', u'tag': u'2.0.4', u'container': True, u'groups': [u'kube-node'], u'sha256': u'', u'enabled': False}, 'key': u'haproxy'}) 
+2019-11-15 14:33:54,343 p=98395 u=root |  skipping: [node2] => (item={'value': {u'repo': u'kubeovn/kube-ovn-controller', u'tag': u'v0.6.0', u'container': True, u'groups': [u'k8s-cluster'], u'sha256': u'', u'enabled': False}, 'key': u'kube_ovn_controller'}) 
+2019-11-15 14:33:54,344 p=98395 u=root |  skipping: [node2] => (item={'value': {u'repo': u'coredns/coredns', u'tag': u'1.6.0', u'container': True, u'groups': [u'kube-master'], u'sha256': u'', u'enabled': True}, 'key': u'coredns'}) 
+2019-11-15 14:33:54,344 p=98395 u=root |  skipping: [node2] => (item={'value': {u'repo': u'calico/cni', u'tag': u'v3.7.3', u'container': True, u'groups': [u'k8s-cluster'], u'sha256': u'', u'enabled': True}, 'key': u'calico_cni'}) 
+2019-11-15 14:33:54,354 p=98395 u=root |  skipping: [node2] => (item={'value': {u'repo': u'cilium/cilium', u'tag': u'v1.5.5', u'container': True, u'groups': [u'k8s-cluster'], u'sha256': u'', u'enabled': False}, 'key': u'cilium'}) 
+2019-11-15 14:33:54,372 p=98395 u=root |  skipping: [master] => (item={'value': {u'repo': u'xueshanf/install-socat', u'tag': u'latest', u'container': True, u'groups': [u'k8s-cluster'], u'sha256': u'', u'enabled': False}, 'key': u'install_socat'}) 
+2019-11-15 14:33:54,374 p=98395 u=root |  skipping: [master] => (item={'value': {u'repo': u'mirrorgooglecontainers/metrics-server-amd64', u'tag': u'v0.3.3', u'container': True, u'groups': [u'kube-master'], u'sha256': u'', u'enabled': False}, 'key': u'metrics_server'}) 
+2019-11-15 14:33:54,375 p=98395 u=root |  skipping: [master] => (item={'value': {u'repo': u'library/haproxy', u'tag': u'2.0.4', u'container': True, u'groups': [u'kube-node'], u'sha256': u'', u'enabled': False}, 'key': u'haproxy'}) 
+2019-11-15 14:33:54,377 p=98395 u=root |  skipping: [master] => (item={'value': {u'repo': u'kubeovn/kube-ovn-controller', u'tag': u'v0.6.0', u'container': True, u'groups': [u'k8s-cluster'], u'sha256': u'', u'enabled': False}, 'key': u'kube_ovn_controller'}) 
+2019-11-15 14:33:54,377 p=98395 u=root |  skipping: [master] => (item={'value': {u'repo': u'coredns/coredns', u'tag': u'1.6.0', u'container': True, u'groups': [u'kube-master'], u'sha256': u'', u'enabled': True}, 'key': u'coredns'}) 
+2019-11-15 14:33:54,378 p=98395 u=root |  skipping: [master] => (item={'value': {u'repo': u'calico/cni', u'tag': u'v3.7.3', u'container': True, u'groups': [u'k8s-cluster'], u'sha256': u'', u'enabled': True}, 'key': u'calico_cni'}) 
+2019-11-15 14:33:54,387 p=98395 u=root |  skipping: [master] => (item={'value': {u'repo': u'cilium/cilium', u'tag': u'v1.5.5', u'container': True, u'groups': [u'k8s-cluster'], u'sha256': u'', u'enabled': False}, 'key': u'cilium'}) 
+2019-11-15 14:33:54,431 p=98395 u=root |  TASK [kubespray-defaults : Configure defaults] *****************************************************************************************
+2019-11-15 14:33:54,431 p=98395 u=root |  Friday 15 November 2019  14:33:54 +0800 (0:00:01.318)       0:00:19.214 ******* 
+2019-11-15 14:33:54,514 p=98395 u=root |  ok: [master] => {
+    "msg": "Check roles/kubespray-defaults/defaults/main.yml"
+}
+2019-11-15 14:33:54,614 p=98395 u=root |  ok: [node2] => {
+    "msg": "Check roles/kubespray-defaults/defaults/main.yml"
+}
+2019-11-15 14:33:54,643 p=98395 u=root |  TASK [adduser : User | Create User Group] **********************************************************************************************
+2019-11-15 14:33:54,643 p=98395 u=root |  Friday 15 November 2019  14:33:54 +0800 (0:00:00.212)       0:00:19.427 ******* 
+2019-11-15 14:33:55,122 p=98395 u=root |  changed: [master]
+2019-11-15 14:33:55,245 p=98395 u=root |  changed: [node2]
+2019-11-15 14:33:55,271 p=98395 u=root |  TASK [adduser : User | Create User] ****************************************************************************************************
+2019-11-15 14:33:55,271 p=98395 u=root |  Friday 15 November 2019  14:33:55 +0800 (0:00:00.627)       0:00:20.055 ******* 
+2019-11-15 14:33:55,814 p=98395 u=root |  changed: [master]
+2019-11-15 14:33:55,952 p=98395 u=root |  changed: [node2]
+2019-11-15 14:33:55,980 p=98395 u=root |  TASK [kubernetes/preinstall : Remove swapfile from /etc/fstab] *************************************************************************
+2019-11-15 14:33:55,980 p=98395 u=root |  Friday 15 November 2019  14:33:55 +0800 (0:00:00.708)       0:00:20.764 ******* 
+2019-11-15 14:33:56,443 p=98395 u=root |  ok: [master] => (item=swap)
+2019-11-15 14:33:56,612 p=98395 u=root |  ok: [node2] => (item=swap)
+2019-11-15 14:33:56,647 p=98395 u=root |  ok: [master] => (item=none)
+2019-11-15 14:33:56,919 p=98395 u=root |  ok: [node2] => (item=none)
+2019-11-15 14:33:56,948 p=98395 u=root |  TASK [kubernetes/preinstall : check swap] **********************************************************************************************
+2019-11-15 14:33:56,948 p=98395 u=root |  Friday 15 November 2019  14:33:56 +0800 (0:00:00.967)       0:00:21.731 ******* 
+2019-11-15 14:33:57,403 p=98395 u=root |  ok: [master]
+2019-11-15 14:33:57,520 p=98395 u=root |  ok: [node2]
+2019-11-15 14:33:57,547 p=98395 u=root |  TASK [kubernetes/preinstall : Disable swap] ********************************************************************************************
+2019-11-15 14:33:57,547 p=98395 u=root |  Friday 15 November 2019  14:33:57 +0800 (0:00:00.599)       0:00:22.331 ******* 
+2019-11-15 14:33:57,603 p=98395 u=root |  skipping: [master]
+2019-11-15 14:33:57,627 p=98395 u=root |  skipping: [node2]
+2019-11-15 14:33:57,656 p=98395 u=root |  TASK [kubernetes/preinstall : Stop if either kube-master, kube-node or etcd is empty] **************************************************
+2019-11-15 14:33:57,656 p=98395 u=root |  Friday 15 November 2019  14:33:57 +0800 (0:00:00.108)       0:00:22.440 ******* 
+2019-11-15 14:33:57,739 p=98395 u=root |  ok: [master] => (item=kube-master) => {
+    "changed": false, 
+    "item": "kube-master", 
+    "msg": "All assertions passed"
+}
+2019-11-15 14:33:57,772 p=98395 u=root |  ok: [master] => (item=kube-node) => {
+    "changed": false, 
+    "item": "kube-node", 
+    "msg": "All assertions passed"
+}
+2019-11-15 14:33:57,808 p=98395 u=root |  ok: [master] => (item=etcd) => {
+    "changed": false, 
+    "item": "etcd", 
+    "msg": "All assertions passed"
+}
+2019-11-15 14:33:57,840 p=98395 u=root |  TASK [kubernetes/preinstall : Stop if non systemd OS type] *****************************************************************************
+2019-11-15 14:33:57,840 p=98395 u=root |  Friday 15 November 2019  14:33:57 +0800 (0:00:00.183)       0:00:22.623 ******* 
+2019-11-15 14:33:57,930 p=98395 u=root |  ok: [master] => {
+    "changed": false, 
+    "msg": "All assertions passed"
+}
+2019-11-15 14:33:58,033 p=98395 u=root |  ok: [node2] => {
+    "changed": false, 
+    "msg": "All assertions passed"
+}
+2019-11-15 14:33:58,062 p=98395 u=root |  TASK [kubernetes/preinstall : Stop if unknown OS] **************************************************************************************
+2019-11-15 14:33:58,062 p=98395 u=root |  Friday 15 November 2019  14:33:58 +0800 (0:00:00.222)       0:00:22.846 ******* 
+2019-11-15 14:33:58,147 p=98395 u=root |  ok: [master] => {
+    "changed": false, 
+    "msg": "All assertions passed"
+}
+2019-11-15 14:33:58,248 p=98395 u=root |  ok: [node2] => {
+    "changed": false, 
+    "msg": "All assertions passed"
+}
+2019-11-15 14:33:58,278 p=98395 u=root |  TASK [kubernetes/preinstall : Stop if unknown network plugin] **************************************************************************
+2019-11-15 14:33:58,279 p=98395 u=root |  Friday 15 November 2019  14:33:58 +0800 (0:00:00.216)       0:00:23.062 ******* 
+2019-11-15 14:33:58,367 p=98395 u=root |  ok: [master] => {
+    "changed": false, 
+    "msg": "All assertions passed"
+}
+2019-11-15 14:33:58,473 p=98395 u=root |  ok: [node2] => {
+    "changed": false, 
+    "msg": "All assertions passed"
+}
+2019-11-15 14:33:58,505 p=98395 u=root |  TASK [kubernetes/preinstall : Stop if incompatible network plugin and cloudprovider] ***************************************************
+2019-11-15 14:33:58,505 p=98395 u=root |  Friday 15 November 2019  14:33:58 +0800 (0:00:00.226)       0:00:23.288 ******* 
+2019-11-15 14:33:58,555 p=98395 u=root |  skipping: [master]
+2019-11-15 14:33:58,575 p=98395 u=root |  skipping: [node2]
+2019-11-15 14:33:58,604 p=98395 u=root |  TASK [kubernetes/preinstall : Stop if unsupported version of Kubernetes] ***************************************************************
+2019-11-15 14:33:58,605 p=98395 u=root |  Friday 15 November 2019  14:33:58 +0800 (0:00:00.099)       0:00:23.388 ******* 
+2019-11-15 14:33:58,698 p=98395 u=root |  ok: [master] => {
+    "changed": false, 
+    "msg": "All assertions passed"
+}
+2019-11-15 14:33:58,798 p=98395 u=root |  ok: [node2] => {
+    "changed": false, 
+    "msg": "All assertions passed"
+}
+2019-11-15 14:33:58,824 p=98395 u=root |  TASK [kubernetes/preinstall : Stop if known booleans are set as strings (Use JSON format on CLI: -e "{'key': true }")] *****************
+2019-11-15 14:33:58,824 p=98395 u=root |  Friday 15 November 2019  14:33:58 +0800 (0:00:00.219)       0:00:23.608 ******* 
+2019-11-15 14:33:58,916 p=98395 u=root |  ok: [master] => (item={u'name': u'download_run_once', u'value': False}) => {
+    "changed": false, 
+    "item": {
+        "name": "download_run_once", 
+        "value": false
+    }, 
+    "msg": "All assertions passed"
+}
+2019-11-15 14:33:58,950 p=98395 u=root |  ok: [master] => (item={u'name': u'deploy_netchecker', u'value': False}) => {
+    "changed": false, 
+    "item": {
+        "name": "deploy_netchecker", 
+        "value": false
+    }, 
+    "msg": "All assertions passed"
+}
+2019-11-15 14:33:58,984 p=98395 u=root |  ok: [master] => (item={u'name': u'download_always_pull', u'value': False}) => {
+    "changed": false, 
+    "item": {
+        "name": "download_always_pull", 
+        "value": false
+    }, 
+    "msg": "All assertions passed"
+}
+2019-11-15 14:33:59,024 p=98395 u=root |  ok: [master] => (item={u'name': u'helm_enabled', u'value': True}) => {
+    "changed": false, 
+    "item": {
+        "name": "helm_enabled", 
+        "value": true
+    }, 
+    "msg": "All assertions passed"
+}
+2019-11-15 14:33:59,057 p=98395 u=root |  ok: [master] => (item={u'name': u'openstack_lbaas_enabled', u'value': False}) => {
+    "changed": false, 
+    "item": {
+        "name": "openstack_lbaas_enabled", 
+        "value": false
+    }, 
+    "msg": "All assertions passed"
+}
+2019-11-15 14:33:59,086 p=98395 u=root |  TASK [kubernetes/preinstall : Stop if even number of etcd hosts] ***********************************************************************
+2019-11-15 14:33:59,087 p=98395 u=root |  Friday 15 November 2019  14:33:59 +0800 (0:00:00.262)       0:00:23.871 ******* 
+2019-11-15 14:33:59,179 p=98395 u=root |  skipping: [node2]
+2019-11-15 14:33:59,180 p=98395 u=root |  ok: [master] => {
+    "changed": false, 
+    "msg": "All assertions passed"
+}
+2019-11-15 14:33:59,210 p=98395 u=root |  TASK [kubernetes/preinstall : Stop if memory is too small for masters] *****************************************************************
+2019-11-15 14:33:59,211 p=98395 u=root |  Friday 15 November 2019  14:33:59 +0800 (0:00:00.123)       0:00:23.994 ******* 
+2019-11-15 14:33:59,295 p=98395 u=root |  skipping: [node2]
+2019-11-15 14:33:59,300 p=98395 u=root |  ok: [master] => {
+    "changed": false, 
+    "msg": "All assertions passed"
+}
+2019-11-15 14:33:59,331 p=98395 u=root |  TASK [kubernetes/preinstall : Stop if memory is too small for nodes] *******************************************************************
+2019-11-15 14:33:59,331 p=98395 u=root |  Friday 15 November 2019  14:33:59 +0800 (0:00:00.120)       0:00:24.115 ******* 
+2019-11-15 14:33:59,380 p=98395 u=root |  skipping: [master]
+2019-11-15 14:33:59,504 p=98395 u=root |  ok: [node2] => {
+    "changed": false, 
+    "msg": "All assertions passed"
+}
+2019-11-15 14:33:59,529 p=98395 u=root |  TASK [kubernetes/preinstall : Guarantee that enough network address space is available for all pods] ***********************************
+2019-11-15 14:33:59,529 p=98395 u=root |  Friday 15 November 2019  14:33:59 +0800 (0:00:00.198)       0:00:24.313 ******* 
+2019-11-15 14:33:59,575 p=98395 u=root |  skipping: [master]
+2019-11-15 14:33:59,769 p=98395 u=root |  ok: [node2] => {
+    "changed": false, 
+    "msg": "All assertions passed"
+}
+2019-11-15 14:33:59,799 p=98395 u=root |  TASK [kubernetes/preinstall : Stop if ip var does not match local ips] *****************************************************************
+2019-11-15 14:33:59,800 p=98395 u=root |  Friday 15 November 2019  14:33:59 +0800 (0:00:00.270)       0:00:24.583 ******* 
+2019-11-15 14:33:59,885 p=98395 u=root |  fatal: [master]: FAILED! => {
+    "assertion": "ip in ansible_all_ipv4_addresses", 
+    "changed": false, 
+    "evaluated_to": false, 
+    "msg": "Assertion failed"
+}
+2019-11-15 14:33:59,987 p=98395 u=root |  ok: [node2] => {
+    "changed": false, 
+    "msg": "All assertions passed"
+}
+2019-11-15 14:34:00,018 p=98395 u=root |  TASK [kubernetes/preinstall : Stop if access_ip is not pingable] ***********************************************************************
+2019-11-15 14:34:00,019 p=98395 u=root |  Friday 15 November 2019  14:34:00 +0800 (0:00:00.218)       0:00:24.802 ******* 
+2019-11-15 14:34:00,044 p=98395 u=root |  skipping: [node2]
+2019-11-15 14:34:00,072 p=98395 u=root |  TASK [kubernetes/preinstall : Stop if RBAC is not enabled when dashboard is enabled] ***************************************************
+2019-11-15 14:34:00,073 p=98395 u=root |  Friday 15 November 2019  14:34:00 +0800 (0:00:00.054)       0:00:24.856 ******* 
+2019-11-15 14:34:00,100 p=98395 u=root |  skipping: [node2]
+2019-11-15 14:34:00,131 p=98395 u=root |  TASK [kubernetes/preinstall : Stop if RBAC is not enabled when OCI cloud controller is enabled] ****************************************
+2019-11-15 14:34:00,131 p=98395 u=root |  Friday 15 November 2019  14:34:00 +0800 (0:00:00.058)       0:00:24.915 ******* 
+2019-11-15 14:34:00,163 p=98395 u=root |  skipping: [node2]
+2019-11-15 14:34:00,196 p=98395 u=root |  TASK [kubernetes/preinstall : Stop if RBAC and anonymous-auth are not enabled when insecure port is disabled] **************************
+2019-11-15 14:34:00,196 p=98395 u=root |  Friday 15 November 2019  14:34:00 +0800 (0:00:00.064)       0:00:24.979 ******* 
+2019-11-15 14:34:00,221 p=98395 u=root |  skipping: [node2]
+2019-11-15 14:34:00,252 p=98395 u=root |  TASK [kubernetes/preinstall : Stop if kernel version is too low] ***********************************************************************
+2019-11-15 14:34:00,252 p=98395 u=root |  Friday 15 November 2019  14:34:00 +0800 (0:00:00.056)       0:00:25.035 ******* 
+2019-11-15 14:34:00,294 p=98395 u=root |  skipping: [node2]
+2019-11-15 14:34:00,346 p=98395 u=root |  TASK [kubernetes/preinstall : Stop if bad hostname] ************************************************************************************
+2019-11-15 14:34:00,347 p=98395 u=root |  Friday 15 November 2019  14:34:00 +0800 (0:00:00.094)       0:00:25.130 ******* 
+2019-11-15 14:34:00,543 p=98395 u=root |  ok: [node2] => {
+    "changed": false, 
+    "msg": "All assertions passed"
+}
+2019-11-15 14:34:00,589 p=98395 u=root |  TASK [kubernetes/preinstall : check cloud_provider value] ******************************************************************************
+2019-11-15 14:34:00,589 p=98395 u=root |  Friday 15 November 2019  14:34:00 +0800 (0:00:00.242)       0:00:25.372 ******* 
+2019-11-15 14:34:00,619 p=98395 u=root |  skipping: [node2]
+2019-11-15 14:34:00,660 p=98395 u=root |  TASK [kubernetes/preinstall : Ensure minimum calico version] ***************************************************************************
+2019-11-15 14:34:00,660 p=98395 u=root |  Friday 15 November 2019  14:34:00 +0800 (0:00:00.071)       0:00:25.444 ******* 
+2019-11-15 14:34:00,860 p=98395 u=root |  ok: [node2] => {
+    "changed": false, 
+    "msg": "All assertions passed"
+}
+2019-11-15 14:34:00,912 p=98395 u=root |  TASK [kubernetes/preinstall : Get current version of calico cluster version] ***********************************************************
+2019-11-15 14:34:00,924 p=98395 u=root |  Friday 15 November 2019  14:34:00 +0800 (0:00:00.251)       0:00:25.707 ******* 
+2019-11-15 14:34:01,457 p=98395 u=root |  ok: [node2]
+2019-11-15 14:34:01,486 p=98395 u=root |  TASK [kubernetes/preinstall : Check that calico version is enough for upgrade] *********************************************************
+2019-11-15 14:34:01,486 p=98395 u=root |  Friday 15 November 2019  14:34:01 +0800 (0:00:00.562)       0:00:26.269 ******* 
+2019-11-15 14:34:01,517 p=98395 u=root |  skipping: [node2]
+2019-11-15 14:34:01,542 p=98395 u=root |  TASK [kubernetes/preinstall : Check that cluster_id is set if calico_rr enabled] *******************************************************
+2019-11-15 14:34:01,542 p=98395 u=root |  Friday 15 November 2019  14:34:01 +0800 (0:00:00.056)       0:00:26.326 ******* 
+2019-11-15 14:34:01,573 p=98395 u=root |  skipping: [node2]
+2019-11-15 14:34:01,614 p=98395 u=root |  TASK [kubernetes/preinstall : Check that calico_rr nodes are in k8s-cluster group] *****************************************************
+2019-11-15 14:34:01,614 p=98395 u=root |  Friday 15 November 2019  14:34:01 +0800 (0:00:00.071)       0:00:26.398 ******* 
+2019-11-15 14:34:01,646 p=98395 u=root |  skipping: [node2]
+2019-11-15 14:34:01,681 p=98395 u=root |  TASK [kubernetes/preinstall : Check that kube_service_addresses is a network range] ****************************************************
+2019-11-15 14:34:01,682 p=98395 u=root |  Friday 15 November 2019  14:34:01 +0800 (0:00:00.067)       0:00:26.465 ******* 
+2019-11-15 14:34:01,960 p=98395 u=root |  ok: [node2] => {
+    "changed": false, 
+    "msg": "All assertions passed"
+}
+2019-11-15 14:34:01,989 p=98395 u=root |  TASK [kubernetes/preinstall : Check that kube_pods_subnet is a network range] **********************************************************
+2019-11-15 14:34:01,989 p=98395 u=root |  Friday 15 November 2019  14:34:01 +0800 (0:00:00.307)       0:00:26.773 ******* 
+2019-11-15 14:34:02,111 p=98395 u=root |  ok: [node2] => {
+    "changed": false, 
+    "msg": "All assertions passed"
+}
+2019-11-15 14:34:02,139 p=98395 u=root |  TASK [kubernetes/preinstall : Check that kube_pods_subnet does not collide with kube_service_addresses] ********************************
+2019-11-15 14:34:02,139 p=98395 u=root |  Friday 15 November 2019  14:34:02 +0800 (0:00:00.150)       0:00:26.923 ******* 
+2019-11-15 14:34:02,256 p=98395 u=root |  ok: [node2] => {
+    "changed": false, 
+    "msg": "All assertions passed"
+}
+2019-11-15 14:34:02,283 p=98395 u=root |  TASK [kubernetes/preinstall : Stop if unknown dns mode] ********************************************************************************
+2019-11-15 14:34:02,283 p=98395 u=root |  Friday 15 November 2019  14:34:02 +0800 (0:00:00.144)       0:00:27.067 ******* 
+2019-11-15 14:34:02,401 p=98395 u=root |  ok: [node2] => {
+    "changed": false, 
+    "msg": "All assertions passed"
+}
+2019-11-15 14:34:02,429 p=98395 u=root |  TASK [kubernetes/preinstall : Stop if unknown kube proxy mode] *************************************************************************
+2019-11-15 14:34:02,430 p=98395 u=root |  Friday 15 November 2019  14:34:02 +0800 (0:00:00.146)       0:00:27.213 ******* 
+2019-11-15 14:34:02,549 p=98395 u=root |  ok: [node2] => {
+    "changed": false, 
+    "msg": "All assertions passed"
+}
+2019-11-15 14:34:02,574 p=98395 u=root |  TASK [kubernetes/preinstall : Stop if vault is chose] **********************************************************************************
+2019-11-15 14:34:02,574 p=98395 u=root |  Friday 15 November 2019  14:34:02 +0800 (0:00:00.144)       0:00:27.358 ******* 
+2019-11-15 14:34:02,688 p=98395 u=root |  ok: [node2] => {
+    "changed": false, 
+    "msg": "All assertions passed"
+}
+2019-11-15 14:34:02,714 p=98395 u=root |  TASK [kubernetes/preinstall : Stop if unknown cert_management] *************************************************************************
+2019-11-15 14:34:02,714 p=98395 u=root |  Friday 15 November 2019  14:34:02 +0800 (0:00:00.139)       0:00:27.498 ******* 
+2019-11-15 14:34:02,831 p=98395 u=root |  ok: [node2] => {
+    "changed": false, 
+    "msg": "All assertions passed"
+}
+2019-11-15 14:34:02,857 p=98395 u=root |  TASK [kubernetes/preinstall : Stop if unknown resolvconf_mode] *************************************************************************
+2019-11-15 14:34:02,857 p=98395 u=root |  Friday 15 November 2019  14:34:02 +0800 (0:00:00.142)       0:00:27.641 ******* 
+2019-11-15 14:34:03,056 p=98395 u=root |  ok: [node2] => {
+    "changed": false, 
+    "msg": "All assertions passed"
+}
+2019-11-15 14:34:03,083 p=98395 u=root |  TASK [kubernetes/preinstall : Stop if k8s version is too low for kubeadm etcd mode] ****************************************************
+2019-11-15 14:34:03,083 p=98395 u=root |  Friday 15 November 2019  14:34:03 +0800 (0:00:00.225)       0:00:27.866 ******* 
+2019-11-15 14:34:03,105 p=98395 u=root |  skipping: [node2]
+2019-11-15 14:34:03,132 p=98395 u=root |  TASK [kubernetes/preinstall : Stop if kubeadm etcd mode is enabled but experimental control plane is not] ******************************
+2019-11-15 14:34:03,132 p=98395 u=root |  Friday 15 November 2019  14:34:03 +0800 (0:00:00.048)       0:00:27.915 ******* 
+2019-11-15 14:34:03,152 p=98395 u=root |  skipping: [node2]
+2019-11-15 14:34:03,178 p=98395 u=root |  TASK [kubernetes/preinstall : Check that localIP does not collide with kube_service_addresses] *****************************************
+2019-11-15 14:34:03,179 p=98395 u=root |  Friday 15 November 2019  14:34:03 +0800 (0:00:00.046)       0:00:27.962 ******* 
+2019-11-15 14:34:03,373 p=98395 u=root |  ok: [node2] => {
+    "changed": false, 
+    "msg": "All assertions passed"
+}
+2019-11-15 14:34:03,403 p=98395 u=root |  TASK [kubernetes/preinstall : Check that localIP does not collide with kube_pods_subnet] ***********************************************
+2019-11-15 14:34:03,404 p=98395 u=root |  Friday 15 November 2019  14:34:03 +0800 (0:00:00.225)       0:00:28.187 ******* 
+2019-11-15 14:34:03,595 p=98395 u=root |  ok: [node2] => {
+    "changed": false, 
+    "msg": "All assertions passed"
+}
+2019-11-15 14:34:03,643 p=98395 u=root |  TASK [kubernetes/preinstall : Pre-upgrade | check if old credential dir exists] ********************************************************
+2019-11-15 14:34:03,644 p=98395 u=root |  Friday 15 November 2019  14:34:03 +0800 (0:00:00.239)       0:00:28.427 ******* 
+2019-11-15 14:34:03,821 p=98395 u=root |  ok: [node2 -> localhost]
+2019-11-15 14:34:03,852 p=98395 u=root |  TASK [kubernetes/preinstall : Pre-upgrade | check if new credential dir exists] ********************************************************
+2019-11-15 14:34:03,853 p=98395 u=root |  Friday 15 November 2019  14:34:03 +0800 (0:00:00.209)       0:00:28.636 ******* 
+2019-11-15 14:34:03,879 p=98395 u=root |  skipping: [node2]
+2019-11-15 14:34:03,912 p=98395 u=root |  TASK [kubernetes/preinstall : Pre-upgrade | move data from old credential dir to new] **************************************************
+2019-11-15 14:34:03,912 p=98395 u=root |  Friday 15 November 2019  14:34:03 +0800 (0:00:00.059)       0:00:28.696 ******* 
+2019-11-15 14:34:03,938 p=98395 u=root |  skipping: [node2]
+2019-11-15 14:34:03,966 p=98395 u=root |  TASK [kubernetes/preinstall : set architecture_groups] *********************************************************************************
+2019-11-15 14:34:03,966 p=98395 u=root |  Friday 15 November 2019  14:34:03 +0800 (0:00:00.053)       0:00:28.750 ******* 
+2019-11-15 14:34:04,077 p=98395 u=root |  ok: [node2]
+2019-11-15 14:34:04,106 p=98395 u=root |  TASK [kubernetes/preinstall : ansible_architecture_rename] *****************************************************************************
+2019-11-15 14:34:04,106 p=98395 u=root |  Friday 15 November 2019  14:34:04 +0800 (0:00:00.139)       0:00:28.890 ******* 
+2019-11-15 14:34:04,288 p=98395 u=root |  ok: [node2]
+2019-11-15 14:34:04,315 p=98395 u=root |  TASK [kubernetes/preinstall : Force binaries directory for Container Linux by CoreOS] **************************************************
+2019-11-15 14:34:04,315 p=98395 u=root |  Friday 15 November 2019  14:34:04 +0800 (0:00:00.208)       0:00:29.099 ******* 
+2019-11-15 14:34:04,335 p=98395 u=root |  skipping: [node2]
+2019-11-15 14:34:04,361 p=98395 u=root |  TASK [kubernetes/preinstall : check if atomic host] ************************************************************************************
+2019-11-15 14:34:04,361 p=98395 u=root |  Friday 15 November 2019  14:34:04 +0800 (0:00:00.046)       0:00:29.145 ******* 
+2019-11-15 14:34:04,828 p=98395 u=root |  ok: [node2]
+2019-11-15 14:34:04,853 p=98395 u=root |  TASK [kubernetes/preinstall : set is_atomic] *******************************************************************************************
+2019-11-15 14:34:04,853 p=98395 u=root |  Friday 15 November 2019  14:34:04 +0800 (0:00:00.492)       0:00:29.637 ******* 
+2019-11-15 14:34:05,044 p=98395 u=root |  ok: [node2]
+2019-11-15 14:34:05,073 p=98395 u=root |  TASK [kubernetes/preinstall : set kube_cert_group on atomic hosts] *********************************************************************
+2019-11-15 14:34:05,074 p=98395 u=root |  Friday 15 November 2019  14:34:05 +0800 (0:00:00.220)       0:00:29.857 ******* 
+2019-11-15 14:34:05,091 p=98395 u=root |  skipping: [node2]
+2019-11-15 14:34:05,118 p=98395 u=root |  TASK [kubernetes/preinstall : check resolvconf] ****************************************************************************************
+2019-11-15 14:34:05,118 p=98395 u=root |  Friday 15 November 2019  14:34:05 +0800 (0:00:00.044)       0:00:29.902 ******* 
+2019-11-15 14:34:05,580 p=98395 u=root |  ok: [node2]
+2019-11-15 14:34:05,606 p=98395 u=root |  TASK [kubernetes/preinstall : set dns facts] *******************************************************************************************
+2019-11-15 14:34:05,607 p=98395 u=root |  Friday 15 November 2019  14:34:05 +0800 (0:00:00.488)       0:00:30.390 ******* 
+2019-11-15 14:34:05,721 p=98395 u=root |  ok: [node2]
+2019-11-15 14:34:05,748 p=98395 u=root |  TASK [kubernetes/preinstall : check if kubelet is configured] **************************************************************************
+2019-11-15 14:34:05,748 p=98395 u=root |  Friday 15 November 2019  14:34:05 +0800 (0:00:00.141)       0:00:30.531 ******* 
+2019-11-15 14:34:06,136 p=98395 u=root |  ok: [node2]
+2019-11-15 14:34:06,162 p=98395 u=root |  TASK [kubernetes/preinstall : check if early DNS configuration stage] ******************************************************************
+2019-11-15 14:34:06,163 p=98395 u=root |  Friday 15 November 2019  14:34:06 +0800 (0:00:00.414)       0:00:30.946 ******* 
+2019-11-15 14:34:06,345 p=98395 u=root |  ok: [node2]
+2019-11-15 14:34:06,372 p=98395 u=root |  TASK [kubernetes/preinstall : target resolv.conf files] ********************************************************************************
+2019-11-15 14:34:06,372 p=98395 u=root |  Friday 15 November 2019  14:34:06 +0800 (0:00:00.209)       0:00:31.156 ******* 
+2019-11-15 14:34:06,564 p=98395 u=root |  ok: [node2]
+2019-11-15 14:34:06,593 p=98395 u=root |  TASK [kubernetes/preinstall : target temporary resolvconf cloud init file (Container Linux by CoreOS)] *********************************
+2019-11-15 14:34:06,593 p=98395 u=root |  Friday 15 November 2019  14:34:06 +0800 (0:00:00.221)       0:00:31.377 ******* 
+2019-11-15 14:34:06,613 p=98395 u=root |  skipping: [node2]
+2019-11-15 14:34:06,638 p=98395 u=root |  TASK [kubernetes/preinstall : check if /etc/dhclient.conf exists] **********************************************************************
+2019-11-15 14:34:06,639 p=98395 u=root |  Friday 15 November 2019  14:34:06 +0800 (0:00:00.045)       0:00:31.422 ******* 
+2019-11-15 14:34:07,098 p=98395 u=root |  ok: [node2]
+2019-11-15 14:34:07,127 p=98395 u=root |  TASK [kubernetes/preinstall : target dhclient conf file for /etc/dhclient.conf] ********************************************************
+2019-11-15 14:34:07,127 p=98395 u=root |  Friday 15 November 2019  14:34:07 +0800 (0:00:00.488)       0:00:31.911 ******* 
+2019-11-15 14:34:07,147 p=98395 u=root |  skipping: [node2]
+2019-11-15 14:34:07,173 p=98395 u=root |  TASK [kubernetes/preinstall : check if /etc/dhcp/dhclient.conf exists] *****************************************************************
+2019-11-15 14:34:07,173 p=98395 u=root |  Friday 15 November 2019  14:34:07 +0800 (0:00:00.045)       0:00:31.957 ******* 
+2019-11-15 14:34:07,557 p=98395 u=root |  ok: [node2]
+2019-11-15 14:34:07,583 p=98395 u=root |  TASK [kubernetes/preinstall : target dhclient conf file for /etc/dhcp/dhclient.conf] ***************************************************
+2019-11-15 14:34:07,584 p=98395 u=root |  Friday 15 November 2019  14:34:07 +0800 (0:00:00.410)       0:00:32.367 ******* 
+2019-11-15 14:34:07,605 p=98395 u=root |  skipping: [node2]
+2019-11-15 14:34:07,631 p=98395 u=root |  TASK [kubernetes/preinstall : target dhclient hook file for Red Hat family] ************************************************************
+2019-11-15 14:34:07,631 p=98395 u=root |  Friday 15 November 2019  14:34:07 +0800 (0:00:00.047)       0:00:32.415 ******* 
+2019-11-15 14:34:07,742 p=98395 u=root |  ok: [node2]
+2019-11-15 14:34:07,767 p=98395 u=root |  TASK [kubernetes/preinstall : target dhclient hook file for Debian family] *************************************************************
+2019-11-15 14:34:07,767 p=98395 u=root |  Friday 15 November 2019  14:34:07 +0800 (0:00:00.135)       0:00:32.550 ******* 
+2019-11-15 14:34:07,788 p=98395 u=root |  skipping: [node2]
+2019-11-15 14:34:07,817 p=98395 u=root |  TASK [kubernetes/preinstall : generate search domains to resolvconf] *******************************************************************
+2019-11-15 14:34:07,817 p=98395 u=root |  Friday 15 November 2019  14:34:07 +0800 (0:00:00.049)       0:00:32.600 ******* 
+2019-11-15 14:34:08,011 p=98395 u=root |  ok: [node2]
+2019-11-15 14:34:08,037 p=98395 u=root |  TASK [kubernetes/preinstall : pick coredns cluster IP or default resolver] *************************************************************
+2019-11-15 14:34:08,037 p=98395 u=root |  Friday 15 November 2019  14:34:08 +0800 (0:00:00.220)       0:00:32.821 ******* 
+2019-11-15 14:34:08,225 p=98395 u=root |  ok: [node2]
+2019-11-15 14:34:08,251 p=98395 u=root |  TASK [kubernetes/preinstall : generate nameservers to resolvconf] **********************************************************************
+2019-11-15 14:34:08,251 p=98395 u=root |  Friday 15 November 2019  14:34:08 +0800 (0:00:00.214)       0:00:33.035 ******* 
+2019-11-15 14:34:08,437 p=98395 u=root |  ok: [node2]
+2019-11-15 14:34:08,463 p=98395 u=root |  TASK [kubernetes/preinstall : gather os specific variables] ****************************************************************************
+2019-11-15 14:34:08,463 p=98395 u=root |  Friday 15 November 2019  14:34:08 +0800 (0:00:00.211)       0:00:33.246 ******* 
+2019-11-15 14:34:08,659 p=98395 u=root |  ok: [node2] => (item=/data/soft/kubesphere-all-v2.1.0/k8s/roles/kubernetes/preinstall/vars/../vars/centos.yml)
+2019-11-15 14:34:08,692 p=98395 u=root |  TASK [kubernetes/preinstall : override kube_proxy_mode to ipvs if kube_proxy_remove is set, as ipvs won't require kube-proxy cleanup when kube-proxy daemonset gets deleted] ***
+2019-11-15 14:34:08,692 p=98395 u=root |  Friday 15 November 2019  14:34:08 +0800 (0:00:00.229)       0:00:33.475 ******* 
+2019-11-15 14:34:08,712 p=98395 u=root |  skipping: [node2]
+2019-11-15 14:34:08,739 p=98395 u=root |  TASK [kubernetes/preinstall : set etcd vars if using kubeadm mode] *********************************************************************
+2019-11-15 14:34:08,739 p=98395 u=root |  Friday 15 November 2019  14:34:08 +0800 (0:00:00.047)       0:00:33.523 ******* 
+2019-11-15 14:34:08,757 p=98395 u=root |  skipping: [node2]
+2019-11-15 14:34:08,783 p=98395 u=root |  TASK [kubernetes/preinstall : check /usr readonly] *************************************************************************************
+2019-11-15 14:34:08,784 p=98395 u=root |  Friday 15 November 2019  14:34:08 +0800 (0:00:00.044)       0:00:33.567 ******* 
+2019-11-15 14:34:09,269 p=98395 u=root |  ok: [node2]
+2019-11-15 14:34:09,297 p=98395 u=root |  TASK [kubernetes/preinstall : set alternate flexvolume path] ***************************************************************************
+2019-11-15 14:34:09,298 p=98395 u=root |  Friday 15 November 2019  14:34:09 +0800 (0:00:00.514)       0:00:34.081 ******* 
+2019-11-15 14:34:09,317 p=98395 u=root |  skipping: [node2]
+2019-11-15 14:34:09,345 p=98395 u=root |  TASK [kubernetes/preinstall : Create kubernetes directories] ***************************************************************************
+2019-11-15 14:34:09,345 p=98395 u=root |  Friday 15 November 2019  14:34:09 +0800 (0:00:00.047)       0:00:34.128 ******* 
+2019-11-15 14:34:09,765 p=98395 u=root |  changed: [node2] => (item=/usr/local/bin)
+2019-11-15 14:34:10,157 p=98395 u=root |  changed: [node2] => (item=/etc/kubernetes)
+2019-11-15 14:34:10,468 p=98395 u=root |  changed: [node2] => (item=/etc/kubernetes/ssl)
+2019-11-15 14:34:10,787 p=98395 u=root |  changed: [node2] => (item=/etc/kubernetes/manifests)
+2019-11-15 14:34:11,119 p=98395 u=root |  changed: [node2] => (item=/usr/local/bin/kubernetes-scripts)
+2019-11-15 14:34:11,453 p=98395 u=root |  changed: [node2] => (item=/usr/libexec/kubernetes/kubelet-plugins/volume/exec)
+2019-11-15 14:34:11,482 p=98395 u=root |  TASK [kubernetes/preinstall : Check if kubernetes kubeadm compat cert dir exists] ******************************************************
+2019-11-15 14:34:11,482 p=98395 u=root |  Friday 15 November 2019  14:34:11 +0800 (0:00:02.137)       0:00:36.266 ******* 
+2019-11-15 14:34:11,958 p=98395 u=root |  ok: [node2]
+2019-11-15 14:34:11,987 p=98395 u=root |  TASK [kubernetes/preinstall : Create kubernetes kubeadm compat cert dir (kubernetes/kubeadm issue 1498)] *******************************
+2019-11-15 14:34:11,988 p=98395 u=root |  Friday 15 November 2019  14:34:11 +0800 (0:00:00.505)       0:00:36.771 ******* 
+2019-11-15 14:34:12,020 p=98395 u=root |  skipping: [node2]
+2019-11-15 14:34:12,046 p=98395 u=root |  TASK [kubernetes/preinstall : Create cni directories] **********************************************************************************
+2019-11-15 14:34:12,046 p=98395 u=root |  Friday 15 November 2019  14:34:12 +0800 (0:00:00.058)       0:00:36.829 ******* 
+2019-11-15 14:34:12,536 p=98395 u=root |  changed: [node2] => (item=/etc/cni/net.d)
+2019-11-15 14:34:12,847 p=98395 u=root |  changed: [node2] => (item=/opt/cni/bin)
+2019-11-15 14:34:13,184 p=98395 u=root |  changed: [node2] => (item=/var/lib/calico)
+2019-11-15 14:34:13,216 p=98395 u=root |  TASK [kubernetes/preinstall : Create local volume provisioner directories] *************************************************************
+2019-11-15 14:34:13,216 p=98395 u=root |  Friday 15 November 2019  14:34:13 +0800 (0:00:01.170)       0:00:37.999 ******* 
+2019-11-15 14:34:13,251 p=98395 u=root |  skipping: [node2] => (item=local-storage) 
+2019-11-15 14:34:13,278 p=98395 u=root |  TASK [kubernetes/preinstall : create temporary resolveconf cloud init file] ************************************************************
+2019-11-15 14:34:13,279 p=98395 u=root |  Friday 15 November 2019  14:34:13 +0800 (0:00:00.062)       0:00:38.062 ******* 
+2019-11-15 14:34:13,305 p=98395 u=root |  skipping: [node2]
+2019-11-15 14:34:13,330 p=98395 u=root |  TASK [kubernetes/preinstall : Add domain/search/nameservers/options to resolv.conf] ****************************************************
+2019-11-15 14:34:13,330 p=98395 u=root |  Friday 15 November 2019  14:34:13 +0800 (0:00:00.051)       0:00:38.114 ******* 
+2019-11-15 14:34:13,352 p=98395 u=root |  skipping: [node2]
+2019-11-15 14:34:13,381 p=98395 u=root |  TASK [kubernetes/preinstall : Remove search/domain/nameserver options before block] ****************************************************
+2019-11-15 14:34:13,381 p=98395 u=root |  Friday 15 November 2019  14:34:13 +0800 (0:00:00.050)       0:00:38.164 ******* 
+2019-11-15 14:34:13,417 p=98395 u=root |  skipping: [node2] => (item=[u'/etc/resolv.conf', u'search ']) 
+2019-11-15 14:34:13,429 p=98395 u=root |  skipping: [node2] => (item=[u'/etc/resolv.conf', u'nameserver ']) 
+2019-11-15 14:34:13,441 p=98395 u=root |  skipping: [node2] => (item=[u'/etc/resolv.conf', u'domain ']) 
+2019-11-15 14:34:13,452 p=98395 u=root |  skipping: [node2] => (item=[u'/etc/resolv.conf', u'options ']) 
+2019-11-15 14:34:13,481 p=98395 u=root |  TASK [kubernetes/preinstall : Remove search/domain/nameserver options after block] *****************************************************
+2019-11-15 14:34:13,481 p=98395 u=root |  Friday 15 November 2019  14:34:13 +0800 (0:00:00.100)       0:00:38.265 ******* 
+2019-11-15 14:34:13,523 p=98395 u=root |  skipping: [node2] => (item=[u'/etc/resolv.conf', u'search ']) 
+2019-11-15 14:34:13,532 p=98395 u=root |  skipping: [node2] => (item=[u'/etc/resolv.conf', u'nameserver ']) 
+2019-11-15 14:34:13,545 p=98395 u=root |  skipping: [node2] => (item=[u'/etc/resolv.conf', u'domain ']) 
+2019-11-15 14:34:13,556 p=98395 u=root |  skipping: [node2] => (item=[u'/etc/resolv.conf', u'options ']) 
+2019-11-15 14:34:13,584 p=98395 u=root |  TASK [kubernetes/preinstall : get temporary resolveconf cloud init file content] *******************************************************
+2019-11-15 14:34:13,585 p=98395 u=root |  Friday 15 November 2019  14:34:13 +0800 (0:00:00.103)       0:00:38.368 ******* 
+2019-11-15 14:34:13,616 p=98395 u=root |  skipping: [node2]
+2019-11-15 14:34:13,642 p=98395 u=root |  TASK [kubernetes/preinstall : persist resolvconf cloud init file] **********************************************************************
+2019-11-15 14:34:13,643 p=98395 u=root |  Friday 15 November 2019  14:34:13 +0800 (0:00:00.057)       0:00:38.426 ******* 
+2019-11-15 14:34:13,665 p=98395 u=root |  skipping: [node2]
+2019-11-15 14:34:13,694 p=98395 u=root |  TASK [kubernetes/preinstall : Update package management cache (zypper) - SUSE] *********************************************************
+2019-11-15 14:34:13,694 p=98395 u=root |  Friday 15 November 2019  14:34:13 +0800 (0:00:00.051)       0:00:38.478 ******* 
+2019-11-15 14:34:13,715 p=98395 u=root |  skipping: [node2]
+2019-11-15 14:34:13,741 p=98395 u=root |  TASK [kubernetes/preinstall : Update package management cache (APT)] *******************************************************************
+2019-11-15 14:34:13,741 p=98395 u=root |  Friday 15 November 2019  14:34:13 +0800 (0:00:00.046)       0:00:38.524 ******* 
+2019-11-15 14:34:13,763 p=98395 u=root |  skipping: [node2]
+2019-11-15 14:34:13,790 p=98395 u=root |  TASK [kubernetes/preinstall : Install python-dnf for latest RedHat versions] ***********************************************************
+2019-11-15 14:34:13,790 p=98395 u=root |  Friday 15 November 2019  14:34:13 +0800 (0:00:00.049)       0:00:38.574 ******* 
+2019-11-15 14:34:13,814 p=98395 u=root |  skipping: [node2]
+2019-11-15 14:34:13,847 p=98395 u=root |  TASK [kubernetes/preinstall : Install epel-release on RedHat/CentOS] *******************************************************************
+2019-11-15 14:34:13,847 p=98395 u=root |  Friday 15 November 2019  14:34:13 +0800 (0:00:00.056)       0:00:38.630 ******* 
+2019-11-15 14:34:13,875 p=98395 u=root |  skipping: [node2]
+2019-11-15 14:34:13,903 p=98395 u=root |  TASK [kubernetes/preinstall : Update common_required_pkgs with ipvsadm when kube_proxy_mode is ipvs] ***********************************
+2019-11-15 14:34:13,903 p=98395 u=root |  Friday 15 November 2019  14:34:13 +0800 (0:00:00.056)       0:00:38.687 ******* 
+2019-11-15 14:34:14,130 p=98395 u=root |  ok: [node2]
+2019-11-15 14:34:14,165 p=98395 u=root |  TASK [kubernetes/preinstall : Install packages requirements] ***************************************************************************
+2019-11-15 14:34:14,165 p=98395 u=root |  Friday 15 November 2019  14:34:14 +0800 (0:00:00.261)       0:00:38.949 ******* 
+2019-11-15 14:34:20,723 p=98395 u=root |  changed: [node2]
+2019-11-15 14:34:20,749 p=98395 u=root |  TASK [kubernetes/preinstall : Install ipvsadm for ClearLinux] **************************************************************************
+2019-11-15 14:34:20,749 p=98395 u=root |  Friday 15 November 2019  14:34:20 +0800 (0:00:06.583)       0:00:45.532 ******* 
+2019-11-15 14:34:20,780 p=98395 u=root |  skipping: [node2]
+2019-11-15 14:34:20,810 p=98395 u=root |  TASK [kubernetes/preinstall : Confirm selinux deployed] ********************************************************************************
+2019-11-15 14:34:20,810 p=98395 u=root |  Friday 15 November 2019  14:34:20 +0800 (0:00:00.060)       0:00:45.593 ******* 
+2019-11-15 14:34:21,309 p=98395 u=root |  ok: [node2]
+2019-11-15 14:34:21,336 p=98395 u=root |  TASK [kubernetes/preinstall : Set selinux policy] **************************************************************************************
+2019-11-15 14:34:21,336 p=98395 u=root |  Friday 15 November 2019  14:34:21 +0800 (0:00:00.525)       0:00:46.119 ******* 
+2019-11-15 14:34:22,113 p=98395 u=root |  ok: [node2]
+2019-11-15 14:34:22,141 p=98395 u=root |  TASK [kubernetes/preinstall : Disable IPv6 DNS lookup] *********************************************************************************
+2019-11-15 14:34:22,142 p=98395 u=root |  Friday 15 November 2019  14:34:22 +0800 (0:00:00.805)       0:00:46.925 ******* 
+2019-11-15 14:34:22,162 p=98395 u=root |  skipping: [node2]
+2019-11-15 14:34:22,188 p=98395 u=root |  TASK [kubernetes/preinstall : Stat sysctl file configuration] **************************************************************************
+2019-11-15 14:34:22,189 p=98395 u=root |  Friday 15 November 2019  14:34:22 +0800 (0:00:00.047)       0:00:46.972 ******* 
+2019-11-15 14:34:22,661 p=98395 u=root |  ok: [node2]
+2019-11-15 14:34:22,695 p=98395 u=root |  TASK [kubernetes/preinstall : Change sysctl file path to link source if linked] ********************************************************
+2019-11-15 14:34:22,695 p=98395 u=root |  Friday 15 November 2019  14:34:22 +0800 (0:00:00.506)       0:00:47.479 ******* 
+2019-11-15 14:34:22,887 p=98395 u=root |  ok: [node2]
+2019-11-15 14:34:22,917 p=98395 u=root |  TASK [kubernetes/preinstall : Make sure sysctl file path folder exists] ****************************************************************
+2019-11-15 14:34:22,918 p=98395 u=root |  Friday 15 November 2019  14:34:22 +0800 (0:00:00.222)       0:00:47.701 ******* 
+2019-11-15 14:34:23,412 p=98395 u=root |  ok: [node2]
+2019-11-15 14:34:23,440 p=98395 u=root |  TASK [kubernetes/preinstall : Enable ip forwarding] ************************************************************************************
+2019-11-15 14:34:23,441 p=98395 u=root |  Friday 15 November 2019  14:34:23 +0800 (0:00:00.523)       0:00:48.224 ******* 
+2019-11-15 14:34:24,029 p=98395 u=root |  changed: [node2]
+2019-11-15 14:34:24,058 p=98395 u=root |  TASK [kubernetes/preinstall : Hosts | populate inventory into hosts file] **************************************************************
+2019-11-15 14:34:24,058 p=98395 u=root |  Friday 15 November 2019  14:34:24 +0800 (0:00:00.617)       0:00:48.841 ******* 
+2019-11-15 14:34:24,946 p=98395 u=root |  changed: [node2]
+2019-11-15 14:34:24,973 p=98395 u=root |  TASK [kubernetes/preinstall : Hosts | populate kubernetes loadbalancer address into hosts file] ****************************************
+2019-11-15 14:34:24,974 p=98395 u=root |  Friday 15 November 2019  14:34:24 +0800 (0:00:00.915)       0:00:49.757 ******* 
+2019-11-15 14:34:25,000 p=98395 u=root |  skipping: [node2]
+2019-11-15 14:34:25,027 p=98395 u=root |  TASK [kubernetes/preinstall : Hosts | Retrieve hosts file content] *********************************************************************
+2019-11-15 14:34:25,027 p=98395 u=root |  Friday 15 November 2019  14:34:25 +0800 (0:00:00.053)       0:00:49.810 ******* 
+2019-11-15 14:34:25,590 p=98395 u=root |  ok: [node2]
+2019-11-15 14:34:25,617 p=98395 u=root |  TASK [kubernetes/preinstall : Hosts | Extract existing entries for localhost from hosts file] ******************************************
+2019-11-15 14:34:25,617 p=98395 u=root |  Friday 15 November 2019  14:34:25 +0800 (0:00:00.589)       0:00:50.400 ******* 
+2019-11-15 14:34:25,835 p=98395 u=root |  ok: [node2] => (item=127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4)
+2019-11-15 14:34:25,868 p=98395 u=root |  ok: [node2] => (item=::1         localhost localhost.localdomain localhost6 localhost6.localdomain6)
+2019-11-15 14:34:25,884 p=98395 u=root |  skipping: [node2] => (item=192.168.189.128 master) 
+2019-11-15 14:34:25,899 p=98395 u=root |  skipping: [node2] => (item=192.168.189.129 node1) 
+2019-11-15 14:34:25,912 p=98395 u=root |  skipping: [node2] => (item=192.168.189.130 node2) 
+2019-11-15 14:34:25,940 p=98395 u=root |  skipping: [node2] => (item=# Ansible inventory hosts BEGIN) 
+2019-11-15 14:34:25,955 p=98395 u=root |  skipping: [node2] => (item=192.168.0.5 master.cluster.local master) 
+2019-11-15 14:34:25,967 p=98395 u=root |  skipping: [node2] => (item=192.168.189.132 node2.cluster.local node2) 
+2019-11-15 14:34:25,982 p=98395 u=root |  skipping: [node2] => (item=# Ansible inventory hosts END) 
+2019-11-15 14:34:26,015 p=98395 u=root |  TASK [kubernetes/preinstall : Hosts | Update target hosts file entries dict with required entries] *************************************
+2019-11-15 14:34:26,015 p=98395 u=root |  Friday 15 November 2019  14:34:26 +0800 (0:00:00.397)       0:00:50.798 ******* 
+2019-11-15 14:34:26,214 p=98395 u=root |  ok: [node2] => (item={'value': {u'expected': [u'localhost6', u'localhost6.localdomain'], u'unexpected': [u'localhost', u'localhost.localdomain']}, 'key': u'::1'})
+2019-11-15 14:34:26,243 p=98395 u=root |  ok: [node2] => (item={'value': {u'expected': [u'localhost', u'localhost.localdomain']}, 'key': u'127.0.0.1'})
+2019-11-15 14:34:26,272 p=98395 u=root |  TASK [kubernetes/preinstall : Hosts | Update (if necessary) hosts file] ****************************************************************
+2019-11-15 14:34:26,272 p=98395 u=root |  Friday 15 November 2019  14:34:26 +0800 (0:00:00.257)       0:00:51.055 ******* 
+2019-11-15 14:34:26,761 p=98395 u=root |  changed: [node2] => (item={'value': [u'localhost6', u'localhost6.localdomain6', u'localhost6.localdomain'], 'key': u'::1'})
+2019-11-15 14:34:27,078 p=98395 u=root |  changed: [node2] => (item={'value': [u'localhost', u'localhost.localdomain', u'localhost4', u'localhost4.localdomain4'], 'key': u'127.0.0.1'})
+2019-11-15 14:34:27,111 p=98395 u=root |  TASK [kubernetes/preinstall : Configure dhclient to supersede search/domain/nameservers] ***********************************************
+2019-11-15 14:34:27,111 p=98395 u=root |  Friday 15 November 2019  14:34:27 +0800 (0:00:00.839)       0:00:51.894 ******* 
+2019-11-15 14:34:27,133 p=98395 u=root |  skipping: [node2]
+2019-11-15 14:34:27,159 p=98395 u=root |  TASK [kubernetes/preinstall : Configure dhclient hooks for resolv.conf (non-RH)] *******************************************************
+2019-11-15 14:34:27,159 p=98395 u=root |  Friday 15 November 2019  14:34:27 +0800 (0:00:00.048)       0:00:51.943 ******* 
+2019-11-15 14:34:27,181 p=98395 u=root |  skipping: [node2]
+2019-11-15 14:34:27,208 p=98395 u=root |  TASK [kubernetes/preinstall : Configure dhclient hooks for resolv.conf (RH-only)] ******************************************************
+2019-11-15 14:34:27,208 p=98395 u=root |  Friday 15 November 2019  14:34:27 +0800 (0:00:00.049)       0:00:51.992 ******* 
+2019-11-15 14:34:27,227 p=98395 u=root |  skipping: [node2]
+2019-11-15 14:34:27,255 p=98395 u=root |  TASK [kubernetes/preinstall : Remove kubespray specific config from dhclient config] ***************************************************
+2019-11-15 14:34:27,255 p=98395 u=root |  Friday 15 November 2019  14:34:27 +0800 (0:00:00.046)       0:00:52.038 ******* 
+2019-11-15 14:34:27,282 p=98395 u=root |  skipping: [node2]
+2019-11-15 14:34:27,312 p=98395 u=root |  TASK [kubernetes/preinstall : Remove kubespray specific dhclient hook] *****************************************************************
+2019-11-15 14:34:27,312 p=98395 u=root |  Friday 15 November 2019  14:34:27 +0800 (0:00:00.057)       0:00:52.096 ******* 
+2019-11-15 14:34:27,782 p=98395 u=root |  ok: [node2]
+2019-11-15 14:34:27,811 p=98395 u=root |  TASK [kubernetes/preinstall : Check if we are running inside a Azure VM] ***************************************************************
+2019-11-15 14:34:27,811 p=98395 u=root |  Friday 15 November 2019  14:34:27 +0800 (0:00:00.498)       0:00:52.595 ******* 
+2019-11-15 14:34:28,276 p=98395 u=root |  ok: [node2]
+2019-11-15 14:34:28,306 p=98395 u=root |  TASK [kubernetes/preinstall : install growpart] ****************************************************************************************
+2019-11-15 14:34:28,307 p=98395 u=root |  Friday 15 November 2019  14:34:28 +0800 (0:00:00.495)       0:00:53.090 ******* 
+2019-11-15 14:34:28,406 p=98395 u=root |  skipping: [node2]
+2019-11-15 14:34:28,485 p=98395 u=root |  TASK [kubernetes/preinstall : check if growpart needs to be run] ***********************************************************************
+2019-11-15 14:34:28,485 p=98395 u=root |  Friday 15 November 2019  14:34:28 +0800 (0:00:00.178)       0:00:53.268 ******* 
+2019-11-15 14:34:28,511 p=98395 u=root |  skipping: [node2]
+2019-11-15 14:34:28,538 p=98395 u=root |  TASK [kubernetes/preinstall : check fs type] *******************************************************************************************
+2019-11-15 14:34:28,538 p=98395 u=root |  Friday 15 November 2019  14:34:28 +0800 (0:00:00.053)       0:00:53.322 ******* 
+2019-11-15 14:34:28,560 p=98395 u=root |  skipping: [node2]
+2019-11-15 14:34:28,586 p=98395 u=root |  TASK [kubernetes/preinstall : run growpart] ********************************************************************************************
+2019-11-15 14:34:28,586 p=98395 u=root |  Friday 15 November 2019  14:34:28 +0800 (0:00:00.047)       0:00:53.370 ******* 
+2019-11-15 14:34:28,609 p=98395 u=root |  skipping: [node2]
+2019-11-15 14:34:28,635 p=98395 u=root |  TASK [kubernetes/preinstall : run xfs_growfs] ******************************************************************************************
+2019-11-15 14:34:28,635 p=98395 u=root |  Friday 15 November 2019  14:34:28 +0800 (0:00:00.048)       0:00:53.418 ******* 
+2019-11-15 14:34:28,656 p=98395 u=root |  skipping: [node2]
+2019-11-15 14:34:28,683 p=98395 u=root |  TASK [container-engine/cri-o : gather os specific variables] ***************************************************************************
+2019-11-15 14:34:28,683 p=98395 u=root |  Friday 15 November 2019  14:34:28 +0800 (0:00:00.048)       0:00:53.466 ******* 
+2019-11-15 14:34:28,725 p=98395 u=root |  skipping: [node2] => (item=/data/soft/kubesphere-all-v2.1.0/k8s/roles/container-engine/cri-o/vars/../vars/redhat.yml) 
+2019-11-15 14:34:28,752 p=98395 u=root |  TASK [container-engine/cri-o : Add OpenShift Origin repository] ************************************************************************
+2019-11-15 14:34:28,752 p=98395 u=root |  Friday 15 November 2019  14:34:28 +0800 (0:00:00.068)       0:00:53.535 ******* 
+2019-11-15 14:34:28,774 p=98395 u=root |  skipping: [node2]
+2019-11-15 14:34:28,804 p=98395 u=root |  TASK [container-engine/cri-o : Add CRI-O PPA] ******************************************************************************************
+2019-11-15 14:34:28,804 p=98395 u=root |  Friday 15 November 2019  14:34:28 +0800 (0:00:00.052)       0:00:53.588 ******* 
+2019-11-15 14:34:28,827 p=98395 u=root |  skipping: [node2]
+2019-11-15 14:34:28,852 p=98395 u=root |  TASK [container-engine/cri-o : Add CRI-O PPA] ******************************************************************************************
+2019-11-15 14:34:28,852 p=98395 u=root |  Friday 15 November 2019  14:34:28 +0800 (0:00:00.047)       0:00:53.636 ******* 
+2019-11-15 14:34:28,877 p=98395 u=root |  skipping: [node2]
+2019-11-15 14:34:28,906 p=98395 u=root |  TASK [container-engine/cri-o : Install crictl] *****************************************************************************************
+2019-11-15 14:34:28,906 p=98395 u=root |  Friday 15 November 2019  14:34:28 +0800 (0:00:00.054)       0:00:53.690 ******* 
+2019-11-15 14:34:28,929 p=98395 u=root |  skipping: [node2]
+2019-11-15 14:34:28,956 p=98395 u=root |  TASK [container-engine/cri-o : Make sure needed folders exist in the system] ***********************************************************
+2019-11-15 14:34:28,956 p=98395 u=root |  Friday 15 November 2019  14:34:28 +0800 (0:00:00.049)       0:00:53.740 ******* 
+2019-11-15 14:34:28,984 p=98395 u=root |  skipping: [node2] => (item=/etc/crio) 
+2019-11-15 14:34:28,998 p=98395 u=root |  skipping: [node2] => (item=/etc/containers) 
+2019-11-15 14:34:29,024 p=98395 u=root |  TASK [container-engine/cri-o : Install cri-o packages] *********************************************************************************
+2019-11-15 14:34:29,024 p=98395 u=root |  Friday 15 November 2019  14:34:29 +0800 (0:00:00.067)       0:00:53.807 ******* 
+2019-11-15 14:34:29,047 p=98395 u=root |  skipping: [node2]
+2019-11-15 14:34:29,072 p=98395 u=root |  TASK [container-engine/cri-o : Install cri-o config] ***********************************************************************************
+2019-11-15 14:34:29,072 p=98395 u=root |  Friday 15 November 2019  14:34:29 +0800 (0:00:00.048)       0:00:53.856 ******* 
+2019-11-15 14:34:29,095 p=98395 u=root |  skipping: [node2]
+2019-11-15 14:34:29,122 p=98395 u=root |  TASK [container-engine/cri-o : Copy mounts.conf] ***************************************************************************************
+2019-11-15 14:34:29,122 p=98395 u=root |  Friday 15 November 2019  14:34:29 +0800 (0:00:00.049)       0:00:53.905 ******* 
+2019-11-15 14:34:29,145 p=98395 u=root |  skipping: [node2]
+2019-11-15 14:34:29,171 p=98395 u=root |  TASK [container-engine/cri-o : Create directory for oci hooks] *************************************************************************
+2019-11-15 14:34:29,171 p=98395 u=root |  Friday 15 November 2019  14:34:29 +0800 (0:00:00.048)       0:00:53.954 ******* 
+2019-11-15 14:34:29,192 p=98395 u=root |  skipping: [node2]
+2019-11-15 14:34:29,217 p=98395 u=root |  TASK [container-engine/cri-o : Install cri-o service] **********************************************************************************
+2019-11-15 14:34:29,219 p=98395 u=root |  Friday 15 November 2019  14:34:29 +0800 (0:00:00.047)       0:00:54.002 ******* 
+2019-11-15 14:34:29,242 p=98395 u=root |  skipping: [node2]
+2019-11-15 14:34:29,267 p=98395 u=root |  TASK [container-engine/containerd : Fail containerd setup if distribution is not supported] ********************************************
+2019-11-15 14:34:29,267 p=98395 u=root |  Friday 15 November 2019  14:34:29 +0800 (0:00:00.048)       0:00:54.051 ******* 
+2019-11-15 14:34:29,298 p=98395 u=root |  skipping: [node2]
+2019-11-15 14:34:29,329 p=98395 u=root |  TASK [container-engine/containerd : gather os specific variables] **********************************************************************
+2019-11-15 14:34:29,329 p=98395 u=root |  Friday 15 November 2019  14:34:29 +0800 (0:00:00.061)       0:00:54.113 ******* 
+2019-11-15 14:34:29,374 p=98395 u=root |  skipping: [node2] => (item=/data/soft/kubesphere-all-v2.1.0/k8s/roles/container-engine/containerd/vars/../vars/redhat.yml) 
+2019-11-15 14:34:29,402 p=98395 u=root |  TASK [container-engine/containerd : include_tasks] *************************************************************************************
+2019-11-15 14:34:29,402 p=98395 u=root |  Friday 15 November 2019  14:34:29 +0800 (0:00:00.072)       0:00:54.186 ******* 
+2019-11-15 14:34:29,425 p=98395 u=root |  skipping: [node2]
+2019-11-15 14:34:29,453 p=98395 u=root |  TASK [container-engine/containerd : ensure containerd config directory] ****************************************************************
+2019-11-15 14:34:29,453 p=98395 u=root |  Friday 15 November 2019  14:34:29 +0800 (0:00:00.050)       0:00:54.236 ******* 
+2019-11-15 14:34:29,475 p=98395 u=root |  skipping: [node2]
+2019-11-15 14:34:29,505 p=98395 u=root |  TASK [container-engine/containerd : Copy containerd config file] ***********************************************************************
+2019-11-15 14:34:29,505 p=98395 u=root |  Friday 15 November 2019  14:34:29 +0800 (0:00:00.052)       0:00:54.288 ******* 
+2019-11-15 14:34:29,526 p=98395 u=root |  skipping: [node2]
+2019-11-15 14:34:29,555 p=98395 u=root |  TASK [container-engine/containerd : Set containerd pin priority to apt_preferences on Debian family] ***********************************
+2019-11-15 14:34:29,555 p=98395 u=root |  Friday 15 November 2019  14:34:29 +0800 (0:00:00.050)       0:00:54.339 ******* 
+2019-11-15 14:34:29,577 p=98395 u=root |  skipping: [node2]
+2019-11-15 14:34:29,603 p=98395 u=root |  TASK [container-engine/containerd : ensure containerd packages are installed] **********************************************************
+2019-11-15 14:34:29,603 p=98395 u=root |  Friday 15 November 2019  14:34:29 +0800 (0:00:00.048)       0:00:54.387 ******* 
+2019-11-15 14:34:29,635 p=98395 u=root |  skipping: [node2] => (item=) 
+2019-11-15 14:34:29,663 p=98395 u=root |  TASK [container-engine/containerd : Check if runc is installed] ************************************************************************
+2019-11-15 14:34:29,663 p=98395 u=root |  Friday 15 November 2019  14:34:29 +0800 (0:00:00.059)       0:00:54.446 ******* 
+2019-11-15 14:34:29,686 p=98395 u=root |  skipping: [node2]
+2019-11-15 14:34:29,712 p=98395 u=root |  TASK [container-engine/containerd : Install runc package if necessary] *****************************************************************
+2019-11-15 14:34:29,712 p=98395 u=root |  Friday 15 November 2019  14:34:29 +0800 (0:00:00.049)       0:00:54.495 ******* 
+2019-11-15 14:34:29,733 p=98395 u=root |  skipping: [node2]
+2019-11-15 14:34:29,761 p=98395 u=root |  TASK [container-engine/containerd : include_tasks] *************************************************************************************
+2019-11-15 14:34:29,761 p=98395 u=root |  Friday 15 November 2019  14:34:29 +0800 (0:00:00.048)       0:00:54.544 ******* 
+2019-11-15 14:34:29,783 p=98395 u=root |  skipping: [node2]
+2019-11-15 14:34:29,812 p=98395 u=root |  TASK [container-engine/docker-storage : docker-storage-setup | install git and make] ***************************************************
+2019-11-15 14:34:29,813 p=98395 u=root |  Friday 15 November 2019  14:34:29 +0800 (0:00:00.051)       0:00:54.596 ******* 
+2019-11-15 14:34:29,843 p=98395 u=root |  skipping: [node2] => (item=git) 
+2019-11-15 14:34:29,855 p=98395 u=root |  skipping: [node2] => (item=make) 
+2019-11-15 14:34:29,883 p=98395 u=root |  TASK [container-engine/docker-storage : docker-storage-setup | docker-storage-setup sysconfig template] ********************************
+2019-11-15 14:34:29,883 p=98395 u=root |  Friday 15 November 2019  14:34:29 +0800 (0:00:00.070)       0:00:54.666 ******* 
+2019-11-15 14:34:29,909 p=98395 u=root |  skipping: [node2]
+2019-11-15 14:34:29,936 p=98395 u=root |  TASK [container-engine/docker-storage : docker-storage-override-directory | docker service storage-setup override dir] *****************
+2019-11-15 14:34:29,937 p=98395 u=root |  Friday 15 November 2019  14:34:29 +0800 (0:00:00.053)       0:00:54.720 ******* 
+2019-11-15 14:34:29,960 p=98395 u=root |  skipping: [node2]
+2019-11-15 14:34:29,986 p=98395 u=root |  TASK [container-engine/docker-storage : docker-storage-override | docker service storage-setup override file] **************************
+2019-11-15 14:34:29,986 p=98395 u=root |  Friday 15 November 2019  14:34:29 +0800 (0:00:00.049)       0:00:54.769 ******* 
+2019-11-15 14:34:30,012 p=98395 u=root |  skipping: [node2]
+2019-11-15 14:34:30,039 p=98395 u=root |  TASK [container-engine/docker-storage : docker-storage-setup | install lvm2] ***********************************************************
+2019-11-15 14:34:30,039 p=98395 u=root |  Friday 15 November 2019  14:34:30 +0800 (0:00:00.053)       0:00:54.823 ******* 
+2019-11-15 14:34:30,064 p=98395 u=root |  skipping: [node2]
+2019-11-15 14:34:30,090 p=98395 u=root |  TASK [container-engine/docker-storage : docker-storage-setup | install and run container-storage-setup] ********************************
+2019-11-15 14:34:30,091 p=98395 u=root |  Friday 15 November 2019  14:34:30 +0800 (0:00:00.051)       0:00:54.874 ******* 
+2019-11-15 14:34:30,116 p=98395 u=root |  skipping: [node2]
+2019-11-15 14:34:30,143 p=98395 u=root |  TASK [container-engine/docker : check if atomic host] **********************************************************************************
+2019-11-15 14:34:30,144 p=98395 u=root |  Friday 15 November 2019  14:34:30 +0800 (0:00:00.052)       0:00:54.927 ******* 
+2019-11-15 14:34:30,553 p=98395 u=root |  ok: [node2]
+2019-11-15 14:34:30,578 p=98395 u=root |  TASK [container-engine/docker : set is_atomic] *****************************************************************************************
+2019-11-15 14:34:30,578 p=98395 u=root |  Friday 15 November 2019  14:34:30 +0800 (0:00:00.434)       0:00:55.361 ******* 
+2019-11-15 14:34:30,690 p=98395 u=root |  ok: [node2]
+2019-11-15 14:34:30,719 p=98395 u=root |  TASK [container-engine/docker : gather os specific variables] **************************************************************************
+2019-11-15 14:34:30,719 p=98395 u=root |  Friday 15 November 2019  14:34:30 +0800 (0:00:00.140)       0:00:55.502 ******* 
+2019-11-15 14:34:30,863 p=98395 u=root |  ok: [node2] => (item=/data/soft/kubesphere-all-v2.1.0/k8s/roles/container-engine/docker/vars/../vars/redhat.yml)
+2019-11-15 14:34:30,895 p=98395 u=root |  TASK [container-engine/docker : Warn about Docker version on SUSE] *********************************************************************
+2019-11-15 14:34:30,895 p=98395 u=root |  Friday 15 November 2019  14:34:30 +0800 (0:00:00.176)       0:00:55.679 ******* 
+2019-11-15 14:34:30,921 p=98395 u=root |  skipping: [node2]
+2019-11-15 14:34:30,947 p=98395 u=root |  TASK [container-engine/docker : include_tasks] *****************************************************************************************
+2019-11-15 14:34:30,948 p=98395 u=root |  Friday 15 November 2019  14:34:30 +0800 (0:00:00.052)       0:00:55.731 ******* 
+2019-11-15 14:34:31,022 p=98395 u=root |  included: /data/soft/kubesphere-all-v2.1.0/k8s/roles/container-engine/docker/tasks/set_facts_dns.yml for node2
+2019-11-15 14:34:31,052 p=98395 u=root |  TASK [container-engine/docker : set dns server for docker] *****************************************************************************
+2019-11-15 14:34:31,053 p=98395 u=root |  Friday 15 November 2019  14:34:31 +0800 (0:00:00.105)       0:00:55.836 ******* 
+2019-11-15 14:34:31,186 p=98395 u=root |  ok: [node2]
+2019-11-15 14:34:31,212 p=98395 u=root |  TASK [container-engine/docker : show docker_dns_servers] *******************************************************************************
+2019-11-15 14:34:31,213 p=98395 u=root |  Friday 15 November 2019  14:34:31 +0800 (0:00:00.160)       0:00:55.996 ******* 
+2019-11-15 14:34:31,335 p=98395 u=root |  ok: [node2] => {
+    "msg": [
+        "10.233.0.3"
+    ]
+}
+2019-11-15 14:34:31,362 p=98395 u=root |  TASK [container-engine/docker : set base docker dns facts] *****************************************************************************
+2019-11-15 14:34:31,362 p=98395 u=root |  Friday 15 November 2019  14:34:31 +0800 (0:00:00.149)       0:00:56.146 ******* 
+2019-11-15 14:34:31,489 p=98395 u=root |  ok: [node2]
+2019-11-15 14:34:31,523 p=98395 u=root |  TASK [container-engine/docker : add upstream dns servers] ******************************************************************************
+2019-11-15 14:34:31,523 p=98395 u=root |  Friday 15 November 2019  14:34:31 +0800 (0:00:00.160)       0:00:56.306 ******* 
+2019-11-15 14:34:31,649 p=98395 u=root |  ok: [node2]
+2019-11-15 14:34:31,676 p=98395 u=root |  TASK [container-engine/docker : add global searchdomains] ******************************************************************************
+2019-11-15 14:34:31,677 p=98395 u=root |  Friday 15 November 2019  14:34:31 +0800 (0:00:00.153)       0:00:56.460 ******* 
+2019-11-15 14:34:31,802 p=98395 u=root |  ok: [node2]
+2019-11-15 14:34:31,835 p=98395 u=root |  TASK [container-engine/docker : check system nameservers] ******************************************************************************
+2019-11-15 14:34:31,835 p=98395 u=root |  Friday 15 November 2019  14:34:31 +0800 (0:00:00.158)       0:00:56.619 ******* 
+2019-11-15 14:34:32,263 p=98395 u=root |  ok: [node2]
+2019-11-15 14:34:32,289 p=98395 u=root |  TASK [container-engine/docker : check system search domains] ***************************************************************************
+2019-11-15 14:34:32,289 p=98395 u=root |  Friday 15 November 2019  14:34:32 +0800 (0:00:00.454)       0:00:57.073 ******* 
+2019-11-15 14:34:32,713 p=98395 u=root |  ok: [node2]
+2019-11-15 14:34:32,743 p=98395 u=root |  TASK [container-engine/docker : add system nameservers to docker options] **************************************************************
+2019-11-15 14:34:32,743 p=98395 u=root |  Friday 15 November 2019  14:34:32 +0800 (0:00:00.453)       0:00:57.527 ******* 
+2019-11-15 14:34:32,876 p=98395 u=root |  ok: [node2]
+2019-11-15 14:34:32,909 p=98395 u=root |  TASK [container-engine/docker : add system search domains to docker options] ***********************************************************
+2019-11-15 14:34:32,909 p=98395 u=root |  Friday 15 November 2019  14:34:32 +0800 (0:00:00.165)       0:00:57.692 ******* 
+2019-11-15 14:34:32,939 p=98395 u=root |  skipping: [node2]
+2019-11-15 14:34:32,966 p=98395 u=root |  TASK [container-engine/docker : check number of nameservers] ***************************************************************************
+2019-11-15 14:34:32,966 p=98395 u=root |  Friday 15 November 2019  14:34:32 +0800 (0:00:00.057)       0:00:57.750 ******* 
+2019-11-15 14:34:33,001 p=98395 u=root |  skipping: [node2]
+2019-11-15 14:34:33,030 p=98395 u=root |  TASK [container-engine/docker : rtrim number of nameservers to 3] **********************************************************************
+2019-11-15 14:34:33,031 p=98395 u=root |  Friday 15 November 2019  14:34:33 +0800 (0:00:00.064)       0:00:57.814 ******* 
+2019-11-15 14:34:33,059 p=98395 u=root |  skipping: [node2]
+2019-11-15 14:34:33,086 p=98395 u=root |  TASK [container-engine/docker : check number of search domains] ************************************************************************
+2019-11-15 14:34:33,086 p=98395 u=root |  Friday 15 November 2019  14:34:33 +0800 (0:00:00.055)       0:00:57.870 ******* 
+2019-11-15 14:34:33,116 p=98395 u=root |  skipping: [node2]
+2019-11-15 14:34:33,142 p=98395 u=root |  TASK [container-engine/docker : check length of search domains] ************************************************************************
+2019-11-15 14:34:33,142 p=98395 u=root |  Friday 15 November 2019  14:34:33 +0800 (0:00:00.055)       0:00:57.925 ******* 
+2019-11-15 14:34:33,177 p=98395 u=root |  skipping: [node2]
+2019-11-15 14:34:33,209 p=98395 u=root |  TASK [container-engine/docker : check for minimum kernel version] **********************************************************************
+2019-11-15 14:34:33,210 p=98395 u=root |  Friday 15 November 2019  14:34:33 +0800 (0:00:00.067)       0:00:57.993 ******* 
+2019-11-15 14:34:33,235 p=98395 u=root |  skipping: [node2]
+2019-11-15 14:34:33,261 p=98395 u=root |  TASK [container-engine/docker : check docker-options] **********************************************************************************
+2019-11-15 14:34:33,262 p=98395 u=root |  Friday 15 November 2019  14:34:33 +0800 (0:00:00.052)       0:00:58.045 ******* 
+2019-11-15 14:34:33,741 p=98395 u=root |  ok: [node2]
+2019-11-15 14:34:33,783 p=98395 u=root |  TASK [container-engine/docker : Ensure old versions of Docker are not installed. | Debian] *********************************************
+2019-11-15 14:34:33,784 p=98395 u=root |  Friday 15 November 2019  14:34:33 +0800 (0:00:00.521)       0:00:58.567 ******* 
+2019-11-15 14:34:33,839 p=98395 u=root |  skipping: [node2]
+2019-11-15 14:34:33,893 p=98395 u=root |  TASK [container-engine/docker : Ensure old versions of Docker are not installed. | RedHat] *********************************************
+2019-11-15 14:34:33,893 p=98395 u=root |  Friday 15 November 2019  14:34:33 +0800 (0:00:00.109)       0:00:58.677 ******* 
+2019-11-15 14:34:35,255 p=98395 u=root |  ok: [node2]
+2019-11-15 14:34:35,281 p=98395 u=root |  TASK [container-engine/docker : ensure docker-ce repository public key is installed] ***************************************************
+2019-11-15 14:34:35,281 p=98395 u=root |  Friday 15 November 2019  14:34:35 +0800 (0:00:01.387)       0:01:00.065 ******* 
+2019-11-15 14:34:35,329 p=98395 u=root |  TASK [container-engine/docker : ensure docker-ce repository is enabled] ****************************************************************
+2019-11-15 14:34:35,329 p=98395 u=root |  Friday 15 November 2019  14:34:35 +0800 (0:00:00.048)       0:01:00.113 ******* 
+2019-11-15 14:34:35,373 p=98395 u=root |  TASK [container-engine/docker : ensure docker-engine repository public key is installed] ***********************************************
+2019-11-15 14:34:35,374 p=98395 u=root |  Friday 15 November 2019  14:34:35 +0800 (0:00:00.044)       0:01:00.157 ******* 
+2019-11-15 14:34:35,416 p=98395 u=root |  skipping: [node2] => (item=) 
+2019-11-15 14:34:35,446 p=98395 u=root |  TASK [container-engine/docker : ensure docker-engine repository is enabled] ************************************************************
+2019-11-15 14:34:35,446 p=98395 u=root |  Friday 15 November 2019  14:34:35 +0800 (0:00:00.072)       0:01:00.229 ******* 
+2019-11-15 14:34:35,488 p=98395 u=root |  skipping: [node2] => (item=) 
+2019-11-15 14:34:35,522 p=98395 u=root |  TASK [container-engine/docker : Configure docker repository on Fedora] *****************************************************************
+2019-11-15 14:34:35,522 p=98395 u=root |  Friday 15 November 2019  14:34:35 +0800 (0:00:00.076)       0:01:00.306 ******* 
+2019-11-15 14:34:35,546 p=98395 u=root |  skipping: [node2]
+2019-11-15 14:34:35,572 p=98395 u=root |  TASK [container-engine/docker : Configure docker repository on RedHat/CentOS/Oracle Linux] *********************************************
+2019-11-15 14:34:35,573 p=98395 u=root |  Friday 15 November 2019  14:34:35 +0800 (0:00:00.050)       0:01:00.356 ******* 
+2019-11-15 14:34:36,258 p=98395 u=root |  changed: [node2]
+2019-11-15 14:34:36,284 p=98395 u=root |  TASK [container-engine/docker : check if container-selinux is available] ***************************************************************
+2019-11-15 14:34:36,284 p=98395 u=root |  Friday 15 November 2019  14:34:36 +0800 (0:00:00.711)       0:01:01.067 ******* 
+2019-11-15 14:34:54,375 p=98395 u=root |  ok: [node2]
+2019-11-15 14:34:54,422 p=98395 u=root |  TASK [container-engine/docker : Configure extras repository on RedHat/CentOS if container-selinux is not available in current repos] ***
+2019-11-15 14:34:54,423 p=98395 u=root |  Friday 15 November 2019  14:34:54 +0800 (0:00:18.138)       0:01:19.206 ******* 
+2019-11-15 14:34:54,466 p=98395 u=root |  skipping: [node2]
+2019-11-15 14:34:54,510 p=98395 u=root |  TASK [container-engine/docker : Copy yum.conf for editing] *****************************************************************************
+2019-11-15 14:34:54,510 p=98395 u=root |  Friday 15 November 2019  14:34:54 +0800 (0:00:00.087)       0:01:19.294 ******* 
+2019-11-15 14:34:55,089 p=98395 u=root |  changed: [node2]
+2019-11-15 14:34:55,147 p=98395 u=root |  TASK [container-engine/docker : Edit copy of yum.conf to set obsoletes=0] **************************************************************
+2019-11-15 14:34:55,147 p=98395 u=root |  Friday 15 November 2019  14:34:55 +0800 (0:00:00.636)       0:01:19.930 ******* 
+2019-11-15 14:34:55,657 p=98395 u=root |  changed: [node2]
+2019-11-15 14:34:55,691 p=98395 u=root |  TASK [container-engine/docker : ensure docker packages are installed] ******************************************************************
+2019-11-15 14:34:55,691 p=98395 u=root |  Friday 15 November 2019  14:34:55 +0800 (0:00:00.544)       0:01:20.475 ******* 
+2019-11-15 14:35:37,833 p=98395 u=root |  changed: [node2] => (item={u'yum_conf': u'/etc/yum_docker.conf', u'name': u'docker-ce-18.09.7-3.el7'})
+2019-11-15 14:35:37,927 p=98395 u=root |  TASK [container-engine/docker : Ensure docker packages are installed] ******************************************************************
+2019-11-15 14:35:37,927 p=98395 u=root |  Friday 15 November 2019  14:35:37 +0800 (0:00:42.235)       0:02:02.711 ******* 
+2019-11-15 14:35:38,016 p=98395 u=root |  skipping: [node2] => (item={u'yum_conf': u'/etc/yum_docker.conf', u'name': u'docker-ce-18.09.7-3.el7'}) 
+2019-11-15 14:35:38,063 p=98395 u=root |  TASK [container-engine/docker : get available packages on Ubuntu] **********************************************************************
+2019-11-15 14:35:38,063 p=98395 u=root |  Friday 15 November 2019  14:35:38 +0800 (0:00:00.136)       0:02:02.847 ******* 
+2019-11-15 14:35:38,101 p=98395 u=root |  skipping: [node2]
+2019-11-15 14:35:38,139 p=98395 u=root |  TASK [container-engine/docker : show available packages on ubuntu] *********************************************************************
+2019-11-15 14:35:38,140 p=98395 u=root |  Friday 15 November 2019  14:35:38 +0800 (0:00:00.076)       0:02:02.923 ******* 
+2019-11-15 14:35:38,176 p=98395 u=root |  skipping: [node2]
+2019-11-15 14:35:38,219 p=98395 u=root |  TASK [container-engine/docker : Tell Debian hosts not to change the docker version with apt upgrade] ***********************************
+2019-11-15 14:35:38,220 p=98395 u=root |  Friday 15 November 2019  14:35:38 +0800 (0:00:00.080)       0:02:03.003 ******* 
+2019-11-15 14:35:38,257 p=98395 u=root |  skipping: [node2]
+2019-11-15 14:35:38,303 p=98395 u=root |  TASK [container-engine/docker : ensure service is started if docker packages are already present] **************************************
+2019-11-15 14:35:38,304 p=98395 u=root |  Friday 15 November 2019  14:35:38 +0800 (0:00:00.083)       0:02:03.087 ******* 
+2019-11-15 14:35:38,947 p=98395 u=root |  ok: [node2]
+2019-11-15 14:35:38,950 p=98395 u=root |   [WARNING]: flush_handlers task does not support when conditional
+
+2019-11-15 14:35:38,964 p=98395 u=root |  RUNNING HANDLER [container-engine/docker : restart docker] *****************************************************************************
+2019-11-15 14:35:38,965 p=98395 u=root |  Friday 15 November 2019  14:35:38 +0800 (0:00:00.660)       0:02:03.748 ******* 
+2019-11-15 14:35:39,631 p=98395 u=root |  changed: [node2]
+2019-11-15 14:35:39,635 p=98395 u=root |  RUNNING HANDLER [container-engine/docker : Docker | reload systemd] ********************************************************************
+2019-11-15 14:35:39,636 p=98395 u=root |  Friday 15 November 2019  14:35:39 +0800 (0:00:00.670)       0:02:04.419 ******* 
+2019-11-15 14:35:40,255 p=98395 u=root |  ok: [node2]
+2019-11-15 14:35:40,259 p=98395 u=root |  RUNNING HANDLER [container-engine/docker : Docker | reload docker.socket] **************************************************************
+2019-11-15 14:35:40,259 p=98395 u=root |  Friday 15 November 2019  14:35:40 +0800 (0:00:00.623)       0:02:05.043 ******* 
+2019-11-15 14:35:40,315 p=98395 u=root |  skipping: [node2]
+2019-11-15 14:35:40,319 p=98395 u=root |  RUNNING HANDLER [container-engine/docker : Docker | reload docker] *********************************************************************
+2019-11-15 14:35:40,319 p=98395 u=root |  Friday 15 November 2019  14:35:40 +0800 (0:00:00.059)       0:02:05.102 ******* 
+2019-11-15 14:35:42,393 p=98395 u=root |  changed: [node2]
+2019-11-15 14:35:42,397 p=98395 u=root |  RUNNING HANDLER [container-engine/docker : Docker | wait for docker] *******************************************************************
+2019-11-15 14:35:42,397 p=98395 u=root |  Friday 15 November 2019  14:35:42 +0800 (0:00:02.077)       0:02:07.180 ******* 
+2019-11-15 14:35:42,993 p=98395 u=root |  changed: [node2]
+2019-11-15 14:35:43,038 p=98395 u=root |  TASK [container-engine/docker : set fact for docker_version] ***************************************************************************
+2019-11-15 14:35:43,039 p=98395 u=root |  Friday 15 November 2019  14:35:43 +0800 (0:00:00.641)       0:02:07.822 ******* 
+2019-11-15 14:35:43,660 p=98395 u=root |  ok: [node2]
+2019-11-15 14:35:43,707 p=98395 u=root |  TASK [container-engine/docker : check minimum docker version for docker_dns mode. You need at least docker version >= 1.12 for resolvconf_mode=docker_dns] ***
+2019-11-15 14:35:43,707 p=98395 u=root |  Friday 15 November 2019  14:35:43 +0800 (0:00:00.668)       0:02:08.491 ******* 
+2019-11-15 14:35:43,751 p=98395 u=root |  skipping: [node2]
+2019-11-15 14:35:43,793 p=98395 u=root |  TASK [container-engine/docker : include_tasks] *****************************************************************************************
+2019-11-15 14:35:43,794 p=98395 u=root |  Friday 15 November 2019  14:35:43 +0800 (0:00:00.086)       0:02:08.577 ******* 
+2019-11-15 14:35:43,861 p=98395 u=root |  TASK [container-engine/docker : Nvidia-Docker | ensure nvidia-docker repository public key is installed] *******************************
+2019-11-15 14:35:43,861 p=98395 u=root |  Friday 15 November 2019  14:35:43 +0800 (0:00:00.067)       0:02:08.645 ******* 
+2019-11-15 14:35:43,921 p=98395 u=root |  skipping: [node2]
+2019-11-15 14:35:43,959 p=98395 u=root |  TASK [container-engine/docker : Nvidia-Docker |ensure nvidia-docker repository is enabled] *********************************************
+2019-11-15 14:35:43,960 p=98395 u=root |  Friday 15 November 2019  14:35:43 +0800 (0:00:00.098)       0:02:08.743 ******* 
+2019-11-15 14:35:44,011 p=98395 u=root |  skipping: [node2]
+2019-11-15 14:35:44,050 p=98395 u=root |  TASK [container-engine/docker : Nvidia-Docker |ensure docker is stopped] ***************************************************************
+2019-11-15 14:35:44,051 p=98395 u=root |  Friday 15 November 2019  14:35:44 +0800 (0:00:00.091)       0:02:08.834 ******* 
+2019-11-15 14:35:44,104 p=98395 u=root |  skipping: [node2]
+2019-11-15 14:35:44,144 p=98395 u=root |  TASK [container-engine/docker : Nvidia-Docker |ensure nvidia-container-runtime are installed] ******************************************
+2019-11-15 14:35:44,145 p=98395 u=root |  Friday 15 November 2019  14:35:44 +0800 (0:00:00.094)       0:02:08.928 ******* 
+2019-11-15 14:35:44,194 p=98395 u=root |  skipping: [node2]
+2019-11-15 14:35:44,239 p=98395 u=root |  TASK [container-engine/docker : Nvidia-Docker |ensure nvidia-docker are installed] *****************************************************
+2019-11-15 14:35:44,240 p=98395 u=root |  Friday 15 November 2019  14:35:44 +0800 (0:00:00.095)       0:02:09.023 ******* 
+2019-11-15 14:35:44,284 p=98395 u=root |  skipping: [node2]
+2019-11-15 14:35:44,326 p=98395 u=root |  TASK [container-engine/docker : Nvidia-Docker |ensure docker daemon.json is absent] ****************************************************
+2019-11-15 14:35:44,326 p=98395 u=root |  Friday 15 November 2019  14:35:44 +0800 (0:00:00.086)       0:02:09.109 ******* 
+2019-11-15 14:35:44,364 p=98395 u=root |  skipping: [node2]
+2019-11-15 14:35:44,397 p=98395 u=root |  TASK [container-engine/docker : Create docker service systemd directory if it doesn't exist] *******************************************
+2019-11-15 14:35:44,397 p=98395 u=root |  Friday 15 November 2019  14:35:44 +0800 (0:00:00.070)       0:02:09.180 ******* 
+2019-11-15 14:35:44,830 p=98395 u=root |  changed: [node2]
+2019-11-15 14:35:44,862 p=98395 u=root |  TASK [container-engine/docker : Write docker proxy drop-in] ****************************************************************************
+2019-11-15 14:35:44,862 p=98395 u=root |  Friday 15 November 2019  14:35:44 +0800 (0:00:00.464)       0:02:09.645 ******* 
+2019-11-15 14:35:44,902 p=98395 u=root |  skipping: [node2]
+2019-11-15 14:35:44,936 p=98395 u=root |  TASK [container-engine/docker : get systemd version] ***********************************************************************************
+2019-11-15 14:35:44,936 p=98395 u=root |  Friday 15 November 2019  14:35:44 +0800 (0:00:00.074)       0:02:09.720 ******* 
+2019-11-15 14:35:45,368 p=98395 u=root |  ok: [node2]
+2019-11-15 14:35:45,405 p=98395 u=root |  TASK [container-engine/docker : Write docker.service systemd file] *********************************************************************
+2019-11-15 14:35:45,405 p=98395 u=root |  Friday 15 November 2019  14:35:45 +0800 (0:00:00.468)       0:02:10.188 ******* 
+2019-11-15 14:35:46,130 p=98395 u=root |  changed: [node2]
+2019-11-15 14:35:46,161 p=98395 u=root |  TASK [container-engine/docker : Write docker options systemd drop-in] ******************************************************************
+2019-11-15 14:35:46,161 p=98395 u=root |  Friday 15 November 2019  14:35:46 +0800 (0:00:00.756)       0:02:10.945 ******* 
+2019-11-15 14:35:46,871 p=98395 u=root |  changed: [node2]
+2019-11-15 14:35:46,904 p=98395 u=root |  TASK [container-engine/docker : Write docker dns systemd drop-in] **********************************************************************
+2019-11-15 14:35:46,905 p=98395 u=root |  Friday 15 November 2019  14:35:46 +0800 (0:00:00.743)       0:02:11.688 ******* 
+2019-11-15 14:35:47,634 p=98395 u=root |  changed: [node2]
+2019-11-15 14:35:47,665 p=98395 u=root |  TASK [container-engine/docker : Copy docker orphan clean up script to the node] ********************************************************
+2019-11-15 14:35:47,665 p=98395 u=root |  Friday 15 November 2019  14:35:47 +0800 (0:00:00.760)       0:02:12.449 ******* 
+2019-11-15 14:35:47,709 p=98395 u=root |  skipping: [node2]
+2019-11-15 14:35:47,744 p=98395 u=root |  TASK [container-engine/docker : Write docker orphan clean up systemd drop-in] **********************************************************
+2019-11-15 14:35:47,744 p=98395 u=root |  Friday 15 November 2019  14:35:47 +0800 (0:00:00.078)       0:02:12.527 ******* 
+2019-11-15 14:35:47,781 p=98395 u=root |  skipping: [node2]
+2019-11-15 14:35:47,785 p=98395 u=root |  RUNNING HANDLER [container-engine/docker : restart docker] *****************************************************************************
+2019-11-15 14:35:47,786 p=98395 u=root |  Friday 15 November 2019  14:35:47 +0800 (0:00:00.041)       0:02:12.569 ******* 
+2019-11-15 14:35:48,365 p=98395 u=root |  changed: [node2]
+2019-11-15 14:35:48,369 p=98395 u=root |  RUNNING HANDLER [container-engine/docker : Docker | reload systemd] ********************************************************************
+2019-11-15 14:35:48,369 p=98395 u=root |  Friday 15 November 2019  14:35:48 +0800 (0:00:00.583)       0:02:13.152 ******* 
+2019-11-15 14:35:49,023 p=98395 u=root |  ok: [node2]
+2019-11-15 14:35:49,026 p=98395 u=root |  RUNNING HANDLER [container-engine/docker : Docker | reload docker.socket] **************************************************************
+2019-11-15 14:35:49,027 p=98395 u=root |  Friday 15 November 2019  14:35:49 +0800 (0:00:00.657)       0:02:13.810 ******* 
+2019-11-15 14:35:49,082 p=98395 u=root |  skipping: [node2]
+2019-11-15 14:35:49,086 p=98395 u=root |  RUNNING HANDLER [container-engine/docker : Docker | reload docker] *********************************************************************
+2019-11-15 14:35:49,086 p=98395 u=root |  Friday 15 November 2019  14:35:49 +0800 (0:00:00.059)       0:02:13.869 ******* 
+2019-11-15 14:35:50,616 p=98395 u=root |  fatal: [node2]: FAILED! => {"changed": false, "msg": "Unable to restart service docker: Job for docker.service failed because the control process exited with error code. See \"systemctl status docker.service\" and \"journalctl -xe\" for details.\n"}
+2019-11-15 14:35:50,619 p=98395 u=root |  RUNNING HANDLER [container-engine/docker : Docker | wait for docker] *******************************************************************
+2019-11-15 14:35:50,620 p=98395 u=root |  Friday 15 November 2019  14:35:50 +0800 (0:00:01.533)       0:02:15.403 ******* 
+2019-11-15 14:35:50,620 p=98395 u=root |  NO MORE HOSTS LEFT *********************************************************************************************************************
+2019-11-15 14:35:50,621 p=98395 u=root |  PLAY RECAP *****************************************************************************************************************************
+2019-11-15 14:35:50,621 p=98395 u=root |  localhost                  : ok=1    changed=0    unreachable=0    failed=0   
+2019-11-15 14:35:50,622 p=98395 u=root |  master                     : ok=30   changed=6    unreachable=0    failed=1   
+2019-11-15 14:35:50,622 p=98395 u=root |  node2                      : ok=110  changed=24   unreachable=0    failed=1   
+2019-11-15 14:35:50,622 p=98395 u=root |  Friday 15 November 2019  14:35:50 +0800 (0:00:00.002)       0:02:15.406 ******* 
+2019-11-15 14:35:50,622 p=98395 u=root |  =============================================================================== 
+2019-11-15 14:35:50,625 p=98395 u=root |  container-engine/docker : ensure docker packages are installed ----------------------------------------------------------------- 42.24s
+2019-11-15 14:35:50,625 p=98395 u=root |  container-engine/docker : check if container-selinux is available -------------------------------------------------------------- 18.14s
+2019-11-15 14:35:50,626 p=98395 u=root |  kubernetes/preinstall : Install packages requirements --------------------------------------------------------------------------- 6.58s
+2019-11-15 14:35:50,626 p=98395 u=root |  chrony : install chrony --------------------------------------------------------------------------------------------------------- 2.84s
+2019-11-15 14:35:50,626 p=98395 u=root |  kubernetes/preinstall : Create kubernetes directories --------------------------------------------------------------------------- 2.14s
+2019-11-15 14:35:50,626 p=98395 u=root |  container-engine/docker : Docker | reload docker -------------------------------------------------------------------------------- 1.53s
+2019-11-15 14:35:50,626 p=98395 u=root |  container-engine/docker : Ensure old versions of Docker are not installed. | RedHat --------------------------------------------- 1.39s
+2019-11-15 14:35:50,626 p=98395 u=root |  bootstrap-os : Install libselinux python package -------------------------------------------------------------------------------- 1.35s
+2019-11-15 14:35:50,627 p=98395 u=root |  download : download | Sync files / images from ansible host to nodes ------------------------------------------------------------ 1.32s
+2019-11-15 14:35:50,627 p=98395 u=root |  download : download | Download files / images ----------------------------------------------------------------------------------- 1.30s
+2019-11-15 14:35:50,627 p=98395 u=root |  kubernetes/preinstall : Create cni directories ---------------------------------------------------------------------------------- 1.17s
+2019-11-15 14:35:50,627 p=98395 u=root |  Gathering Facts ----------------------------------------------------------------------------------------------------------------- 1.09s
+2019-11-15 14:35:50,627 p=98395 u=root |  kubernetes/preinstall : Remove swapfile from /etc/fstab ------------------------------------------------------------------------- 0.97s
+2019-11-15 14:35:50,627 p=98395 u=root |  kubernetes/preinstall : Hosts | populate inventory into hosts file -------------------------------------------------------------- 0.92s
+2019-11-15 14:35:50,627 p=98395 u=root |  bootstrap-os : Assign inventory name to unconfigured hostnames (non-CoreOS, Suse and ClearLinux) -------------------------------- 0.89s
+2019-11-15 14:35:50,627 p=98395 u=root |  kubernetes/preinstall : Hosts | Update (if necessary) hosts file ---------------------------------------------------------------- 0.84s
+2019-11-15 14:35:50,627 p=98395 u=root |  chrony : conf chrony client ----------------------------------------------------------------------------------------------------- 0.81s
+2019-11-15 14:35:50,627 p=98395 u=root |  kubernetes/preinstall : Set selinux policy -------------------------------------------------------------------------------------- 0.81s
+2019-11-15 14:35:50,627 p=98395 u=root |  container-engine/docker : Write docker dns systemd drop-in ---------------------------------------------------------------------- 0.76s
+2019-11-15 14:35:50,627 p=98395 u=root |  container-engine/docker : Write docker.service systemd file --------------------------------------------------------------------- 0.76s
