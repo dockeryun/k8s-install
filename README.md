@@ -2,7 +2,9 @@
 
 来自项目 https://github.com/kubesphere/kubesphere
 
-> 需要使用pyhton3
+> sshpass 不持密码
+
+
 
 ## 有修改
 * /k8s/inventory/sample/group_vars/k8s-cluster/k8s-cluster.yml
