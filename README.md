@@ -13,3 +13,4 @@
 # kubernetes image repo define
 kube_image_repo: "gcr.azk8s.cn/google-containers"
 ```
+备用阿里镜像：registry.cn-hangzhou.aliyuncs.com/google_containers
