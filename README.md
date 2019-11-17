@@ -2,6 +2,8 @@
 
 来自项目 https://github.com/kubesphere/kubesphere
 
+> 需要使用pyhton3
+
 ## 有修改
 * /k8s/inventory/sample/group_vars/k8s-cluster/k8s-cluster.yml
 调整为国内镜像
