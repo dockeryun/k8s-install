@@ -14,3 +14,27 @@
 kube_image_repo: "gcr.azk8s.cn/google-containers"
 ```
 备用阿里镜像：registry.cn-hangzhou.aliyuncs.com/google_containers
+
+
+##准备
+- ansible>=2.4.0
+- jinja2>=2.9.6
+- netaddr
+- pbr>=1.6
+- ansible-modules-hashivault>=3.9.4
+- hvac
+
+```
+#
+# 安装pip
+yum -y install epel-release
+yum -y install python-pip  ansible
+# 安装python-netaddr
+pip install netaddr
+#Jinja 2.9 (or newer)
+pip install --upgrade jinja2
+systemctl stop firewalld
+systemctl disable firewalld
+
+#ssh-kengen
+#ssh-copy-id   root@node1
