@@ -24,6 +24,7 @@ kube_image_repo: "gcr.azk8s.cn/google-containers"
 - ansible-modules-hashivault>=3.9.4
 - hvac
 - match
+- register
 
 ```
 #
