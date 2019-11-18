@@ -23,6 +23,7 @@ kube_image_repo: "gcr.azk8s.cn/google-containers"
 - pbr>=1.6
 - ansible-modules-hashivault>=3.9.4
 - hvac
+- match
 
 ```
 #
@@ -31,6 +32,7 @@ yum -y install epel-release
 yum -y install python-pip  ansible
 # 安装python-netaddr
 pip install netaddr
+pip install match
 #Jinja 2.9 (or newer)
 pip install --upgrade jinja2
 systemctl stop firewalld
